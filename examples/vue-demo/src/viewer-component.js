@@ -16,8 +16,9 @@ class ViewerWebComponents extends HTMLElement {
     super();
     this.init();
   }
+
   imageCount(imageArr) {
-    const innerTemplate = '<ul id="images">' + '</ul>'
+    const innerTemplate = '<ul id="viewer-image">' + '</ul>'
     const preInnerTemplate = innerTemplate.split('</ul>').filter(Boolean)
     if (imageArr && imageArr.length) {
       for (let i = 0; i < imageArr.length; i++) {
@@ -26,22 +27,31 @@ class ViewerWebComponents extends HTMLElement {
     }
     return preInnerTemplate.join('') + '</ul>'
   }
-  
+
   init() {
-    const template = document.createElement('template')
-    template.setAttribute('id', 'viewer-id')
-    // template.innerHTML = TEMPLATE
-    const imageArr = this.getAttribute('images')
-    console.log('imageArr', imageArr)
-    template.innerHTML = this.imageCount(eval(imageArr))
-  
-    document.body.appendChild(template)
-  
-    const content = template.content.cloneNode(true); // 克隆一份
-    this.appendChild(content);
-  
-    const options = this.getAttribute('options')
-    const viewer = new Viewer(document.getElementById('images'), eval(`( ${options} )`));
+    setTimeout(() => {
+      const template = document.createElement('template')
+      template.setAttribute('id', 'viewer-id')
+      // template.innerHTML = TEMPLATE
+      const imageArr = this.getAttribute('images')
+      template.innerHTML = this.imageCount(imageArr.split(','))
+
+      document.body.appendChild(template)
+
+      const content = template.content.cloneNode(true); // 克隆一份
+      this.appendChild(content);
+
+      const options = {}
+      for(let i of this.attributes){
+        let arr = String(i).split('=')
+        if(!i.name.includes('-')&&i.name!=='images'){
+          options[i.name] = eval(i.value)
+        }
+      }
+
+      // const options = this.getAttribute('options')
+      const viewer = new Viewer(document.getElementById('viewer-image'), options);
+    })
   }
 }
 
