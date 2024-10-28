@@ -11,7 +11,7 @@ import Viewer from 'viewerjs'
 import 'viewerjs/dist/viewer.css'
 // import innerTemplate from './template';
 
-class ViewerWebComponents extends HTMLElement {
+class ViewerWebComponent extends HTMLElement {
   constructor() {
     super();
     this.init();
@@ -55,5 +55,5 @@ class ViewerWebComponents extends HTMLElement {
   }
 }
 
-window.customElements.define('viewer-webcomponents', ViewerWebComponents);
-export default ViewerWebComponents;
+window.customElements.define('viewer-webcomponent', ViewerWebComponent);
+export default ViewerWebComponent;
