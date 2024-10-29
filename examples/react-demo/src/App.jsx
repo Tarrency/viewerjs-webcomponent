@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      {<viewer-webcomponent options={options} images={images}> </viewer-webcomponent>
+      {<viewer-webcomponent {...options} images={images}> </viewer-webcomponent>
       /* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
