@@ -1,8 +1,8 @@
 <!--
  * @Author: wangqi01 13693607080@163.com
  * @Date: 2024-10-16 13:50:18
- * @LastEditors: Tarrency 760216236@qq.com
- * @LastEditTime: 2024-10-23 23:44:52
+ * @LastEditors: wangqi01 13693607080@163.com
+ * @LastEditTime: 2024-10-30 16:16:05
  * @FilePath: \vanilla-demo\index.html
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -17,8 +17,15 @@
 </head>
 
 <body>
-  <script type="module" src="src/js/main.js"></script>
+  <!-- <script type="module" src="src/js/main.js">
+  </script> -->
+  <script type="module">
+    import viewer from '/src/js/main.js'
+    viewer.show()
+    </script>
   <viewer-webcomponent options="{toolbar: false}" images="['src/assets/tibet-1.jpg', 'src/assets/tibet-2.jpg']">
+    <div>真实内容</div>
+    <span slot="slotName">这是真正的slot</slot>
   </viewer-webcomponent>
   <!-- <template id="viewer-id">
     <div class="custom-component">
