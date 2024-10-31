@@ -2,9 +2,9 @@ import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
+import getViewer from '/src/webcomponent/viewer-component.js'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [options, setOptions] = useState({ toolbar: true, title: false })
   const [images, setImages] = useState([
     "src/assets/tibet-1.jpg",
@@ -17,6 +17,12 @@ function App() {
     "src/assets/tibet-6.jpg",
     "src/assets/tibet-5.jpg",
   ])
+  const [viewer, setViewer] = useState(null)
+
+  getViewer((viewer) => {
+    setViewer(viewer)
+  })
+    viewer?.show()
 
   return (
     <>
