@@ -1,6 +1,12 @@
-import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+/*
+ * @Author: wangqi01 13693607080@163.com
+ * @Date: 2024-10-29 16:02:11
+ * @LastEditors: wangqi01 13693607080@163.com
+ * @LastEditTime: 2024-11-04 16:26:28
+ * @FilePath: \viewerjs-webcomponent\examples\react-demo\src\App.jsx
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
+import { useState, useEffect } from 'react'
 import './App.css'
 import getViewer from '/src/webcomponent/viewer-component.js'
 
@@ -19,34 +25,14 @@ function App() {
   ])
   const [viewer, setViewer] = useState(null)
 
-  getViewer((viewer) => {
-    setViewer(viewer)
-  })
+  useEffect(() => {
+    setViewer(getViewer.viewer)
+  }, [getViewer])
     viewer?.show()
 
   return (
     <>
-      {<viewer-webcomponent {...options} images={images}> </viewer-webcomponent>
-      /* <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
+      {<viewer-webcomponent {...options} images={images}> <span slot="slotName">这是真正的slot</span></viewer-webcomponent>}
     </>
   )
 }
