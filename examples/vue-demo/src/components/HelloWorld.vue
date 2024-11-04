@@ -8,7 +8,7 @@
 -->
 <script setup>
 import { ref, computed, onMounted } from "vue";
-import getViewer from "/src/webcomponent/viewer-component.js";
+import getViewer from "/src/webcomponent/viewer-webcomponent.js";
 
 const options = ref({ toolbar: true, title: false });
 const images = ref([
