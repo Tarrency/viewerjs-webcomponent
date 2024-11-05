@@ -18,8 +18,9 @@ class ViewerWebComponent extends HTMLElement {
   connectedCallback() {
     // 创建webcomponent模板
     const template = document.createElement('template')
-    // 获取webcomponent组件props中的图片
+    // 获取webcomponent组件props中的images属性，即所有图片url
     const imageArr = this.getAttribute('images')
+    // 将处理后的图片html片段插入模板
     template.innerHTML = this.imageCount(imageArr.split(','))
 
     // 可在devtool中查看模板结构
@@ -30,7 +31,7 @@ class ViewerWebComponent extends HTMLElement {
     this.shadow.appendChild(content)
     // this.appendChild(content)
 
-    // 处理webcomponent组件的props，options属性
+    // 处理webcomponent组件的props，options属性，对应viewerjs的options，用于进行相关配置
     const options = {}
     for (let i of this.attributes) {
       if (!i.name.includes('-') && i.name !== 'images') {

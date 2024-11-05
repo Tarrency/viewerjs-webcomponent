@@ -2,7 +2,7 @@
  * @Author: Tarrency 760216236@qq.com
  * @Date: 2024-10-21 16:34:58
  * @LastEditors: wangqi01 13693607080@163.com
- * @LastEditTime: 2024-11-04 16:20:28
+ * @LastEditTime: 2024-11-05 10:33:21
  * @FilePath: /vanilla-demo/src/js/main.js
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -18,8 +18,9 @@ class ViewerWebComponent extends HTMLElement {
   connectedCallback() {
     // 创建webcomponent模板
     const template = document.createElement('template')
-    // 获取webcomponent组件props中的图片
+    // 获取webcomponent组件props中的images属性，即所有图片url
     const imageArr = this.getAttribute('images')
+    // 将处理后的图片html片段插入模板
     template.innerHTML = this.imageCount(imageArr.split(','))
 
     // 可在devtool中查看模板结构
@@ -30,7 +31,7 @@ class ViewerWebComponent extends HTMLElement {
     this.shadow.appendChild(content)
     // this.appendChild(content)
 
-    // 处理webcomponent组件的props，options属性
+    // 处理webcomponent组件的props，options属性，对应viewerjs的options，用于进行相关配置
     const options = {}
     for (let i of this.attributes) {
       if (!i.name.includes('-') && i.name !== 'images') {
