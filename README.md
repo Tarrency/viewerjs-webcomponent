@@ -1,11 +1,17 @@
 # Viewerjs-Webcomponent
+[![Framework](https://img.shields.io/badge/language-React-brightgreen.svg)]
+[![Framework](https://img.shields.io/badge/language-Vue-brightgreen.svg)]
+[![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://mit-license.org/) 
 
 > Image viewer webcomponent based on [viewerjs](https://github.com/fengyuanchen/viewerjs).
-> It can be invoked everywhere, including Vue, React and HTML.
+- It can be invoked everywhere, including Vue, React and HTML.
+- All the options & methods of viewerjs are avaliable.
 
 ## Table of contents
-- [Main](#main)
+- [Main files](#main-files)
 - [Getting started](#getting-started)
+- [Options and Methods and Keyboard support of Viewer](#options-and-methods-and-keyboard-support-of-viewer)
+- [License & Contributing & Versioning](#license-and-contributing-and-versioning)
 
 ## Main files
 
@@ -58,7 +64,7 @@ npm install viewerjs
 - If you are using Vue or React, please copy the webcomponent files in `examples/vue-demo/webcomponent` or `examples/react-demo/webcomponent`. They are the same.
 - If you are using HTML, please copy the webcomponent files in `src/webcomponent`. It is a simple webcomponent demo used only in HTML.
 
-#### Manual
+#### General
 1. Invoke the webcomponent files.
 
     ```text
@@ -78,9 +84,18 @@ npm install viewerjs
         images="['src/assets/tibet-1.jpg', 'src/assets/tibet-2.jpg']">
     </viewer-webcomponent>
     ```
+##### Component Props
+- options`(Optional)`
+    - Type: `Object`
+    - Viewerjs options. For details, please see [viewerjs-options](#Example)
+    - It should be coded in destructured way while used in framworks. For details, please see [Example](#Example)
+- Images
+    - Type: `Array`
+    - Images Urls.
 
-3. **(Skippable)** Modify the webcomponent template in your way in `template.js`.
-- `template.js`
+##### Customizable
+- **(Template)**: Modify the webcomponent template in your way in `template.js`.
+    - `template.js`
 
     ```js
     const styleStr = '<style>' + '.container {'
@@ -97,8 +112,8 @@ npm install viewerjs
     const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
     ```
 
-4. **(Skippable)** If you want to close the shadowdom mod, close it in `viewer-webcomponent.js` and modify template style in `template.css` and `template.js`.
-- `viewer-webcomponent.js`
+- **(Shadowdom)**: If you want to close the shadowdom mod, close it in `viewer-webcomponent.js` and modify template style in `template.css` and `template.js`.
+    - `viewer-webcomponent.js`
 
     ```js
     // this.shadow.appendChild(content)
@@ -114,7 +129,7 @@ npm install viewerjs
     }
     ```
 
-- `template.css`
+    - `template.css`
     ```css
     .container {
         display: grid;
@@ -128,14 +143,14 @@ npm install viewerjs
     }
     ```
 
-- `template.js`
+    - `template.js`
     ```js
     const innerTemplate = '<div id="viewer-container" class="container">' + '</div>'
     // const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
     ```
 
-5. **(Skippable)** If you want to add slot, add it in `template.js` and use it.
-- `template.js`
+- **(Slot)**: If you want to add slot, add it in `template.js` and use it.
+    - `template.js`
     ```js
     const slotStr = '<slot name="slotName"></slot>'
     // const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
@@ -143,7 +158,7 @@ npm install viewerjs
      + styleStr + slotStr
     ```
 
-- `where you use it`
+    - `where you use it`
     ```html
     <viewer-webcomponent options="{toolbar: false}"
       images="['src/assets/tibet-1.jpg', 'src/assets/tibet-2.jpg']"> 
@@ -153,6 +168,19 @@ npm install viewerjs
 #### Example
 
 - Vue
+1. Skip component parsing
+```js
+export default defineConfig({
+  plugins: [vue({
+    template: {
+      compilerOptions: {
+        // 将所有带短横线的标签名都视为自定义元素
+        isCustomElement: (tag) => tag.includes('-')
+      }
+    }
+  })],
+})
+```
 ```vue
 <script setup>
     import { ref, onMounted } from "vue";
@@ -188,6 +216,20 @@ npm install viewerjs
 ```
 
 - React
+1. Skip component parsing
+```jsx
+export default defineConfig({
+  plugins: [react({
+    template: {
+      compilerOptions: {
+        // 将所有带短横线的标签名都视为自定义元素
+        isCustomElement: (tag) => tag.includes('-')
+      }
+    }
+  })],
+})
+```
+2. Use it.
 ```jsx
 import { useState, useEffect } from 'react'
 import getViewer from '/src/webcomponent/viewer-webcomponent.js'
@@ -232,3 +274,12 @@ export default App
     images="['src/assets/tibet-1.jpg', 'src/assets/tibet-2.jpg']">
 </viewer-webcomponent>
 ```
+
+## Options and Methods and Keyboard support of Viewer
+Refer to [viewjs-options](https://github.com/fengyuanchen/viewerjs?tab=readme-ov-file#options) and [viewjs-methods](https://github.com/fengyuanchen/viewerjs?tab=readme-ov-file#methods)
+
+## License and Contributing and Versioning
+- License: [MIT](https://opensource.org/licenses/MIT)
+- Contributing: [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+- Versioning: [Semantic Versioning guidelines](https://semver.org/).
+[⬆ back to top](#viewerjs-webcomponent)
