@@ -3,14 +3,14 @@
 ![Framework](https://img.shields.io/badge/language-Vue-brightgreen.svg)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://mit-license.org/) 
 
-> Image viewer webcomponent based on [viewerjs](https://github.com/fengyuanchen/viewerjs).
-- It can be invoked everywhere, including Vue, React and HTML.
+> **Image viewer webcomponent** based on [viewerjs](https://github.com/fengyuanchen/viewerjs).
+- It can be invoked everywhere, including **Vue, React and HTML**.
 - All the options & methods of viewerjs are avaliable.
 
 ## Table of contents
 - [Main files](#main-files)
 - [Getting started](#getting-started)
-- [Options & Methods & Keyboard support of Viewer](#options-and-methods-and-keyboard-support-of-viewer)
+- [Options & Methods & Keyboard support of Viewerjs](#options-and-methods-and-keyboard-support-of-viewerjs)
 - [License & Contributing & Versioning](#license-and-contributing-and-versioning)
 
 ## Main files
@@ -60,9 +60,9 @@ npm install viewerjs
 
 ### Usage
 > [!IMPORTANT]
-> Viewerjs-webcomponent is used differently in frameworks and HTML.
-- If you are using Vue or React, please copy the webcomponent files in `examples/vue-demo/webcomponent` or `examples/react-demo/webcomponent`. They are the same.
-- If you are using HTML, please copy the webcomponent files in `src/webcomponent`. It is a simple webcomponent demo used only in HTML.
+> Viewerjs-webcomponent is used **differently** in frameworks and HTML.
+- If you are using **Vue** or **React**, please copy the webcomponent files in `examples/vue-demo/webcomponent` or `examples/react-demo/webcomponent`. They are the same.
+- If you are using **HTML**, please copy the webcomponent files in `src/webcomponent`. It is a simple webcomponent demo used only in HTML.
 
 #### General
 1. Invoke the webcomponent files.
@@ -74,9 +74,9 @@ npm install viewerjs
         └── viewer-webcomponent.js
     ```
 
-2. Import the webcomponent where you use. For details, please see [Example](#Example).
+2. Import the webcomponent where you use.
     ```js
-        import viewer from '/src/webcomponent/viewer-webcomponent.js'
+        import viewer from 'webcomponent/viewer-webcomponent.js'
         viewer.show()
     ```
     ```html
@@ -156,7 +156,7 @@ npm install viewerjs
     const slotStr = '<slot name="slotName"></slot>'
     // const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
     const innerTemplate = '<div id="viewer-container" class="container">' + '</div>'
-     + styleStr + slotStr
+                            + styleStr + slotStr
     ```
 
     - `where you use it`
@@ -169,6 +169,7 @@ npm install viewerjs
 #### Example
 
 - Vue
+
 Skip component parsing
 ```js
 export default defineConfig({
@@ -218,6 +219,7 @@ export default defineConfig({
 ```
 
 - React
+
 Skip component parsing
 ```jsx
 export default defineConfig({
@@ -257,10 +259,8 @@ useEffect(() => {
     viewer?.show()
 
 return (
-    <>
-    {<viewer-webcomponent {...options} images={images}></viewer-webcomponent>}
-    </>
-)
+    <>{<viewer-webcomponent {...options} images={images}></viewer-webcomponent>}</>
+  )
 }
 
 export default App
@@ -277,7 +277,7 @@ export default App
 </viewer-webcomponent>
 ```
 
-## Options and Methods and Keyboard support of Viewer
+## Options and Methods and Keyboard support of Viewerjs
 Refer to [viewjs](https://github.com/fengyuanchen/viewerjs?tab=readme-ov-file).
 
 ## License and Contributing and Versioning
@@ -285,4 +285,4 @@ Refer to [viewjs](https://github.com/fengyuanchen/viewerjs?tab=readme-ov-file).
 - Contributing: [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 - Versioning: [Semantic Versioning guidelines](https://semver.org/).
 
-[⬆ back to top](#viewerjs-webcomponent)
+[⬆ Back To Top](#viewerjs-webcomponent)
