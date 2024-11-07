@@ -84,16 +84,17 @@ npm install viewerjs
         images="['src/assets/tibet-1.jpg', 'src/assets/tibet-2.jpg']">
     </viewer-webcomponent>
     ```
-##### Component Props
-- **options**(Optional)
+#### Component Props
+- **options** (Optional)
     - Type: `Object`
     - Viewerjs options. For details, please see [viewerjs-options](#Example).
-    - It should be coded in destructured way while used in framworks. For details, please see [Example](#Example).
+    - It should be coded in destructured way while used in frameworks. For details, please see [Example](#Example).
 - **Images**
     - Type: `Array`
     - Images Urls.
 
-##### Customizable
+#### Customizable Details
+> You can skip this part if you have no further needs.
 - **Template**: Modify the webcomponent template in your way in `template.js`.
     - `template.js`
 
@@ -168,7 +169,7 @@ npm install viewerjs
 #### Example
 
 - Vue
-1. Skip component parsing
+Skip component parsing
 ```js
 export default defineConfig({
   plugins: [vue({
@@ -181,7 +182,7 @@ export default defineConfig({
   })],
 })
 ```
-2. Use it
+
 ```vue
 <script setup>
     import { ref, onMounted } from "vue";
@@ -217,7 +218,7 @@ export default defineConfig({
 ```
 
 - React
-1. Skip component parsing
+Skip component parsing
 ```jsx
 export default defineConfig({
   plugins: [react({
@@ -230,7 +231,7 @@ export default defineConfig({
   })],
 })
 ```
-2. Use it
+
 ```jsx
 import { useState, useEffect } from 'react'
 import getViewer from '/src/webcomponent/viewer-webcomponent.js'
