@@ -74,7 +74,7 @@ npm install viewerjs
         └── viewer-webcomponent.js
     ```
 
-2. Import the webcomponent where you use.
+2. Import the webcomponent.
     ```js
         import viewer from 'webcomponent/viewer-webcomponent.js'
         viewer.show()
@@ -94,8 +94,8 @@ npm install viewerjs
     - Images Urls.
 
 #### Customizable Details
-> You can skip this part if you have no further needs.
-- **Template**: Modify the webcomponent template in your way in `template.js`.
+> Skip this part if you have no further needs.
+- **Template**: Modify the webcomponent template in specific way in `template.js`.
     - `template.js`
 
     ```js
@@ -113,7 +113,7 @@ npm install viewerjs
     const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
     ```
 
-- **Shadowdom**: If you want to close the shadowdom mod, close it in `viewer-webcomponent.js` and modify template style in `template.css` and `template.js`.
+- **Shadowdom**: Close the shadowdom mode in `viewer-webcomponent.js` and modify template style in `template.css` and `template.js`.
     - `viewer-webcomponent.js`
 
     ```js
@@ -150,7 +150,7 @@ npm install viewerjs
     // const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
     ```
 
-- **Slot**: If you want to add slot, add it in `template.js` and use it.
+- **Slot**: Add slot in `template.js`.
     - `template.js`
     ```js
     const slotStr = '<slot name="slotName"></slot>'
@@ -159,7 +159,7 @@ npm install viewerjs
                             + styleStr + slotStr
     ```
 
-    - `where you use it`
+    - `component or html`
     ```html
     <viewer-webcomponent options="{toolbar: false}"
       images="['src/assets/tibet-1.jpg', 'src/assets/tibet-2.jpg']"> 
@@ -170,13 +170,13 @@ npm install viewerjs
 
 - Vue
 
-Skip component parsing
 ```js
+// Skip component parsing
 export default defineConfig({
   plugins: [vue({
     template: {
       compilerOptions: {
-        // 将所有带短横线的标签名都视为自定义元素
+        // Treat all tag names with dashes as custom elements
         isCustomElement: (tag) => tag.includes('-')
       }
     }
@@ -205,7 +205,7 @@ export default defineConfig({
     const viewer = getViewer.viewer;
     viewer.show();
 
-    // 响应式
+    // // Reactive
     // const vueViewer = ref(viewer)
     // vueViewer.value.show()
     });
@@ -220,13 +220,13 @@ export default defineConfig({
 
 - React
 
-Skip component parsing
 ```jsx
+// Skip component parsing
 export default defineConfig({
   plugins: [react({
     template: {
       compilerOptions: {
-        // 将所有带短横线的标签名都视为自定义元素
+        // Treat all tag names with dashes as custom elements
         isCustomElement: (tag) => tag.includes('-')
       }
     }
