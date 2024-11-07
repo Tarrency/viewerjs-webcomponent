@@ -1,6 +1,6 @@
 # Viewerjs-Webcomponent
-[![Framework](https://img.shields.io/badge/language-React-brightgreen.svg)]
-[![Framework](https://img.shields.io/badge/language-Vue-brightgreen.svg)]
+![Framework](https://img.shields.io/badge/language-React-brightgreen.svg)
+![Framework](https://img.shields.io/badge/language-Vue-brightgreen.svg)
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://mit-license.org/) 
 
 > Image viewer webcomponent based on [viewerjs](https://github.com/fengyuanchen/viewerjs).
@@ -10,7 +10,7 @@
 ## Table of contents
 - [Main files](#main-files)
 - [Getting started](#getting-started)
-- [Options and Methods and Keyboard support of Viewer](#options-and-methods-and-keyboard-support-of-viewer)
+- [Options & Methods & Keyboard support of Viewer](#options-and-methods-and-keyboard-support-of-viewer)
 - [License & Contributing & Versioning](#license-and-contributing-and-versioning)
 
 ## Main files
@@ -85,16 +85,16 @@ npm install viewerjs
     </viewer-webcomponent>
     ```
 ##### Component Props
-- options`(Optional)`
+- **options**(Optional)
     - Type: `Object`
-    - Viewerjs options. For details, please see [viewerjs-options](#Example)
-    - It should be coded in destructured way while used in framworks. For details, please see [Example](#Example)
-- Images
+    - Viewerjs options. For details, please see [viewerjs-options](#Example).
+    - It should be coded in destructured way while used in framworks. For details, please see [Example](#Example).
+- **Images**
     - Type: `Array`
     - Images Urls.
 
 ##### Customizable
-- **(Template)**: Modify the webcomponent template in your way in `template.js`.
+- **Template**: Modify the webcomponent template in your way in `template.js`.
     - `template.js`
 
     ```js
@@ -112,7 +112,7 @@ npm install viewerjs
     const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
     ```
 
-- **(Shadowdom)**: If you want to close the shadowdom mod, close it in `viewer-webcomponent.js` and modify template style in `template.css` and `template.js`.
+- **Shadowdom**: If you want to close the shadowdom mod, close it in `viewer-webcomponent.js` and modify template style in `template.css` and `template.js`.
     - `viewer-webcomponent.js`
 
     ```js
@@ -149,7 +149,7 @@ npm install viewerjs
     // const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
     ```
 
-- **(Slot)**: If you want to add slot, add it in `template.js` and use it.
+- **Slot**: If you want to add slot, add it in `template.js` and use it.
     - `template.js`
     ```js
     const slotStr = '<slot name="slotName"></slot>'
@@ -181,6 +181,7 @@ export default defineConfig({
   })],
 })
 ```
+2. Use it
 ```vue
 <script setup>
     import { ref, onMounted } from "vue";
@@ -229,7 +230,7 @@ export default defineConfig({
   })],
 })
 ```
-2. Use it.
+2. Use it
 ```jsx
 import { useState, useEffect } from 'react'
 import getViewer from '/src/webcomponent/viewer-webcomponent.js'
@@ -276,10 +277,11 @@ export default App
 ```
 
 ## Options and Methods and Keyboard support of Viewer
-Refer to [viewjs-options](https://github.com/fengyuanchen/viewerjs?tab=readme-ov-file#options) and [viewjs-methods](https://github.com/fengyuanchen/viewerjs?tab=readme-ov-file#methods)
+Refer to [viewjs](https://github.com/fengyuanchen/viewerjs?tab=readme-ov-file).
 
 ## License and Contributing and Versioning
 - License: [MIT](https://opensource.org/licenses/MIT)
 - Contributing: [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
 - Versioning: [Semantic Versioning guidelines](https://semver.org/).
+
 [⬆ back to top](#viewerjs-webcomponent)
