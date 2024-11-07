@@ -7,7 +7,7 @@
 // </template >
 const styleStr = '<style>' + '.container {'
 + 'display: grid;'
-+ ' grid-template-columns: repeat(3, 33.33%);'
++ 'grid-template-columns: repeat(3, 33.33%);'
 + 'grid-template-rows: 1fr 1fr auto;'
 + 'img {'
 + 'width: 100%;'
@@ -17,7 +17,7 @@ const styleStr = '<style>' + '.container {'
 + '}'
 + '</style>'
 
-// const slotStr = '<br/>' + '<slot name="slotName"></slot>' + '<br/>'
+// const slotStr = '<slot name="slotName"></slot>'
 
 // 非shadowdom模式可引入css文件
 // const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
