@@ -65,7 +65,7 @@ npm install viewerjs
 - If you are using **HTML**, please copy the webcomponent files in `src/webcomponent`. It is a simple webcomponent demo used only in HTML.
 
 #### General
-1. Invoke the webcomponent files.
+- Invoke the webcomponent files
 
     ```text
     ├── webcomponent
@@ -74,7 +74,7 @@ npm install viewerjs
         └── viewer-webcomponent.js
     ```
 
-2. Import the webcomponent.
+- Import the webcomponent
     ```js
         import viewer from 'webcomponent/viewer-webcomponent.js'
         viewer.show()
@@ -169,7 +169,6 @@ npm install viewerjs
 #### Example
 
 - Vue
-
 ```js
 // Skip component parsing
 export default defineConfig({
@@ -219,7 +218,6 @@ export default defineConfig({
 ```
 
 - React
-
 ```jsx
 // Skip component parsing
 export default defineConfig({
