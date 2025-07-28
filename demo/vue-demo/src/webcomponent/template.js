@@ -20,9 +20,9 @@ const styleStr = '<style>' + '.container {'
 // const slotStr = '<slot name="slotName"></slot>'
 
 // 非shadowdom模式可引入css文件
-// const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
+// const innerTemplate = '<div id="viewer-container" class="container">' + '</div>'
 // 开启shadowdom则需要将样式以字符串形式写入模板
-// const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
+const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr
 // // 加入slot
-const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr + slotStr
+// const innerTemplate = '<div id="viewer-container" class="container">' + '</div>' + styleStr + slotStr
 export default innerTemplate
