@@ -2,9 +2,14 @@
   "name": "viewerjs-webcomponent",
   "version": "0.0.0",
   "description": "Image viewer webcomponent based on viewerjs.",
-  "type": "module",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "files": ["dist"],
   "exports": {
-    ".": "./src/index.js"
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    }
   },
   "scripts": {
     "dev": "vite",
