@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import getViewer from "viewerjs-webcomponent"
+// import getViewer from "./webcomponent/viewer-webcomponent"
 
 function App() {
   const [options, setOptions] = useState({ toolbar: true, title: false })
