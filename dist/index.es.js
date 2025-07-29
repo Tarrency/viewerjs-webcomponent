@@ -1540,7 +1540,7 @@ class ViewerWebComponent extends HTMLElement {
     for (let i of this.attributes)
       !i.name.includes("-") && i.name !== "images" && (options[i.name] = eval(i.value));
     const viewer = new Viewer(this.shadowRoot.getElementById("viewer-container"), options);
-    getViewer.viewer = viewer;
+    Object.setPrototypeOf(viewer, Viewer.prototype), getViewer.viewer = viewer;
   }
   // 设置组件的初始化状态
   constructor() {
@@ -1558,7 +1558,7 @@ class ViewerWebComponent extends HTMLElement {
   }
 }
 document.querySelector("viewer-webcomponent") || customElements.define("viewer-webcomponent", ViewerWebComponent);
-let getViewer = new Proxy({}, {});
+let getViewer;
 export {
   getViewer as default
 };
