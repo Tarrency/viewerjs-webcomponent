@@ -1558,7 +1558,14 @@ class ViewerWebComponent extends HTMLElement {
   }
 }
 document.querySelector("viewer-webcomponent") || customElements.define("viewer-webcomponent", ViewerWebComponent);
-let getViewer;
+const getViewer = new Proxy({}, {
+  get(n, e) {
+    return console.log(`[get] ${e}`), n[e];
+  },
+  set(n, e, s) {
+    return console.log(`[set] ${e} =`, s), n[e] = s, !0;
+  }
+});
 export {
   getViewer as default
 };
