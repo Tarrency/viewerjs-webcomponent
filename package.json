@@ -4,13 +4,15 @@
   "description": "Image viewer webcomponent based on viewerjs.",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
+  "browser": "./dist/browser.js",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
-      "require": "./dist/index.cjs.js"
+      "require": "./dist/index.cjs.js",
+      "browser": "./dist/browser.js"
     }
   },
   "scripts": {
