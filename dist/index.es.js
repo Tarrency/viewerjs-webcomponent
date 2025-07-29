@@ -1528,7 +1528,7 @@ var render = {
   }]);
 }();
 assign(Viewer.prototype, render, events, handlers, methods, others);
-const styleStr = "<style>.container {display: grid;grid-template-columns: repeat(3, 33.33%);grid-template-rows: 1fr 1fr auto;img {width: 100%;height: 100%;max-height: 100%;}}</style>", innerTemplate = '<div id="viewer-container" class="container"></div>' + styleStr + slotStr;
+const styleStr = "<style>.container {display: grid;grid-template-columns: repeat(3, 33.33%);grid-template-rows: 1fr 1fr auto;img {width: 100%;height: 100%;max-height: 100%;}}</style>", slotStr = '<slot name="slotName"></slot>', innerTemplate = '<div id="viewer-container" class="container"></div>' + styleStr + slotStr;
 class ViewerWebComponent extends HTMLElement {
   constructor() {
     super(), this.init();
