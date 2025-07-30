@@ -1535,18 +1535,16 @@ class ViewerWebComponent extends HTMLElement {
     const template = document.createElement("template"), imageArr = this.getAttribute("images");
     template.innerHTML = this.imageCount(imageArr.split(","));
     const content = template.content.cloneNode(!0);
-    this.shadow.appendChild(content);
+    this.appendChild(content);
     const options = {};
     for (let i of this.attributes)
       !i.name.includes("-") && i.name !== "images" && (options[i.name] = eval(i.value));
-    const viewer = new Viewer(this.shadowRoot.getElementById("viewer-container"), options);
-    Object.setPrototypeOf(viewer, Viewer.prototype), getViewer.viewer = viewer;
+    const viewer = new Viewer(document.getElementById("viewer-container"), options);
+    getViewer.viewer = viewer;
   }
   // 设置组件的初始化状态
   constructor() {
     super();
-    const n = this.attachShadow({ mode: "open" });
-    this.shadow = n;
   }
   // 处理webcomponent模板下的图片html
   imageCount(n) {
