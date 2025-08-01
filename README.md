@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://mit-license.org/) 
 
 > **Image viewer webcomponent** based on [viewerjs](https://github.com/fengyuanchen/viewerjs).
-- It can be imported in **Vue, React and HTML**.
+- It can be imported in **Vue and React**.
 - All the options & methods of viewerjs are avaliable.
 
 ## Table of contents
@@ -128,27 +128,6 @@ return (
 
 export default App
 ```
-
-- HTML
-```html
-<script type="module">
-    import viewer from "viewerjs-webcomponent"
-    viewer.show()
-</script>
-<viewer-webcomponent options="{toolbar: false}"
-    images="['src/assets/tibet-1.jpg', 'src/assets/tibet-2.jpg']">
-</viewer-webcomponent>
-```
-#### Customizable Details
-> Skip this part if you have no further needs.
-
-- **Slot**: Add slot in `component or html`.
-    ```html
-    <viewer-webcomponent options="{toolbar: false}"
-      images="['src/assets/tibet-1.jpg', 'src/assets/tibet-2.jpg']"> 
-        <span slot="slotName">xxx</span>
-    </viewer-webcomponent>
-    ```
 
 ## Options and Methods and Keyboard support of Viewerjs
 Refer to [viewjs](https://github.com/fengyuanchen/viewerjs?tab=readme-ov-file).

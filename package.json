@@ -4,7 +4,7 @@
   "description": "Image viewer webcomponent based on viewerjs.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tarrency/viewerjs-webcomponent.git"
+    "url": "https://github.com/Tarrency/viewerjs-webcomponent.git"
   },
   "keywords": [
     "npm",
