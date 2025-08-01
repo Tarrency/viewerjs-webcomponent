@@ -1546,7 +1546,7 @@ class ViewerWebComponent extends HTMLElement {
     const content = template.content.cloneNode(!0);
     this.appendChild(content);
     const options = {};
-    for (let i of this.attributes)
+    for (const i of this.attributes)
       !i.name.includes("-") && i.name !== "images" && (options[i.name] = eval(i.value));
     const viewer = new Viewer(document.getElementById("viewer-container"), options);
     getViewer.viewer = viewer;
