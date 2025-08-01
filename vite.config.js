@@ -1,7 +1,9 @@
 import { defineConfig } from 'vite';
 import path from 'path';
+import cssInjectedByJs from 'vite-plugin-css-injected-by-js';
 
 export default defineConfig({
+  plugins: [cssInjectedByJs()], // 自动注入 CSS 到 JS
   build: {
     lib: {
       entry: path.resolve(__dirname, 'lib/index.js'),
@@ -13,12 +15,5 @@ export default defineConfig({
         if (format === 'umd') return 'browser.js'; // 浏览器专用
       },
     },
-    // rollupOptions: {
-    //   // 移除 external: ['viewerjs']，表示要打包 viewerjs
-    //   output: {
-    //     // assetFileNames: 'viewer-webcomponent.css', // 输出独立的 CSS 文件
-    //   },
-    // },
-    cssCodeSplit: true, // 生成独立 CSS
   },
 });

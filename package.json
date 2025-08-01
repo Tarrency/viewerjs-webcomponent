@@ -2,11 +2,35 @@
   "name": "viewerjs-webcomponent",
   "version": "0.0.8",
   "description": "Image viewer webcomponent based on viewerjs.",
-  "main": "./dist/index.cjs.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tarrency/viewerjs-webcomponent.git"
+  },
+  "keywords": [
+    "npm",
+    "webcomponent",
+    "react",
+    "vue",
+    "image",
+    "viewer",
+    "viewerjs",
+    "viewer.js",
+    "html",
+    "css",
+    "javascript",
+    "front-end",
+    "web"
+  ],
+  "author": {
+    "name": "Tarrency"
+  },
+  "license": "MIT",
   "module": "./dist/index.es.js",
+  "main": "./dist/index.cjs.js",
   "browser": "./dist/browser.js",
   "files": [
-    "dist"
+    "dist",
+    "lib"
   ],
   "exports": {
     ".": {
@@ -22,6 +46,7 @@
   },
   "devDependencies": {
     "viewerjs": "^1.11.7",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
   }
 }
