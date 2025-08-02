@@ -1562,7 +1562,7 @@ class ViewerWebComponent extends HTMLElement {
     const e = innerTemplate.split("</div>").filter(Boolean);
     if (n && n.length)
       for (let s = 0; s < n.length; s++)
-        e.push(`<div><img src="${n[s]}" alt="${s + 1}" title="${s + 1}"></div>`);
+        e.push(`<div><img src="${n[s]}" alt="${s + 1}" title="${s + 1}" part="img"></div>`);
     return e.join("") + "</div>";
   }
 }

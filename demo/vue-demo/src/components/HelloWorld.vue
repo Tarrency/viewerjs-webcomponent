@@ -40,4 +40,8 @@ onMounted(() => {
 /* viewer-webcomponent::part(content) {
   grid-template-columns: repeat(1, 100%)
 } */
+ /* 改写多图片布局样式 */
+/* viewer-webcomponent::part(img) {
+  height: 50%
+} */
 </style>

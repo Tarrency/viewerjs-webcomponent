@@ -98,6 +98,10 @@ export default defineConfig({
   viewer-webcomponent::part(content) {
     grid-template-columns: repeat(1, 100%)
   }
+  /* 改写图片样式 */
+  viewer-webcomponent::part(img) {
+    height: 50%
+  }
 </style>
 ```
 
