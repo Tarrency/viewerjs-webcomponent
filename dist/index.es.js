@@ -1537,7 +1537,7 @@ var render = {
   }]);
 }();
 assign(Viewer.prototype, render, events, handlers, methods, others);
-const styleStr = "<style>.container {display: grid;grid-template-columns: repeat(3, 33.33%);grid-template-rows: 1fr 1fr auto;img {width: 100%;height: 100%;max-height: 100%;}}</style>", slotStr = '<slot name="slotName"></slot>', innerTemplate = '<div id="viewer-container" class="container"></div>' + styleStr + slotStr;
+const styleStr = "<style>.container {display: grid;grid-template-columns: repeat(3, 33.33%);grid-template-rows: 1fr 1fr auto;img {width: 100%;height: 100%;max-height: 100%;}}</style>", slotStr = '<slot name="slotName"></slot>', innerTemplate = '<div id="viewer-container" class="container" part="content"></div>' + styleStr + slotStr;
 class ViewerWebComponent extends HTMLElement {
   // 生命周期，元素添加到文档中时调用
   connectedCallback() {
