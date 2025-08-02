@@ -30,6 +30,15 @@ npm install viewerjs-webcomponent
     - Type: `Array`
     - Images Urls.
 
+#### Change Style
+> If you want to override the default styles of Viewerjs-WebComponent, you can use the ::part pseudo-element to target and style its internal elements.
+```css
+viewer-webcomponent::part(content) {
+  /* code your style here */
+  grid-template-columns: repeat(1, 100%)
+}
+```
+
 #### Example
 
 - Vue
@@ -79,6 +88,17 @@ export default defineConfig({
         <viewer-webcomponent :.="options" :images="images"></viewer-webcomponent>
     </div>
 </template>
+
+<style scoped>
+  .demo {
+    height: 100vh;
+    width: 70vw;
+  }
+  /* 改写默认样式 override the default style */
+  viewer-webcomponent::part(content) {
+    grid-template-columns: repeat(1, 100%)
+  }
+</style>
 ```
 
 - React

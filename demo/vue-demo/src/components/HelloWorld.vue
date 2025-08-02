@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
   <div class="demo">
-    <viewer-webcomponent :.="options" :images="images"> <span slot="slotName">这是真正的slot</span> </viewer-webcomponent>
+    <viewer-webcomponent :.="options" :images="images"></viewer-webcomponent>
   </div>
 </template>
 
@@ -36,4 +36,8 @@ onMounted(() => {
   height: 100vh;
   width: 70vw;
 }
+/* 改写多图片布局样式 */
+/* viewer-webcomponent::part(content) {
+  grid-template-columns: repeat(1, 100%)
+} */
 </style>
