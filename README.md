@@ -33,10 +33,17 @@ npm install viewerjs-webcomponent
 #### Change Style
 > If you want to override the default styles of Viewerjs-WebComponent, you can use the ::part pseudo-element to target and style its internal elements.
 ```css
-viewer-webcomponent::part(content) {
-  /* code your style here */
-  grid-template-columns: repeat(1, 100%)
-}
+<style>
+  /* override the default style */
+  viewer-webcomponent::part(content) {
+    /* code your style here */
+    grid-template-columns: repeat(1, 100%)
+  }
+  /* override the image style*/
+  viewer-webcomponent::part(img) {
+      height: 50%
+    }
+</style>
 ```
 
 #### Example
@@ -93,14 +100,6 @@ export default defineConfig({
   .demo {
     height: 100vh;
     width: 70vw;
-  }
-  /* 改写默认样式 override the default style */
-  viewer-webcomponent::part(content) {
-    grid-template-columns: repeat(1, 100%)
-  }
-  /* 改写图片样式 */
-  viewer-webcomponent::part(img) {
-    height: 50%
   }
 </style>
 ```
