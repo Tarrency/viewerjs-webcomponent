@@ -1,6 +1,6 @@
 {
   "name": "viewerjs-webcomponent",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Image viewer webcomponent based on viewerjs.",
   "repository": {
     "type": "git",
