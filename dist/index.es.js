@@ -16,72 +16,72 @@
  *
  * Date: 2024-11-24T04:32:19.116Z
  */
-function _classCallCheck(n, e) {
-  if (!(n instanceof e)) throw new TypeError("Cannot call a class as a function");
+function ne(a, t) {
+  if (!(a instanceof t)) throw new TypeError("Cannot call a class as a function");
 }
-function _defineProperties(n, e) {
-  for (var s = 0; s < e.length; s++) {
-    var t = e[s];
-    t.enumerable = t.enumerable || !1, t.configurable = !0, "value" in t && (t.writable = !0), Object.defineProperty(n, _toPropertyKey(t.key), t);
+function St(a, t) {
+  for (var i = 0; i < t.length; i++) {
+    var e = t[i];
+    e.enumerable = e.enumerable || !1, e.configurable = !0, "value" in e && (e.writable = !0), Object.defineProperty(a, Jt(e.key), e);
   }
 }
-function _createClass(n, e, s) {
-  return e && _defineProperties(n.prototype, e), s && _defineProperties(n, s), Object.defineProperty(n, "prototype", {
+function ae(a, t, i) {
+  return t && St(a.prototype, t), i && St(a, i), Object.defineProperty(a, "prototype", {
     writable: !1
-  }), n;
+  }), a;
 }
-function _defineProperty(n, e, s) {
-  return (e = _toPropertyKey(e)) in n ? Object.defineProperty(n, e, {
-    value: s,
+function re(a, t, i) {
+  return (t = Jt(t)) in a ? Object.defineProperty(a, t, {
+    value: i,
     enumerable: !0,
     configurable: !0,
     writable: !0
-  }) : n[e] = s, n;
+  }) : a[t] = i, a;
 }
-function ownKeys(n, e) {
-  var s = Object.keys(n);
+function Dt(a, t) {
+  var i = Object.keys(a);
   if (Object.getOwnPropertySymbols) {
-    var t = Object.getOwnPropertySymbols(n);
-    e && (t = t.filter(function(a) {
-      return Object.getOwnPropertyDescriptor(n, a).enumerable;
-    })), s.push.apply(s, t);
+    var e = Object.getOwnPropertySymbols(a);
+    t && (e = e.filter(function(n) {
+      return Object.getOwnPropertyDescriptor(a, n).enumerable;
+    })), i.push.apply(i, e);
   }
-  return s;
+  return i;
 }
-function _objectSpread2(n) {
-  for (var e = 1; e < arguments.length; e++) {
-    var s = arguments[e] != null ? arguments[e] : {};
-    e % 2 ? ownKeys(Object(s), !0).forEach(function(t) {
-      _defineProperty(n, t, s[t]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(n, Object.getOwnPropertyDescriptors(s)) : ownKeys(Object(s)).forEach(function(t) {
-      Object.defineProperty(n, t, Object.getOwnPropertyDescriptor(s, t));
+function wt(a) {
+  for (var t = 1; t < arguments.length; t++) {
+    var i = arguments[t] != null ? arguments[t] : {};
+    t % 2 ? Dt(Object(i), !0).forEach(function(e) {
+      re(a, e, i[e]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(a, Object.getOwnPropertyDescriptors(i)) : Dt(Object(i)).forEach(function(e) {
+      Object.defineProperty(a, e, Object.getOwnPropertyDescriptor(i, e));
     });
   }
-  return n;
+  return a;
 }
-function _toPrimitive(n, e) {
-  if (typeof n != "object" || !n) return n;
-  var s = n[Symbol.toPrimitive];
-  if (s !== void 0) {
-    var t = s.call(n, e);
-    if (typeof t != "object") return t;
+function se(a, t) {
+  if (typeof a != "object" || !a) return a;
+  var i = a[Symbol.toPrimitive];
+  if (i !== void 0) {
+    var e = i.call(a, t);
+    if (typeof e != "object") return e;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return String(n);
+  return String(a);
 }
-function _toPropertyKey(n) {
-  var e = _toPrimitive(n, "string");
-  return typeof e == "symbol" ? e : e + "";
+function Jt(a) {
+  var t = se(a, "string");
+  return typeof t == "symbol" ? t : t + "";
 }
-function _typeof(n) {
+function vt(a) {
   "@babel/helpers - typeof";
-  return _typeof = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(e) {
-    return typeof e;
-  } : function(e) {
-    return e && typeof Symbol == "function" && e.constructor === Symbol && e !== Symbol.prototype ? "symbol" : typeof e;
-  }, _typeof(n);
+  return vt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t) {
+    return typeof t;
+  } : function(t) {
+    return t && typeof Symbol == "function" && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
+  }, vt(a);
 }
-var DEFAULTS = {
+var Nt = {
   /**
    * Enable a modal backdrop, specify `static` for a backdrop
    * which doesn't close the modal on click.
@@ -286,256 +286,256 @@ var DEFAULTS = {
   zoomed: null,
   play: null,
   stop: null
-}, TEMPLATE = '<div class="viewer-container" tabindex="-1" touch-action="none"><div class="viewer-canvas"></div><div class="viewer-footer"><div class="viewer-title"></div><div class="viewer-toolbar"></div><div class="viewer-navbar"><ul class="viewer-list" role="navigation"></ul></div></div><div class="viewer-tooltip" role="alert" aria-hidden="true"></div><div class="viewer-button" data-viewer-action="mix" role="button"></div><div class="viewer-player"></div></div>', IS_BROWSER = typeof window < "u" && typeof window.document < "u", WINDOW = IS_BROWSER ? window : {}, IS_TOUCH_DEVICE = IS_BROWSER && WINDOW.document.documentElement ? "ontouchstart" in WINDOW.document.documentElement : !1, HAS_POINTER_EVENT = IS_BROWSER ? "PointerEvent" in WINDOW : !1, NAMESPACE = "viewer", ACTION_MOVE = "move", ACTION_SWITCH = "switch", ACTION_ZOOM = "zoom", CLASS_ACTIVE = "".concat(NAMESPACE, "-active"), CLASS_CLOSE = "".concat(NAMESPACE, "-close"), CLASS_FADE = "".concat(NAMESPACE, "-fade"), CLASS_FIXED = "".concat(NAMESPACE, "-fixed"), CLASS_FULLSCREEN = "".concat(NAMESPACE, "-fullscreen"), CLASS_FULLSCREEN_EXIT = "".concat(NAMESPACE, "-fullscreen-exit"), CLASS_HIDE = "".concat(NAMESPACE, "-hide"), CLASS_HIDE_MD_DOWN = "".concat(NAMESPACE, "-hide-md-down"), CLASS_HIDE_SM_DOWN = "".concat(NAMESPACE, "-hide-sm-down"), CLASS_HIDE_XS_DOWN = "".concat(NAMESPACE, "-hide-xs-down"), CLASS_IN = "".concat(NAMESPACE, "-in"), CLASS_INVISIBLE = "".concat(NAMESPACE, "-invisible"), CLASS_LOADING = "".concat(NAMESPACE, "-loading"), CLASS_MOVE = "".concat(NAMESPACE, "-move"), CLASS_OPEN = "".concat(NAMESPACE, "-open"), CLASS_SHOW = "".concat(NAMESPACE, "-show"), CLASS_TRANSITION = "".concat(NAMESPACE, "-transition"), EVENT_CLICK = "click", EVENT_DBLCLICK = "dblclick", EVENT_DRAG_START = "dragstart", EVENT_FOCUSIN = "focusin", EVENT_KEY_DOWN = "keydown", EVENT_LOAD = "load", EVENT_ERROR = "error", EVENT_TOUCH_END = IS_TOUCH_DEVICE ? "touchend touchcancel" : "mouseup", EVENT_TOUCH_MOVE = IS_TOUCH_DEVICE ? "touchmove" : "mousemove", EVENT_TOUCH_START = IS_TOUCH_DEVICE ? "touchstart" : "mousedown", EVENT_POINTER_DOWN = HAS_POINTER_EVENT ? "pointerdown" : EVENT_TOUCH_START, EVENT_POINTER_MOVE = HAS_POINTER_EVENT ? "pointermove" : EVENT_TOUCH_MOVE, EVENT_POINTER_UP = HAS_POINTER_EVENT ? "pointerup pointercancel" : EVENT_TOUCH_END, EVENT_RESIZE = "resize", EVENT_TRANSITION_END = "transitionend", EVENT_WHEEL = "wheel", EVENT_READY = "ready", EVENT_SHOW = "show", EVENT_SHOWN = "shown", EVENT_HIDE = "hide", EVENT_HIDDEN = "hidden", EVENT_VIEW = "view", EVENT_VIEWED = "viewed", EVENT_MOVE = "move", EVENT_MOVED = "moved", EVENT_ROTATE = "rotate", EVENT_ROTATED = "rotated", EVENT_SCALE = "scale", EVENT_SCALED = "scaled", EVENT_ZOOM = "zoom", EVENT_ZOOMED = "zoomed", EVENT_PLAY = "play", EVENT_STOP = "stop", DATA_ACTION = "".concat(NAMESPACE, "Action"), REGEXP_SPACES = /\s\s*/, BUTTONS = ["zoom-in", "zoom-out", "one-to-one", "reset", "prev", "play", "next", "rotate-left", "rotate-right", "flip-horizontal", "flip-vertical"];
-function isString(n) {
-  return typeof n == "string";
+}, oe = '<div class="viewer-container" tabindex="-1" touch-action="none"><div class="viewer-canvas"></div><div class="viewer-footer"><div class="viewer-title"></div><div class="viewer-toolbar"></div><div class="viewer-navbar"><ul class="viewer-list" role="navigation"></ul></div></div><div class="viewer-tooltip" role="alert" aria-hidden="true"></div><div class="viewer-button" data-viewer-action="mix" role="button"></div><div class="viewer-player"></div></div>', dt = typeof window < "u" && typeof window.document < "u", F = dt ? window : {}, Z = dt && F.document.documentElement ? "ontouchstart" in F.document.documentElement : !1, yt = dt ? "PointerEvent" in F : !1, m = "viewer", ht = "move", Qt = "switch", tt = "zoom", rt = "".concat(m, "-active"), le = "".concat(m, "-close"), ut = "".concat(m, "-fade"), gt = "".concat(m, "-fixed"), he = "".concat(m, "-fullscreen"), xt = "".concat(m, "-fullscreen-exit"), W = "".concat(m, "-hide"), ue = "".concat(m, "-hide-md-down"), ce = "".concat(m, "-hide-sm-down"), fe = "".concat(m, "-hide-xs-down"), _ = "".concat(m, "-in"), et = "".concat(m, "-invisible"), $ = "".concat(m, "-loading"), de = "".concat(m, "-move"), It = "".concat(m, "-open"), q = "".concat(m, "-show"), D = "".concat(m, "-transition"), G = "click", pt = "dblclick", At = "dragstart", Ot = "focusin", Ct = "keydown", z = "load", X = "error", me = Z ? "touchend touchcancel" : "mouseup", ve = Z ? "touchmove" : "mousemove", ge = Z ? "touchstart" : "mousedown", _t = yt ? "pointerdown" : ge, zt = yt ? "pointermove" : ve, Lt = yt ? "pointerup pointercancel" : me, kt = "resize", L = "transitionend", Rt = "wheel", Vt = "ready", Mt = "show", Ft = "shown", Pt = "hide", Yt = "hidden", Wt = "view", it = "viewed", Xt = "move", Ht = "moved", qt = "rotate", jt = "rotated", Ut = "scale", Bt = "scaled", Kt = "zoom", Zt = "zoomed", $t = "play", Gt = "stop", ft = "".concat(m, "Action"), Et = /\s\s*/, st = ["zoom-in", "zoom-out", "one-to-one", "reset", "prev", "play", "next", "rotate-left", "rotate-right", "flip-horizontal", "flip-vertical"];
+function nt(a) {
+  return typeof a == "string";
 }
-var isNaN = Number.isNaN || WINDOW.isNaN;
-function isNumber(n) {
-  return typeof n == "number" && !isNaN(n);
+var pe = Number.isNaN || F.isNaN;
+function T(a) {
+  return typeof a == "number" && !pe(a);
 }
-function isUndefined(n) {
-  return typeof n > "u";
+function U(a) {
+  return typeof a > "u";
 }
-function isObject(n) {
-  return _typeof(n) === "object" && n !== null;
+function J(a) {
+  return vt(a) === "object" && a !== null;
 }
-var hasOwnProperty = Object.prototype.hasOwnProperty;
-function isPlainObject(n) {
-  if (!isObject(n))
+var be = Object.prototype.hasOwnProperty;
+function B(a) {
+  if (!J(a))
     return !1;
   try {
-    var e = n.constructor, s = e.prototype;
-    return e && s && hasOwnProperty.call(s, "isPrototypeOf");
+    var t = a.constructor, i = t.prototype;
+    return t && i && be.call(i, "isPrototypeOf");
   } catch {
     return !1;
   }
 }
-function isFunction(n) {
-  return typeof n == "function";
+function p(a) {
+  return typeof a == "function";
 }
-function forEach(n, e) {
-  if (n && isFunction(e))
-    if (Array.isArray(n) || isNumber(n.length)) {
-      var s = n.length, t;
-      for (t = 0; t < s && e.call(n, n[t], t, n) !== !1; t += 1)
+function w(a, t) {
+  if (a && p(t))
+    if (Array.isArray(a) || T(a.length)) {
+      var i = a.length, e;
+      for (e = 0; e < i && t.call(a, a[e], e, a) !== !1; e += 1)
         ;
-    } else isObject(n) && Object.keys(n).forEach(function(a) {
-      e.call(n, n[a], a, n);
+    } else J(a) && Object.keys(a).forEach(function(n) {
+      t.call(a, a[n], n, a);
     });
-  return n;
+  return a;
 }
-var assign = Object.assign || function(e) {
-  for (var s = arguments.length, t = new Array(s > 1 ? s - 1 : 0), a = 1; a < s; a++)
-    t[a - 1] = arguments[a];
-  return isObject(e) && t.length > 0 && t.forEach(function(r) {
-    isObject(r) && Object.keys(r).forEach(function(o) {
-      e[o] = r[o];
+var C = Object.assign || function(t) {
+  for (var i = arguments.length, e = new Array(i > 1 ? i - 1 : 0), n = 1; n < i; n++)
+    e[n - 1] = arguments[n];
+  return J(t) && e.length > 0 && e.forEach(function(s) {
+    J(s) && Object.keys(s).forEach(function(r) {
+      t[r] = s[r];
     });
-  }), e;
-}, REGEXP_SUFFIX = /^(?:width|height|left|top|marginLeft|marginTop)$/;
-function setStyle(n, e) {
-  var s = n.style;
-  forEach(e, function(t, a) {
-    REGEXP_SUFFIX.test(a) && isNumber(t) && (t += "px"), s[a] = t;
+  }), t;
+}, we = /^(?:width|height|left|top|marginLeft|marginTop)$/;
+function k(a, t) {
+  var i = a.style;
+  w(t, function(e, n) {
+    we.test(n) && T(e) && (e += "px"), i[n] = e;
   });
 }
-function escapeHTMLEntities(n) {
-  return isString(n) ? n.replace(/&(?!amp;|quot;|#39;|lt;|gt;)/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : n;
+function ye(a) {
+  return nt(a) ? a.replace(/&(?!amp;|quot;|#39;|lt;|gt;)/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : a;
 }
-function hasClass(n, e) {
-  return !n || !e ? !1 : n.classList ? n.classList.contains(e) : n.className.indexOf(e) > -1;
+function j(a, t) {
+  return !a || !t ? !1 : a.classList ? a.classList.contains(t) : a.className.indexOf(t) > -1;
 }
-function addClass(n, e) {
-  if (!(!n || !e)) {
-    if (isNumber(n.length)) {
-      forEach(n, function(t) {
-        addClass(t, e);
+function f(a, t) {
+  if (!(!a || !t)) {
+    if (T(a.length)) {
+      w(a, function(e) {
+        f(e, t);
       });
       return;
     }
-    if (n.classList) {
-      n.classList.add(e);
+    if (a.classList) {
+      a.classList.add(t);
       return;
     }
-    var s = n.className.trim();
-    s ? s.indexOf(e) < 0 && (n.className = "".concat(s, " ").concat(e)) : n.className = e;
+    var i = a.className.trim();
+    i ? i.indexOf(t) < 0 && (a.className = "".concat(i, " ").concat(t)) : a.className = t;
   }
 }
-function removeClass(n, e) {
-  if (!(!n || !e)) {
-    if (isNumber(n.length)) {
-      forEach(n, function(s) {
-        removeClass(s, e);
+function g(a, t) {
+  if (!(!a || !t)) {
+    if (T(a.length)) {
+      w(a, function(i) {
+        g(i, t);
       });
       return;
     }
-    if (n.classList) {
-      n.classList.remove(e);
+    if (a.classList) {
+      a.classList.remove(t);
       return;
     }
-    n.className.indexOf(e) >= 0 && (n.className = n.className.replace(e, ""));
+    a.className.indexOf(t) >= 0 && (a.className = a.className.replace(t, ""));
   }
 }
-function toggleClass(n, e, s) {
-  if (e) {
-    if (isNumber(n.length)) {
-      forEach(n, function(t) {
-        toggleClass(t, e, s);
+function at(a, t, i) {
+  if (t) {
+    if (T(a.length)) {
+      w(a, function(e) {
+        at(e, t, i);
       });
       return;
     }
-    s ? addClass(n, e) : removeClass(n, e);
+    i ? f(a, t) : g(a, t);
   }
 }
-var REGEXP_HYPHENATE = /([a-z\d])([A-Z])/g;
-function hyphenate(n) {
-  return n.replace(REGEXP_HYPHENATE, "$1-$2").toLowerCase();
+var Ee = /([a-z\d])([A-Z])/g;
+function Tt(a) {
+  return a.replace(Ee, "$1-$2").toLowerCase();
 }
-function getData(n, e) {
-  return isObject(n[e]) ? n[e] : n.dataset ? n.dataset[e] : n.getAttribute("data-".concat(hyphenate(e)));
+function K(a, t) {
+  return J(a[t]) ? a[t] : a.dataset ? a.dataset[t] : a.getAttribute("data-".concat(Tt(t)));
 }
-function setData(n, e, s) {
-  isObject(s) ? n[e] = s : n.dataset ? n.dataset[e] = s : n.setAttribute("data-".concat(hyphenate(e)), s);
+function bt(a, t, i) {
+  J(i) ? a[t] = i : a.dataset ? a.dataset[t] = i : a.setAttribute("data-".concat(Tt(t)), i);
 }
-var onceSupported = function() {
-  var n = !1;
-  if (IS_BROWSER) {
-    var e = !1, s = function() {
-    }, t = Object.defineProperty({}, "once", {
+var te = function() {
+  var a = !1;
+  if (dt) {
+    var t = !1, i = function() {
+    }, e = Object.defineProperty({}, "once", {
       get: function() {
-        return n = !0, e;
+        return a = !0, t;
       },
       /**
        * This setter can fix a `TypeError` in strict mode
        * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Getter_only}
        * @param {boolean} value - The value to set
        */
-      set: function(r) {
-        e = r;
+      set: function(s) {
+        t = s;
       }
     });
-    WINDOW.addEventListener("test", s, t), WINDOW.removeEventListener("test", s, t);
+    F.addEventListener("test", i, e), F.removeEventListener("test", i, e);
   }
-  return n;
+  return a;
 }();
-function removeListener(n, e, s) {
-  var t = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, a = s;
-  e.trim().split(REGEXP_SPACES).forEach(function(r) {
-    if (!onceSupported) {
-      var o = n.listeners;
-      o && o[r] && o[r][s] && (a = o[r][s], delete o[r][s], Object.keys(o[r]).length === 0 && delete o[r], Object.keys(o).length === 0 && delete n.listeners);
+function b(a, t, i) {
+  var e = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, n = i;
+  t.trim().split(Et).forEach(function(s) {
+    if (!te) {
+      var r = a.listeners;
+      r && r[s] && r[s][i] && (n = r[s][i], delete r[s][i], Object.keys(r[s]).length === 0 && delete r[s], Object.keys(r).length === 0 && delete a.listeners);
     }
-    n.removeEventListener(r, a, t);
+    a.removeEventListener(s, n, e);
   });
 }
-function addListener(n, e, s) {
-  var t = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, a = s;
-  e.trim().split(REGEXP_SPACES).forEach(function(r) {
-    if (t.once && !onceSupported) {
-      var o = n.listeners, h = o === void 0 ? {} : o;
-      a = function() {
-        delete h[r][s], n.removeEventListener(r, a, t);
-        for (var u = arguments.length, l = new Array(u), d = 0; d < u; d++)
-          l[d] = arguments[d];
-        s.apply(n, l);
-      }, h[r] || (h[r] = {}), h[r][s] && n.removeEventListener(r, h[r][s], t), h[r][s] = a, n.listeners = h;
+function d(a, t, i) {
+  var e = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, n = i;
+  t.trim().split(Et).forEach(function(s) {
+    if (e.once && !te) {
+      var r = a.listeners, o = r === void 0 ? {} : r;
+      n = function() {
+        delete o[s][i], a.removeEventListener(s, n, e);
+        for (var h = arguments.length, l = new Array(h), c = 0; c < h; c++)
+          l[c] = arguments[c];
+        i.apply(a, l);
+      }, o[s] || (o[s] = {}), o[s][i] && a.removeEventListener(s, o[s][i], e), o[s][i] = n, a.listeners = o;
     }
-    n.addEventListener(r, a, t);
+    a.addEventListener(s, n, e);
   });
 }
-function dispatchEvent(n, e, s, t) {
-  var a;
-  return isFunction(Event) && isFunction(CustomEvent) ? a = new CustomEvent(e, _objectSpread2({
+function x(a, t, i, e) {
+  var n;
+  return p(Event) && p(CustomEvent) ? n = new CustomEvent(t, wt({
     bubbles: !0,
     cancelable: !0,
-    detail: s
-  }, t)) : (a = document.createEvent("CustomEvent"), a.initCustomEvent(e, !0, !0, s)), n.dispatchEvent(a);
+    detail: i
+  }, e)) : (n = document.createEvent("CustomEvent"), n.initCustomEvent(t, !0, !0, i)), a.dispatchEvent(n);
 }
-function getOffset(n) {
-  var e = n.getBoundingClientRect();
+function Te(a) {
+  var t = a.getBoundingClientRect();
   return {
-    left: e.left + (window.pageXOffset - document.documentElement.clientLeft),
-    top: e.top + (window.pageYOffset - document.documentElement.clientTop)
+    left: t.left + (window.pageXOffset - document.documentElement.clientLeft),
+    top: t.top + (window.pageYOffset - document.documentElement.clientTop)
   };
 }
-function getTransforms(n) {
-  var e = n.rotate, s = n.scaleX, t = n.scaleY, a = n.translateX, r = n.translateY, o = [];
-  isNumber(a) && a !== 0 && o.push("translateX(".concat(a, "px)")), isNumber(r) && r !== 0 && o.push("translateY(".concat(r, "px)")), isNumber(e) && e !== 0 && o.push("rotate(".concat(e, "deg)")), isNumber(s) && s !== 1 && o.push("scaleX(".concat(s, ")")), isNumber(t) && t !== 1 && o.push("scaleY(".concat(t, ")"));
-  var h = o.length ? o.join(" ") : "none";
+function ct(a) {
+  var t = a.rotate, i = a.scaleX, e = a.scaleY, n = a.translateX, s = a.translateY, r = [];
+  T(n) && n !== 0 && r.push("translateX(".concat(n, "px)")), T(s) && s !== 0 && r.push("translateY(".concat(s, "px)")), T(t) && t !== 0 && r.push("rotate(".concat(t, "deg)")), T(i) && i !== 1 && r.push("scaleX(".concat(i, ")")), T(e) && e !== 1 && r.push("scaleY(".concat(e, ")"));
+  var o = r.length ? r.join(" ") : "none";
   return {
-    WebkitTransform: h,
-    msTransform: h,
-    transform: h
+    WebkitTransform: o,
+    msTransform: o,
+    transform: o
   };
 }
-function getImageNameFromURL(n) {
-  return isString(n) ? decodeURIComponent(n.replace(/^.*\//, "").replace(/[?&#].*$/, "")) : "";
+function Se(a) {
+  return nt(a) ? decodeURIComponent(a.replace(/^.*\//, "").replace(/[?&#].*$/, "")) : "";
 }
-var IS_SAFARI = WINDOW.navigator && /Version\/\d+(\.\d+)+?\s+Safari/i.test(WINDOW.navigator.userAgent);
-function getImageNaturalSizes(n, e, s) {
-  var t = document.createElement("img");
-  if (n.naturalWidth && !IS_SAFARI)
-    return s(n.naturalWidth, n.naturalHeight), t;
-  var a = document.body || document.documentElement;
-  return t.onload = function() {
-    s(t.width, t.height), IS_SAFARI || a.removeChild(t);
-  }, forEach(e.inheritedAttributes, function(r) {
-    var o = n.getAttribute(r);
-    o !== null && t.setAttribute(r, o);
-  }), t.src = n.src, IS_SAFARI || (t.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", a.appendChild(t)), t;
+var mt = F.navigator && /Version\/\d+(\.\d+)+?\s+Safari/i.test(F.navigator.userAgent);
+function ee(a, t, i) {
+  var e = document.createElement("img");
+  if (a.naturalWidth && !mt)
+    return i(a.naturalWidth, a.naturalHeight), e;
+  var n = document.body || document.documentElement;
+  return e.onload = function() {
+    i(e.width, e.height), mt || n.removeChild(e);
+  }, w(t.inheritedAttributes, function(s) {
+    var r = a.getAttribute(s);
+    r !== null && e.setAttribute(s, r);
+  }), e.src = a.src, mt || (e.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", n.appendChild(e)), e;
 }
-function getResponsiveClass(n) {
-  switch (n) {
+function ot(a) {
+  switch (a) {
     case 2:
-      return CLASS_HIDE_XS_DOWN;
+      return fe;
     case 3:
-      return CLASS_HIDE_SM_DOWN;
+      return ce;
     case 4:
-      return CLASS_HIDE_MD_DOWN;
+      return ue;
     default:
       return "";
   }
 }
-function getMaxZoomRatio(n) {
-  var e = _objectSpread2({}, n), s = [];
-  return forEach(n, function(t, a) {
-    delete e[a], forEach(e, function(r) {
-      var o = Math.abs(t.startX - r.startX), h = Math.abs(t.startY - r.startY), c = Math.abs(t.endX - r.endX), u = Math.abs(t.endY - r.endY), l = Math.sqrt(o * o + h * h), d = Math.sqrt(c * c + u * u), f = (d - l) / l;
-      s.push(f);
+function De(a) {
+  var t = wt({}, a), i = [];
+  return w(a, function(e, n) {
+    delete t[n], w(t, function(s) {
+      var r = Math.abs(e.startX - s.startX), o = Math.abs(e.startY - s.startY), u = Math.abs(e.endX - s.endX), h = Math.abs(e.endY - s.endY), l = Math.sqrt(r * r + o * o), c = Math.sqrt(u * u + h * h), v = (c - l) / l;
+      i.push(v);
     });
-  }), s.sort(function(t, a) {
-    return Math.abs(t) < Math.abs(a);
-  }), s[0];
+  }), i.sort(function(e, n) {
+    return Math.abs(e) < Math.abs(n);
+  }), i[0];
 }
-function getPointer(n, e) {
-  var s = n.pageX, t = n.pageY, a = {
-    endX: s,
-    endY: t
+function lt(a, t) {
+  var i = a.pageX, e = a.pageY, n = {
+    endX: i,
+    endY: e
   };
-  return e ? a : _objectSpread2({
+  return t ? n : wt({
     timeStamp: Date.now(),
-    startX: s,
-    startY: t
-  }, a);
+    startX: i,
+    startY: e
+  }, n);
 }
-function getPointersCenter(n) {
-  var e = 0, s = 0, t = 0;
-  return forEach(n, function(a) {
-    var r = a.startX, o = a.startY;
-    e += r, s += o, t += 1;
-  }), e /= t, s /= t, {
-    pageX: e,
-    pageY: s
+function Ne(a) {
+  var t = 0, i = 0, e = 0;
+  return w(a, function(n) {
+    var s = n.startX, r = n.startY;
+    t += s, i += r, e += 1;
+  }), t /= e, i /= e, {
+    pageX: t,
+    pageY: i
   };
 }
-var render = {
+var xe = {
   render: function() {
     this.initContainer(), this.initViewer(), this.initList(), this.renderViewer();
   },
   initBody: function() {
-    var e = this.element.ownerDocument, s = e.body || e.documentElement;
-    this.body = s, this.scrollbarWidth = window.innerWidth - e.documentElement.clientWidth, this.initialBodyPaddingRight = s.style.paddingRight, this.initialBodyComputedPaddingRight = window.getComputedStyle(s).paddingRight;
+    var t = this.element.ownerDocument, i = t.body || t.documentElement;
+    this.body = i, this.scrollbarWidth = window.innerWidth - t.documentElement.clientWidth, this.initialBodyPaddingRight = i.style.paddingRight, this.initialBodyComputedPaddingRight = window.getComputedStyle(i).paddingRight;
   },
   initContainer: function() {
     this.containerData = {
@@ -544,139 +544,139 @@ var render = {
     };
   },
   initViewer: function() {
-    var e = this.options, s = this.parent, t;
-    e.inline && (t = {
-      width: Math.max(s.offsetWidth, e.minWidth),
-      height: Math.max(s.offsetHeight, e.minHeight)
-    }, this.parentData = t), (this.fulled || !t) && (t = this.containerData), this.viewerData = assign({}, t);
+    var t = this.options, i = this.parent, e;
+    t.inline && (e = {
+      width: Math.max(i.offsetWidth, t.minWidth),
+      height: Math.max(i.offsetHeight, t.minHeight)
+    }, this.parentData = e), (this.fulled || !e) && (e = this.containerData), this.viewerData = C({}, e);
   },
   renderViewer: function() {
-    this.options.inline && !this.fulled && setStyle(this.viewer, this.viewerData);
+    this.options.inline && !this.fulled && k(this.viewer, this.viewerData);
   },
   initList: function() {
-    var e = this, s = this.element, t = this.options, a = this.list, r = [];
-    a.innerHTML = "", forEach(this.images, function(o, h) {
-      var c = o.src, u = o.alt || getImageNameFromURL(c), l = e.getImageURL(o);
-      if (c || l) {
-        var d = document.createElement("li"), f = document.createElement("img");
-        forEach(t.inheritedAttributes, function(g) {
-          var v = o.getAttribute(g);
-          v !== null && f.setAttribute(g, v);
-        }), t.navbar && (f.src = c || l), f.alt = u, f.setAttribute("data-original-url", l || c), d.setAttribute("data-index", h), d.setAttribute("data-viewer-action", "view"), d.setAttribute("role", "button"), t.keyboard && d.setAttribute("tabindex", 0), d.appendChild(f), a.appendChild(d), r.push(d);
+    var t = this, i = this.element, e = this.options, n = this.list, s = [];
+    n.innerHTML = "", w(this.images, function(r, o) {
+      var u = r.src, h = r.alt || Se(u), l = t.getImageURL(r);
+      if (u || l) {
+        var c = document.createElement("li"), v = document.createElement("img");
+        w(e.inheritedAttributes, function(N) {
+          var S = r.getAttribute(N);
+          S !== null && v.setAttribute(N, S);
+        }), e.navbar && (v.src = u || l), v.alt = h, v.setAttribute("data-original-url", l || u), c.setAttribute("data-index", o), c.setAttribute("data-viewer-action", "view"), c.setAttribute("role", "button"), e.keyboard && c.setAttribute("tabindex", 0), c.appendChild(v), n.appendChild(c), s.push(c);
       }
-    }), this.items = r, forEach(r, function(o) {
-      var h = o.firstElementChild, c, u;
-      setData(h, "filled", !0), t.loading && addClass(o, CLASS_LOADING), addListener(h, EVENT_LOAD, c = function(d) {
-        removeListener(h, EVENT_ERROR, u), t.loading && removeClass(o, CLASS_LOADING), e.loadImage(d);
+    }), this.items = s, w(s, function(r) {
+      var o = r.firstElementChild, u, h;
+      bt(o, "filled", !0), e.loading && f(r, $), d(o, z, u = function(c) {
+        b(o, X, h), e.loading && g(r, $), t.loadImage(c);
       }, {
         once: !0
-      }), addListener(h, EVENT_ERROR, u = function() {
-        removeListener(h, EVENT_LOAD, c), t.loading && removeClass(o, CLASS_LOADING);
+      }), d(o, X, h = function() {
+        b(o, z, u), e.loading && g(r, $);
       }, {
         once: !0
       });
-    }), t.transition && addListener(s, EVENT_VIEWED, function() {
-      addClass(a, CLASS_TRANSITION);
+    }), e.transition && d(i, it, function() {
+      f(n, D);
     }, {
       once: !0
     });
   },
   renderList: function() {
-    var e = this.index, s = this.items[e];
-    if (s) {
-      var t = s.nextElementSibling, a = parseInt(window.getComputedStyle(t || s).marginLeft, 10), r = s.offsetWidth, o = r + a;
-      setStyle(this.list, assign({
-        width: o * this.length - a
-      }, getTransforms({
-        translateX: (this.viewerData.width - r) / 2 - o * e
+    var t = this.index, i = this.items[t];
+    if (i) {
+      var e = i.nextElementSibling, n = parseInt(window.getComputedStyle(e || i).marginLeft, 10), s = i.offsetWidth, r = s + n;
+      k(this.list, C({
+        width: r * this.length - n
+      }, ct({
+        translateX: (this.viewerData.width - s) / 2 - r * t
       })));
     }
   },
   resetList: function() {
-    var e = this.list;
-    e.innerHTML = "", removeClass(e, CLASS_TRANSITION), setStyle(e, getTransforms({
+    var t = this.list;
+    t.innerHTML = "", g(t, D), k(t, ct({
       translateX: 0
     }));
   },
-  initImage: function(e) {
-    var s = this, t = this.options, a = this.image, r = this.viewerData, o = this.footer.offsetHeight, h = r.width, c = Math.max(r.height - o, o), u = this.imageData || {}, l;
+  initImage: function(t) {
+    var i = this, e = this.options, n = this.image, s = this.viewerData, r = this.footer.offsetHeight, o = s.width, u = Math.max(s.height - r, r), h = this.imageData || {}, l;
     this.imageInitializing = {
       abort: function() {
         l.onload = null;
       }
-    }, l = getImageNaturalSizes(a, t, function(d, f) {
-      var g = d / f, v = Math.max(0, Math.min(1, t.initialCoverage)), E = h, p = c;
-      s.imageInitializing = !1, c * g > h ? p = h / g : E = c * g, v = isNumber(v) ? v : 0.9, E = Math.min(E * v, d), p = Math.min(p * v, f);
-      var S = (h - E) / 2, N = (c - p) / 2, m = {
-        left: S,
-        top: N,
-        x: S,
-        y: N,
+    }, l = ee(n, e, function(c, v) {
+      var N = c / v, S = Math.max(0, Math.min(1, e.initialCoverage)), E = o, I = u;
+      i.imageInitializing = !1, u * N > o ? I = o / N : E = u * N, S = T(S) ? S : 0.9, E = Math.min(E * S, c), I = Math.min(I * S, v);
+      var A = (o - E) / 2, O = (u - I) / 2, y = {
+        left: A,
+        top: O,
+        x: A,
+        y: O,
         width: E,
-        height: p,
+        height: I,
         oldRatio: 1,
-        ratio: E / d,
-        aspectRatio: g,
-        naturalWidth: d,
-        naturalHeight: f
-      }, C = assign({}, m);
-      t.rotatable && (m.rotate = u.rotate || 0, C.rotate = 0), t.scalable && (m.scaleX = u.scaleX || 1, m.scaleY = u.scaleY || 1, C.scaleX = 1, C.scaleY = 1), s.imageData = m, s.initialImageData = C, e && e();
+        ratio: E / c,
+        aspectRatio: N,
+        naturalWidth: c,
+        naturalHeight: v
+      }, V = C({}, y);
+      e.rotatable && (y.rotate = h.rotate || 0, V.rotate = 0), e.scalable && (y.scaleX = h.scaleX || 1, y.scaleY = h.scaleY || 1, V.scaleX = 1, V.scaleY = 1), i.imageData = y, i.initialImageData = V, t && t();
     });
   },
-  renderImage: function(e) {
-    var s = this, t = this.image, a = this.imageData;
-    if (setStyle(t, assign({
-      width: a.width,
-      height: a.height,
+  renderImage: function(t) {
+    var i = this, e = this.image, n = this.imageData;
+    if (k(e, C({
+      width: n.width,
+      height: n.height,
       // XXX: Not to use translateX/Y to avoid image shaking when zooming
-      marginLeft: a.x,
-      marginTop: a.y
-    }, getTransforms(a))), e)
-      if ((this.viewing || this.moving || this.rotating || this.scaling || this.zooming) && this.options.transition && hasClass(t, CLASS_TRANSITION)) {
-        var r = function() {
-          s.imageRendering = !1, e();
+      marginLeft: n.x,
+      marginTop: n.y
+    }, ct(n))), t)
+      if ((this.viewing || this.moving || this.rotating || this.scaling || this.zooming) && this.options.transition && j(e, D)) {
+        var s = function() {
+          i.imageRendering = !1, t();
         };
         this.imageRendering = {
           abort: function() {
-            removeListener(t, EVENT_TRANSITION_END, r);
+            b(e, L, s);
           }
-        }, addListener(t, EVENT_TRANSITION_END, r, {
+        }, d(e, L, s, {
           once: !0
         });
       } else
-        e();
+        t();
   },
   resetImage: function() {
-    var e = this.image;
-    e && (this.viewing && this.viewing.abort(), e.parentNode.removeChild(e), this.image = null, this.title.innerHTML = "");
+    var t = this.image;
+    t && (this.viewing && this.viewing.abort(), t.parentNode.removeChild(t), this.image = null, this.title.innerHTML = "");
   }
-}, events = {
+}, Ie = {
   bind: function() {
-    var e = this.options, s = this.viewer, t = this.canvas, a = this.element.ownerDocument;
-    addListener(s, EVENT_CLICK, this.onClick = this.click.bind(this)), addListener(s, EVENT_DRAG_START, this.onDragStart = this.dragstart.bind(this)), addListener(t, EVENT_POINTER_DOWN, this.onPointerDown = this.pointerdown.bind(this)), addListener(a, EVENT_POINTER_MOVE, this.onPointerMove = this.pointermove.bind(this)), addListener(a, EVENT_POINTER_UP, this.onPointerUp = this.pointerup.bind(this)), addListener(a, EVENT_KEY_DOWN, this.onKeyDown = this.keydown.bind(this)), addListener(window, EVENT_RESIZE, this.onResize = this.resize.bind(this)), e.zoomable && e.zoomOnWheel && addListener(s, EVENT_WHEEL, this.onWheel = this.wheel.bind(this), {
+    var t = this.options, i = this.viewer, e = this.canvas, n = this.element.ownerDocument;
+    d(i, G, this.onClick = this.click.bind(this)), d(i, At, this.onDragStart = this.dragstart.bind(this)), d(e, _t, this.onPointerDown = this.pointerdown.bind(this)), d(n, zt, this.onPointerMove = this.pointermove.bind(this)), d(n, Lt, this.onPointerUp = this.pointerup.bind(this)), d(n, Ct, this.onKeyDown = this.keydown.bind(this)), d(window, kt, this.onResize = this.resize.bind(this)), t.zoomable && t.zoomOnWheel && d(i, Rt, this.onWheel = this.wheel.bind(this), {
       passive: !1,
       capture: !0
-    }), e.toggleOnDblclick && addListener(t, EVENT_DBLCLICK, this.onDblclick = this.dblclick.bind(this));
+    }), t.toggleOnDblclick && d(e, pt, this.onDblclick = this.dblclick.bind(this));
   },
   unbind: function() {
-    var e = this.options, s = this.viewer, t = this.canvas, a = this.element.ownerDocument;
-    removeListener(s, EVENT_CLICK, this.onClick), removeListener(s, EVENT_DRAG_START, this.onDragStart), removeListener(t, EVENT_POINTER_DOWN, this.onPointerDown), removeListener(a, EVENT_POINTER_MOVE, this.onPointerMove), removeListener(a, EVENT_POINTER_UP, this.onPointerUp), removeListener(a, EVENT_KEY_DOWN, this.onKeyDown), removeListener(window, EVENT_RESIZE, this.onResize), e.zoomable && e.zoomOnWheel && removeListener(s, EVENT_WHEEL, this.onWheel, {
+    var t = this.options, i = this.viewer, e = this.canvas, n = this.element.ownerDocument;
+    b(i, G, this.onClick), b(i, At, this.onDragStart), b(e, _t, this.onPointerDown), b(n, zt, this.onPointerMove), b(n, Lt, this.onPointerUp), b(n, Ct, this.onKeyDown), b(window, kt, this.onResize), t.zoomable && t.zoomOnWheel && b(i, Rt, this.onWheel, {
       passive: !1,
       capture: !0
-    }), e.toggleOnDblclick && removeListener(t, EVENT_DBLCLICK, this.onDblclick);
+    }), t.toggleOnDblclick && b(e, pt, this.onDblclick);
   }
-}, handlers = {
-  click: function(e) {
-    var s = this.options, t = this.imageData, a = e.target, r = getData(a, DATA_ACTION);
-    switch (!r && a.localName === "img" && a.parentElement.localName === "li" && (a = a.parentElement, r = getData(a, DATA_ACTION)), IS_TOUCH_DEVICE && e.isTrusted && a === this.canvas && clearTimeout(this.clickCanvasTimeout), r) {
+}, Ae = {
+  click: function(t) {
+    var i = this.options, e = this.imageData, n = t.target, s = K(n, ft);
+    switch (!s && n.localName === "img" && n.parentElement.localName === "li" && (n = n.parentElement, s = K(n, ft)), Z && t.isTrusted && n === this.canvas && clearTimeout(this.clickCanvasTimeout), s) {
       case "mix":
-        this.played ? this.stop() : s.inline ? this.fulled ? this.exit() : this.full() : this.hide();
+        this.played ? this.stop() : i.inline ? this.fulled ? this.exit() : this.full() : this.hide();
         break;
       case "hide":
         this.pointerMoved || this.hide();
         break;
       case "view":
-        this.view(getData(a, "index"));
+        this.view(K(n, "index"));
         break;
       case "zoom-in":
         this.zoom(0.1, !0);
@@ -691,13 +691,13 @@ var render = {
         this.reset();
         break;
       case "prev":
-        this.prev(s.loop);
+        this.prev(i.loop);
         break;
       case "play":
-        this.play(s.fullscreen);
+        this.play(i.fullscreen);
         break;
       case "next":
-        this.next(s.loop);
+        this.next(i.loop);
         break;
       case "rotate-left":
         this.rotate(-90);
@@ -706,175 +706,175 @@ var render = {
         this.rotate(90);
         break;
       case "flip-horizontal":
-        this.scaleX(-t.scaleX || -1);
+        this.scaleX(-e.scaleX || -1);
         break;
       case "flip-vertical":
-        this.scaleY(-t.scaleY || -1);
+        this.scaleY(-e.scaleY || -1);
         break;
       default:
         this.played && this.stop();
     }
   },
-  dblclick: function(e) {
-    e.preventDefault(), this.viewed && e.target === this.image && (IS_TOUCH_DEVICE && e.isTrusted && clearTimeout(this.doubleClickImageTimeout), this.toggle(e.isTrusted ? e : e.detail && e.detail.originalEvent));
+  dblclick: function(t) {
+    t.preventDefault(), this.viewed && t.target === this.image && (Z && t.isTrusted && clearTimeout(this.doubleClickImageTimeout), this.toggle(t.isTrusted ? t : t.detail && t.detail.originalEvent));
   },
   load: function() {
-    var e = this;
+    var t = this;
     this.timeout && (clearTimeout(this.timeout), this.timeout = !1);
-    var s = this.element, t = this.options, a = this.image, r = this.index, o = this.viewerData;
-    removeClass(a, CLASS_INVISIBLE), t.loading && removeClass(this.canvas, CLASS_LOADING), a.style.cssText = "height:0;" + "margin-left:".concat(o.width / 2, "px;") + "margin-top:".concat(o.height / 2, "px;") + "max-width:none!important;position:relative;width:0;", this.initImage(function() {
-      toggleClass(a, CLASS_MOVE, t.movable), toggleClass(a, CLASS_TRANSITION, t.transition), e.renderImage(function() {
-        e.viewed = !0, e.viewing = !1, isFunction(t.viewed) && addListener(s, EVENT_VIEWED, t.viewed, {
+    var i = this.element, e = this.options, n = this.image, s = this.index, r = this.viewerData;
+    g(n, et), e.loading && g(this.canvas, $), n.style.cssText = "height:0;" + "margin-left:".concat(r.width / 2, "px;") + "margin-top:".concat(r.height / 2, "px;") + "max-width:none!important;position:relative;width:0;", this.initImage(function() {
+      at(n, de, e.movable), at(n, D, e.transition), t.renderImage(function() {
+        t.viewed = !0, t.viewing = !1, p(e.viewed) && d(i, it, e.viewed, {
           once: !0
-        }), dispatchEvent(s, EVENT_VIEWED, {
-          originalImage: e.images[r],
-          index: r,
-          image: a
+        }), x(i, it, {
+          originalImage: t.images[s],
+          index: s,
+          image: n
         }, {
           cancelable: !1
         });
       });
     });
   },
-  loadImage: function(e) {
-    var s = e.target, t = s.parentNode, a = t.offsetWidth || 30, r = t.offsetHeight || 50, o = !!getData(s, "filled");
-    getImageNaturalSizes(s, this.options, function(h, c) {
-      var u = h / c, l = a, d = r;
-      r * u > a ? o ? l = r * u : d = a / u : o ? d = a / u : l = r * u, setStyle(s, assign({
+  loadImage: function(t) {
+    var i = t.target, e = i.parentNode, n = e.offsetWidth || 30, s = e.offsetHeight || 50, r = !!K(i, "filled");
+    ee(i, this.options, function(o, u) {
+      var h = o / u, l = n, c = s;
+      s * h > n ? r ? l = s * h : c = n / h : r ? c = n / h : l = s * h, k(i, C({
         width: l,
-        height: d
-      }, getTransforms({
-        translateX: (a - l) / 2,
-        translateY: (r - d) / 2
+        height: c
+      }, ct({
+        translateX: (n - l) / 2,
+        translateY: (s - c) / 2
       })));
     });
   },
-  keydown: function(e) {
-    var s = this.options;
-    if (s.keyboard) {
-      var t = e.keyCode || e.which || e.charCode;
-      switch (t) {
+  keydown: function(t) {
+    var i = this.options;
+    if (i.keyboard) {
+      var e = t.keyCode || t.which || t.charCode;
+      switch (e) {
         case 13:
-          this.viewer.contains(e.target) && this.click(e);
+          this.viewer.contains(t.target) && this.click(t);
           break;
       }
       if (this.fulled)
-        switch (t) {
+        switch (e) {
           case 27:
-            this.played ? this.stop() : s.inline ? this.fulled && this.exit() : this.hide();
+            this.played ? this.stop() : i.inline ? this.fulled && this.exit() : this.hide();
             break;
           case 32:
             this.played && this.stop();
             break;
           case 37:
-            this.played && this.playing ? this.playing.prev() : this.prev(s.loop);
+            this.played && this.playing ? this.playing.prev() : this.prev(i.loop);
             break;
           case 38:
-            e.preventDefault(), this.zoom(s.zoomRatio, !0);
+            t.preventDefault(), this.zoom(i.zoomRatio, !0);
             break;
           case 39:
-            this.played && this.playing ? this.playing.next() : this.next(s.loop);
+            this.played && this.playing ? this.playing.next() : this.next(i.loop);
             break;
           case 40:
-            e.preventDefault(), this.zoom(-s.zoomRatio, !0);
+            t.preventDefault(), this.zoom(-i.zoomRatio, !0);
             break;
           case 48:
           case 49:
-            e.ctrlKey && (e.preventDefault(), this.toggle());
+            t.ctrlKey && (t.preventDefault(), this.toggle());
             break;
         }
     }
   },
-  dragstart: function(e) {
-    e.target.localName === "img" && e.preventDefault();
+  dragstart: function(t) {
+    t.target.localName === "img" && t.preventDefault();
   },
-  pointerdown: function(e) {
-    var s = this.options, t = this.pointers, a = e.buttons, r = e.button;
-    if (this.pointerMoved = !1, !(!this.viewed || this.showing || this.viewing || this.hiding || (e.type === "mousedown" || e.type === "pointerdown" && e.pointerType === "mouse") && // No primary button (Usually the left button)
-    (isNumber(a) && a !== 1 || isNumber(r) && r !== 0 || e.ctrlKey))) {
-      e.preventDefault(), e.changedTouches ? forEach(e.changedTouches, function(h) {
-        t[h.identifier] = getPointer(h);
-      }) : t[e.pointerId || 0] = getPointer(e);
-      var o = s.movable ? ACTION_MOVE : !1;
-      s.zoomOnTouch && s.zoomable && Object.keys(t).length > 1 ? o = ACTION_ZOOM : s.slideOnTouch && (e.pointerType === "touch" || e.type === "touchstart") && this.isSwitchable() && (o = ACTION_SWITCH), s.transition && (o === ACTION_MOVE || o === ACTION_ZOOM) && removeClass(this.image, CLASS_TRANSITION), this.action = o;
+  pointerdown: function(t) {
+    var i = this.options, e = this.pointers, n = t.buttons, s = t.button;
+    if (this.pointerMoved = !1, !(!this.viewed || this.showing || this.viewing || this.hiding || (t.type === "mousedown" || t.type === "pointerdown" && t.pointerType === "mouse") && // No primary button (Usually the left button)
+    (T(n) && n !== 1 || T(s) && s !== 0 || t.ctrlKey))) {
+      t.preventDefault(), t.changedTouches ? w(t.changedTouches, function(o) {
+        e[o.identifier] = lt(o);
+      }) : e[t.pointerId || 0] = lt(t);
+      var r = i.movable ? ht : !1;
+      i.zoomOnTouch && i.zoomable && Object.keys(e).length > 1 ? r = tt : i.slideOnTouch && (t.pointerType === "touch" || t.type === "touchstart") && this.isSwitchable() && (r = Qt), i.transition && (r === ht || r === tt) && g(this.image, D), this.action = r;
     }
   },
-  pointermove: function(e) {
-    var s = this.pointers, t = this.action;
-    !this.viewed || !t || (e.preventDefault(), e.changedTouches ? forEach(e.changedTouches, function(a) {
-      assign(s[a.identifier] || {}, getPointer(a, !0));
-    }) : assign(s[e.pointerId || 0] || {}, getPointer(e, !0)), this.change(e));
+  pointermove: function(t) {
+    var i = this.pointers, e = this.action;
+    !this.viewed || !e || (t.preventDefault(), t.changedTouches ? w(t.changedTouches, function(n) {
+      C(i[n.identifier] || {}, lt(n, !0));
+    }) : C(i[t.pointerId || 0] || {}, lt(t, !0)), this.change(t));
   },
-  pointerup: function(e) {
-    var s = this, t = this.options, a = this.action, r = this.pointers, o;
-    e.changedTouches ? forEach(e.changedTouches, function(h) {
-      o = r[h.identifier], delete r[h.identifier];
-    }) : (o = r[e.pointerId || 0], delete r[e.pointerId || 0]), a && (e.preventDefault(), t.transition && (a === ACTION_MOVE || a === ACTION_ZOOM) && addClass(this.image, CLASS_TRANSITION), this.action = !1, IS_TOUCH_DEVICE && a !== ACTION_ZOOM && o && Date.now() - o.timeStamp < 500 && (clearTimeout(this.clickCanvasTimeout), clearTimeout(this.doubleClickImageTimeout), t.toggleOnDblclick && this.viewed && e.target === this.image ? this.imageClicked ? (this.imageClicked = !1, this.doubleClickImageTimeout = setTimeout(function() {
-      dispatchEvent(s.image, EVENT_DBLCLICK, {
-        originalEvent: e
+  pointerup: function(t) {
+    var i = this, e = this.options, n = this.action, s = this.pointers, r;
+    t.changedTouches ? w(t.changedTouches, function(o) {
+      r = s[o.identifier], delete s[o.identifier];
+    }) : (r = s[t.pointerId || 0], delete s[t.pointerId || 0]), n && (t.preventDefault(), e.transition && (n === ht || n === tt) && f(this.image, D), this.action = !1, Z && n !== tt && r && Date.now() - r.timeStamp < 500 && (clearTimeout(this.clickCanvasTimeout), clearTimeout(this.doubleClickImageTimeout), e.toggleOnDblclick && this.viewed && t.target === this.image ? this.imageClicked ? (this.imageClicked = !1, this.doubleClickImageTimeout = setTimeout(function() {
+      x(i.image, pt, {
+        originalEvent: t
       });
     }, 50)) : (this.imageClicked = !0, this.doubleClickImageTimeout = setTimeout(function() {
-      s.imageClicked = !1;
-    }, 500)) : (this.imageClicked = !1, t.backdrop && t.backdrop !== "static" && e.target === this.canvas && (this.clickCanvasTimeout = setTimeout(function() {
-      dispatchEvent(s.canvas, EVENT_CLICK, {
-        originalEvent: e
+      i.imageClicked = !1;
+    }, 500)) : (this.imageClicked = !1, e.backdrop && e.backdrop !== "static" && t.target === this.canvas && (this.clickCanvasTimeout = setTimeout(function() {
+      x(i.canvas, G, {
+        originalEvent: t
       });
     }, 50)))));
   },
   resize: function() {
-    var e = this;
+    var t = this;
     if (!(!this.isShown || this.hiding) && (this.fulled && (this.close(), this.initBody(), this.open()), this.initContainer(), this.initViewer(), this.renderViewer(), this.renderList(), this.viewed && this.initImage(function() {
-      e.renderImage();
+      t.renderImage();
     }), this.played)) {
       if (this.options.fullscreen && this.fulled && !(document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement)) {
         this.stop();
         return;
       }
-      forEach(this.player.getElementsByTagName("img"), function(s) {
-        addListener(s, EVENT_LOAD, e.loadImage.bind(e), {
+      w(this.player.getElementsByTagName("img"), function(i) {
+        d(i, z, t.loadImage.bind(t), {
           once: !0
-        }), dispatchEvent(s, EVENT_LOAD);
+        }), x(i, z);
       });
     }
   },
-  wheel: function(e) {
-    var s = this;
-    if (this.viewed && (e.preventDefault(), !this.wheeling)) {
+  wheel: function(t) {
+    var i = this;
+    if (this.viewed && (t.preventDefault(), !this.wheeling)) {
       this.wheeling = !0, setTimeout(function() {
-        s.wheeling = !1;
+        i.wheeling = !1;
       }, 50);
-      var t = Number(this.options.zoomRatio) || 0.1, a = 1;
-      e.deltaY ? a = e.deltaY > 0 ? 1 : -1 : e.wheelDelta ? a = -e.wheelDelta / 120 : e.detail && (a = e.detail > 0 ? 1 : -1), this.zoom(-a * t, !0, null, e);
+      var e = Number(this.options.zoomRatio) || 0.1, n = 1;
+      t.deltaY ? n = t.deltaY > 0 ? 1 : -1 : t.wheelDelta ? n = -t.wheelDelta / 120 : t.detail && (n = t.detail > 0 ? 1 : -1), this.zoom(-n * e, !0, null, t);
     }
   }
-}, methods = {
+}, Oe = {
   /** Show the viewer (only available in modal mode)
    * @param {boolean} [immediate=false] - Indicates if show the viewer immediately or not.
    * @returns {Viewer} this
    */
   show: function() {
-    var e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, s = this.element, t = this.options;
-    if (t.inline || this.showing || this.isShown || this.showing)
+    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, i = this.element, e = this.options;
+    if (e.inline || this.showing || this.isShown || this.showing)
       return this;
     if (!this.ready)
-      return this.build(), this.ready && this.show(e), this;
-    if (isFunction(t.show) && addListener(s, EVENT_SHOW, t.show, {
+      return this.build(), this.ready && this.show(t), this;
+    if (p(e.show) && d(i, Mt, e.show, {
       once: !0
-    }), dispatchEvent(s, EVENT_SHOW) === !1 || !this.ready)
+    }), x(i, Mt) === !1 || !this.ready)
       return this;
     this.hiding && this.transitioning.abort(), this.showing = !0, this.open();
-    var a = this.viewer;
-    if (removeClass(a, CLASS_HIDE), a.setAttribute("role", "dialog"), a.setAttribute("aria-labelledby", this.title.id), a.setAttribute("aria-modal", !0), a.removeAttribute("aria-hidden"), t.transition && !e) {
-      var r = this.shown.bind(this);
+    var n = this.viewer;
+    if (g(n, W), n.setAttribute("role", "dialog"), n.setAttribute("aria-labelledby", this.title.id), n.setAttribute("aria-modal", !0), n.removeAttribute("aria-hidden"), e.transition && !t) {
+      var s = this.shown.bind(this);
       this.transitioning = {
         abort: function() {
-          removeListener(a, EVENT_TRANSITION_END, r), removeClass(a, CLASS_IN);
+          b(n, L, s), g(n, _);
         }
-      }, addClass(a, CLASS_TRANSITION), a.initialOffsetWidth = a.offsetWidth, addListener(a, EVENT_TRANSITION_END, r, {
+      }, f(n, D), n.initialOffsetWidth = n.offsetWidth, d(n, L, s, {
         once: !0
-      }), addClass(a, CLASS_IN);
+      }), f(n, _);
     } else
-      addClass(a, CLASS_IN), this.shown();
+      f(n, _), this.shown();
     return this;
   },
   /**
@@ -883,32 +883,32 @@ var render = {
    * @returns {Viewer} this
    */
   hide: function() {
-    var e = this, s = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, t = this.element, a = this.options;
-    if (a.inline || this.hiding || !(this.isShown || this.showing))
+    var t = this, i = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.element, n = this.options;
+    if (n.inline || this.hiding || !(this.isShown || this.showing))
       return this;
-    if (isFunction(a.hide) && addListener(t, EVENT_HIDE, a.hide, {
+    if (p(n.hide) && d(e, Pt, n.hide, {
       once: !0
-    }), dispatchEvent(t, EVENT_HIDE) === !1)
+    }), x(e, Pt) === !1)
       return this;
     this.showing && this.transitioning.abort(), this.hiding = !0, this.played ? this.stop() : this.viewing && this.viewing.abort();
-    var r = this.viewer, o = this.image, h = function() {
-      removeClass(r, CLASS_IN), e.hidden();
+    var s = this.viewer, r = this.image, o = function() {
+      g(s, _), t.hidden();
     };
-    if (a.transition && !s) {
-      var c = function(d) {
-        d && d.target === r && (removeListener(r, EVENT_TRANSITION_END, c), e.hidden());
-      }, u = function() {
-        hasClass(r, CLASS_TRANSITION) ? (addListener(r, EVENT_TRANSITION_END, c), removeClass(r, CLASS_IN)) : h();
+    if (n.transition && !i) {
+      var u = function(c) {
+        c && c.target === s && (b(s, L, u), t.hidden());
+      }, h = function() {
+        j(s, D) ? (d(s, L, u), g(s, _)) : o();
       };
       this.transitioning = {
         abort: function() {
-          e.viewed && hasClass(o, CLASS_TRANSITION) ? removeListener(o, EVENT_TRANSITION_END, u) : hasClass(r, CLASS_TRANSITION) && removeListener(r, EVENT_TRANSITION_END, c);
+          t.viewed && j(r, D) ? b(r, L, h) : j(s, D) && b(s, L, u);
         }
-      }, this.viewed && hasClass(o, CLASS_TRANSITION) ? (addListener(o, EVENT_TRANSITION_END, u, {
+      }, this.viewed && j(r, D) ? (d(r, L, h, {
         once: !0
-      }), this.zoomTo(0, !1, null, null, !0)) : u();
+      }), this.zoomTo(0, !1, null, null, !0)) : h();
     } else
-      h();
+      o();
     return this;
   },
   /**
@@ -917,46 +917,46 @@ var render = {
    * @returns {Viewer} this
    */
   view: function() {
-    var e = this, s = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : this.options.initialViewIndex;
-    if (s = Number(s) || 0, this.hiding || this.played || s < 0 || s >= this.length || this.viewed && s === this.index)
+    var t = this, i = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : this.options.initialViewIndex;
+    if (i = Number(i) || 0, this.hiding || this.played || i < 0 || i >= this.length || this.viewed && i === this.index)
       return this;
     if (!this.isShown)
-      return this.index = s, this.show();
+      return this.index = i, this.show();
     this.viewing && this.viewing.abort();
-    var t = this.element, a = this.options, r = this.title, o = this.canvas, h = this.items[s], c = h.querySelector("img"), u = getData(c, "originalUrl"), l = c.getAttribute("alt"), d = document.createElement("img");
-    if (forEach(a.inheritedAttributes, function(p) {
-      var S = c.getAttribute(p);
-      S !== null && d.setAttribute(p, S);
-    }), d.src = u, d.alt = l, isFunction(a.view) && addListener(t, EVENT_VIEW, a.view, {
+    var e = this.element, n = this.options, s = this.title, r = this.canvas, o = this.items[i], u = o.querySelector("img"), h = K(u, "originalUrl"), l = u.getAttribute("alt"), c = document.createElement("img");
+    if (w(n.inheritedAttributes, function(I) {
+      var A = u.getAttribute(I);
+      A !== null && c.setAttribute(I, A);
+    }), c.src = h, c.alt = l, p(n.view) && d(e, Wt, n.view, {
       once: !0
-    }), dispatchEvent(t, EVENT_VIEW, {
-      originalImage: this.images[s],
-      index: s,
-      image: d
+    }), x(e, Wt, {
+      originalImage: this.images[i],
+      index: i,
+      image: c
     }) === !1 || !this.isShown || this.hiding || this.played)
       return this;
-    var f = this.items[this.index];
-    f && (removeClass(f, CLASS_ACTIVE), f.removeAttribute("aria-selected")), addClass(h, CLASS_ACTIVE), h.setAttribute("aria-selected", !0), a.focus && h.focus(), this.image = d, this.viewed = !1, this.index = s, this.imageData = {}, addClass(d, CLASS_INVISIBLE), a.loading && addClass(o, CLASS_LOADING), o.innerHTML = "", o.appendChild(d), this.renderList(), r.innerHTML = "";
-    var g = function() {
-      var S = e.imageData, N = Array.isArray(a.title) ? a.title[1] : a.title;
-      r.innerHTML = escapeHTMLEntities(isFunction(N) ? N.call(e, d, S) : "".concat(l, " (").concat(S.naturalWidth, " × ").concat(S.naturalHeight, ")"));
-    }, v, E;
-    return addListener(t, EVENT_VIEWED, g, {
+    var v = this.items[this.index];
+    v && (g(v, rt), v.removeAttribute("aria-selected")), f(o, rt), o.setAttribute("aria-selected", !0), n.focus && o.focus(), this.image = c, this.viewed = !1, this.index = i, this.imageData = {}, f(c, et), n.loading && f(r, $), r.innerHTML = "", r.appendChild(c), this.renderList(), s.innerHTML = "";
+    var N = function() {
+      var A = t.imageData, O = Array.isArray(n.title) ? n.title[1] : n.title;
+      s.innerHTML = ye(p(O) ? O.call(t, c, A) : "".concat(l, " (").concat(A.naturalWidth, " × ").concat(A.naturalHeight, ")"));
+    }, S, E;
+    return d(e, it, N, {
       once: !0
     }), this.viewing = {
       abort: function() {
-        removeListener(t, EVENT_VIEWED, g), d.complete ? e.imageRendering ? e.imageRendering.abort() : e.imageInitializing && e.imageInitializing.abort() : (d.src = "", removeListener(d, EVENT_LOAD, v), e.timeout && clearTimeout(e.timeout));
+        b(e, it, N), c.complete ? t.imageRendering ? t.imageRendering.abort() : t.imageInitializing && t.imageInitializing.abort() : (c.src = "", b(c, z, S), t.timeout && clearTimeout(t.timeout));
       }
-    }, d.complete ? this.load() : (addListener(d, EVENT_LOAD, v = function() {
-      removeListener(d, EVENT_ERROR, E), e.load();
+    }, c.complete ? this.load() : (d(c, z, S = function() {
+      b(c, X, E), t.load();
     }, {
       once: !0
-    }), addListener(d, EVENT_ERROR, E = function() {
-      removeListener(d, EVENT_LOAD, v), e.timeout && (clearTimeout(e.timeout), e.timeout = !1), removeClass(d, CLASS_INVISIBLE), a.loading && removeClass(e.canvas, CLASS_LOADING);
+    }), d(c, X, E = function() {
+      b(c, z, S), t.timeout && (clearTimeout(t.timeout), t.timeout = !1), g(c, et), n.loading && g(t.canvas, $);
     }, {
       once: !0
     }), this.timeout && clearTimeout(this.timeout), this.timeout = setTimeout(function() {
-      removeClass(d, CLASS_INVISIBLE), e.timeout = !1;
+      g(c, et), t.timeout = !1;
     }, 1e3)), this;
   },
   /**
@@ -966,8 +966,8 @@ var render = {
    * @returns {Viewer} this
    */
   prev: function() {
-    var e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, s = this.index - 1;
-    return s < 0 && (s = e ? this.length - 1 : 0), this.view(s), this;
+    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, i = this.index - 1;
+    return i < 0 && (i = t ? this.length - 1 : 0), this.view(i), this;
   },
   /**
    * View the next image
@@ -976,8 +976,8 @@ var render = {
    * @returns {Viewer} this
    */
   next: function() {
-    var e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, s = this.length - 1, t = this.index + 1;
-    return t > s && (t = e ? 0 : s), this.view(t), this;
+    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, i = this.length - 1, e = this.index + 1;
+    return e > i && (e = t ? 0 : i), this.view(e), this;
   },
   /**
    * Move the image with relative offsets.
@@ -985,9 +985,9 @@ var render = {
    * @param {number} [y=x] The moving distance in the vertical direction.
    * @returns {Viewer} this
    */
-  move: function(e) {
-    var s = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : e, t = this.imageData;
-    return this.moveTo(isUndefined(e) ? e : t.x + Number(e), isUndefined(s) ? s : t.y + Number(s)), this;
+  move: function(t) {
+    var i = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, e = this.imageData;
+    return this.moveTo(U(t) ? t : e.x + Number(t), U(i) ? i : e.y + Number(i)), this;
   },
   /**
    * Move the image to an absolute point.
@@ -996,30 +996,30 @@ var render = {
    * @param {Event} [_originalEvent=null] - The original event if any.
    * @returns {Viewer} this
    */
-  moveTo: function(e) {
-    var s = this, t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : e, a = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, r = this.element, o = this.options, h = this.imageData;
-    if (e = Number(e), t = Number(t), this.viewed && !this.played && o.movable) {
-      var c = h.x, u = h.y, l = !1;
-      if (isNumber(e) ? l = !0 : e = c, isNumber(t) ? l = !0 : t = u, l) {
-        if (isFunction(o.move) && addListener(r, EVENT_MOVE, o.move, {
+  moveTo: function(t) {
+    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, n = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, s = this.element, r = this.options, o = this.imageData;
+    if (t = Number(t), e = Number(e), this.viewed && !this.played && r.movable) {
+      var u = o.x, h = o.y, l = !1;
+      if (T(t) ? l = !0 : t = u, T(e) ? l = !0 : e = h, l) {
+        if (p(r.move) && d(s, Xt, r.move, {
           once: !0
-        }), dispatchEvent(r, EVENT_MOVE, {
-          x: e,
-          y: t,
-          oldX: c,
-          oldY: u,
-          originalEvent: a
+        }), x(s, Xt, {
+          x: t,
+          y: e,
+          oldX: u,
+          oldY: h,
+          originalEvent: n
         }) === !1)
           return this;
-        h.x = e, h.y = t, h.left = e, h.top = t, this.moving = !0, this.renderImage(function() {
-          s.moving = !1, isFunction(o.moved) && addListener(r, EVENT_MOVED, o.moved, {
+        o.x = t, o.y = e, o.left = t, o.top = e, this.moving = !0, this.renderImage(function() {
+          i.moving = !1, p(r.moved) && d(s, Ht, r.moved, {
             once: !0
-          }), dispatchEvent(r, EVENT_MOVED, {
-            x: e,
-            y: t,
-            oldX: c,
-            oldY: u,
-            originalEvent: a
+          }), x(s, Ht, {
+            x: t,
+            y: e,
+            oldX: u,
+            oldY: h,
+            originalEvent: n
           }, {
             cancelable: !1
           });
@@ -1033,31 +1033,31 @@ var render = {
    * @param {number} degree - The rotate degree.
    * @returns {Viewer} this
    */
-  rotate: function(e) {
-    return this.rotateTo((this.imageData.rotate || 0) + Number(e)), this;
+  rotate: function(t) {
+    return this.rotateTo((this.imageData.rotate || 0) + Number(t)), this;
   },
   /**
    * Rotate the image to an absolute degree.
    * @param {number} degree - The rotate degree.
    * @returns {Viewer} this
    */
-  rotateTo: function(e) {
-    var s = this, t = this.element, a = this.options, r = this.imageData;
-    if (e = Number(e), isNumber(e) && this.viewed && !this.played && a.rotatable) {
-      var o = r.rotate;
-      if (isFunction(a.rotate) && addListener(t, EVENT_ROTATE, a.rotate, {
+  rotateTo: function(t) {
+    var i = this, e = this.element, n = this.options, s = this.imageData;
+    if (t = Number(t), T(t) && this.viewed && !this.played && n.rotatable) {
+      var r = s.rotate;
+      if (p(n.rotate) && d(e, qt, n.rotate, {
         once: !0
-      }), dispatchEvent(t, EVENT_ROTATE, {
-        degree: e,
-        oldDegree: o
+      }), x(e, qt, {
+        degree: t,
+        oldDegree: r
       }) === !1)
         return this;
-      r.rotate = e, this.rotating = !0, this.renderImage(function() {
-        s.rotating = !1, isFunction(a.rotated) && addListener(t, EVENT_ROTATED, a.rotated, {
+      s.rotate = t, this.rotating = !0, this.renderImage(function() {
+        i.rotating = !1, p(n.rotated) && d(e, jt, n.rotated, {
           once: !0
-        }), dispatchEvent(t, EVENT_ROTATED, {
-          degree: e,
-          oldDegree: o
+        }), x(e, jt, {
+          degree: t,
+          oldDegree: r
         }, {
           cancelable: !1
         });
@@ -1070,16 +1070,16 @@ var render = {
    * @param {number} scaleX - The scale ratio on the x-axis.
    * @returns {Viewer} this
    */
-  scaleX: function(e) {
-    return this.scale(e, this.imageData.scaleY), this;
+  scaleX: function(t) {
+    return this.scale(t, this.imageData.scaleY), this;
   },
   /**
    * Scale the image on the y-axis.
    * @param {number} scaleY - The scale ratio on the y-axis.
    * @returns {Viewer} this
    */
-  scaleY: function(e) {
-    return this.scale(this.imageData.scaleX, e), this;
+  scaleY: function(t) {
+    return this.scale(this.imageData.scaleX, t), this;
   },
   /**
    * Scale the image.
@@ -1087,28 +1087,28 @@ var render = {
    * @param {number} [scaleY=scaleX] - The scale ratio on the y-axis.
    * @returns {Viewer} this
    */
-  scale: function(e) {
-    var s = this, t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : e, a = this.element, r = this.options, o = this.imageData;
-    if (e = Number(e), t = Number(t), this.viewed && !this.played && r.scalable) {
-      var h = o.scaleX, c = o.scaleY, u = !1;
-      if (isNumber(e) ? u = !0 : e = h, isNumber(t) ? u = !0 : t = c, u) {
-        if (isFunction(r.scale) && addListener(a, EVENT_SCALE, r.scale, {
+  scale: function(t) {
+    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, n = this.element, s = this.options, r = this.imageData;
+    if (t = Number(t), e = Number(e), this.viewed && !this.played && s.scalable) {
+      var o = r.scaleX, u = r.scaleY, h = !1;
+      if (T(t) ? h = !0 : t = o, T(e) ? h = !0 : e = u, h) {
+        if (p(s.scale) && d(n, Ut, s.scale, {
           once: !0
-        }), dispatchEvent(a, EVENT_SCALE, {
-          scaleX: e,
-          scaleY: t,
-          oldScaleX: h,
-          oldScaleY: c
+        }), x(n, Ut, {
+          scaleX: t,
+          scaleY: e,
+          oldScaleX: o,
+          oldScaleY: u
         }) === !1)
           return this;
-        o.scaleX = e, o.scaleY = t, this.scaling = !0, this.renderImage(function() {
-          s.scaling = !1, isFunction(r.scaled) && addListener(a, EVENT_SCALED, r.scaled, {
+        r.scaleX = t, r.scaleY = e, this.scaling = !0, this.renderImage(function() {
+          i.scaling = !1, p(s.scaled) && d(n, Bt, s.scaled, {
             once: !0
-          }), dispatchEvent(a, EVENT_SCALED, {
-            scaleX: e,
-            scaleY: t,
-            oldScaleX: h,
-            oldScaleY: c
+          }), x(n, Bt, {
+            scaleX: t,
+            scaleY: e,
+            oldScaleX: o,
+            oldScaleY: u
           }, {
             cancelable: !1
           });
@@ -1125,9 +1125,9 @@ var render = {
    * @param {Event} [_originalEvent=null] - The original event if any.
    * @returns {Viewer} this
    */
-  zoom: function(e) {
-    var s = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, t = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, a = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null, r = this.imageData;
-    return e = Number(e), e < 0 ? e = 1 / (1 - e) : e = 1 + e, this.zoomTo(r.width * e / r.naturalWidth, s, t, a), this;
+  zoom: function(t) {
+    var i = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, e = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, n = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null, s = this.imageData;
+    return t = Number(t), t < 0 ? t = 1 / (1 - t) : t = 1 + t, this.zoomTo(s.width * t / s.naturalWidth, i, e, n), this;
   },
   /**
    * Zoom the image to an absolute ratio.
@@ -1138,51 +1138,51 @@ var render = {
    * @param {Event} [_zoomable=false] - Indicates if the current zoom is available or not.
    * @returns {Viewer} this
    */
-  zoomTo: function(e) {
-    var s = this, t = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, a = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, r = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null, o = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : !1, h = this.element, c = this.options, u = this.pointers, l = this.imageData, d = l.x, f = l.y, g = l.width, v = l.height, E = l.naturalWidth, p = l.naturalHeight;
-    if (e = Math.max(0, e), isNumber(e) && this.viewed && !this.played && (o || c.zoomable)) {
-      if (!o) {
-        var S = Math.max(0.01, c.minZoomRatio), N = Math.min(100, c.maxZoomRatio);
-        e = Math.min(Math.max(e, S), N);
+  zoomTo: function(t) {
+    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, n = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, s = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null, r = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : !1, o = this.element, u = this.options, h = this.pointers, l = this.imageData, c = l.x, v = l.y, N = l.width, S = l.height, E = l.naturalWidth, I = l.naturalHeight;
+    if (t = Math.max(0, t), T(t) && this.viewed && !this.played && (r || u.zoomable)) {
+      if (!r) {
+        var A = Math.max(0.01, u.minZoomRatio), O = Math.min(100, u.maxZoomRatio);
+        t = Math.min(Math.max(t, A), O);
       }
-      if (r)
-        switch (r.type) {
+      if (s)
+        switch (s.type) {
           case "wheel":
-            c.zoomRatio >= 0.055 && e > 0.95 && e < 1.05 && (e = 1);
+            u.zoomRatio >= 0.055 && t > 0.95 && t < 1.05 && (t = 1);
             break;
           case "pointermove":
           case "touchmove":
           case "mousemove":
-            e > 0.99 && e < 1.01 && (e = 1);
+            t > 0.99 && t < 1.01 && (t = 1);
             break;
         }
-      var m = E * e, C = p * e, b = m - g, T = C - v, _ = l.ratio;
-      if (isFunction(c.zoom) && addListener(h, EVENT_ZOOM, c.zoom, {
+      var y = E * t, V = I * t, P = y - N, R = V - S, Y = l.ratio;
+      if (p(u.zoom) && d(o, Kt, u.zoom, {
         once: !0
-      }), dispatchEvent(h, EVENT_ZOOM, {
-        ratio: e,
-        oldRatio: _,
-        originalEvent: r
+      }), x(o, Kt, {
+        ratio: t,
+        oldRatio: Y,
+        originalEvent: s
       }) === !1)
         return this;
-      if (this.zooming = !0, r) {
-        var I = getOffset(this.viewer), w = u && Object.keys(u).length > 0 ? getPointersCenter(u) : {
-          pageX: r.pageX,
-          pageY: r.pageY
+      if (this.zooming = !0, s) {
+        var Q = Te(this.viewer), H = h && Object.keys(h).length > 0 ? Ne(h) : {
+          pageX: s.pageX,
+          pageY: s.pageY
         };
-        l.x -= b * ((w.pageX - I.left - d) / g), l.y -= T * ((w.pageY - I.top - f) / v);
-      } else isPlainObject(a) && isNumber(a.x) && isNumber(a.y) ? (l.x -= b * ((a.x - d) / g), l.y -= T * ((a.y - f) / v)) : (l.x -= b / 2, l.y -= T / 2);
-      l.left = l.x, l.top = l.y, l.width = m, l.height = C, l.oldRatio = _, l.ratio = e, this.renderImage(function() {
-        s.zooming = !1, isFunction(c.zoomed) && addListener(h, EVENT_ZOOMED, c.zoomed, {
+        l.x -= P * ((H.pageX - Q.left - c) / N), l.y -= R * ((H.pageY - Q.top - v) / S);
+      } else B(n) && T(n.x) && T(n.y) ? (l.x -= P * ((n.x - c) / N), l.y -= R * ((n.y - v) / S)) : (l.x -= P / 2, l.y -= R / 2);
+      l.left = l.x, l.top = l.y, l.width = y, l.height = V, l.oldRatio = Y, l.ratio = t, this.renderImage(function() {
+        i.zooming = !1, p(u.zoomed) && d(o, Zt, u.zoomed, {
           once: !0
-        }), dispatchEvent(h, EVENT_ZOOMED, {
-          ratio: e,
-          oldRatio: _,
-          originalEvent: r
+        }), x(o, Zt, {
+          ratio: t,
+          oldRatio: Y,
+          originalEvent: s
         }, {
           cancelable: !1
         });
-      }), t && this.tooltip();
+      }), e && this.tooltip();
     }
     return this;
   },
@@ -1192,84 +1192,84 @@ var render = {
    * @returns {Viewer} this
    */
   play: function() {
-    var e = this, s = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1;
+    var t = this, i = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1;
     if (!this.isShown || this.played)
       return this;
-    var t = this.element, a = this.options;
-    if (isFunction(a.play) && addListener(t, EVENT_PLAY, a.play, {
+    var e = this.element, n = this.options;
+    if (p(n.play) && d(e, $t, n.play, {
       once: !0
-    }), dispatchEvent(t, EVENT_PLAY) === !1)
+    }), x(e, $t) === !1)
       return this;
-    var r = this.player, o = this.loadImage.bind(this), h = [], c = 0, u = 0;
-    if (this.played = !0, this.onLoadWhenPlay = o, s && this.requestFullscreen(s), addClass(r, CLASS_SHOW), forEach(this.items, function(f, g) {
-      var v = f.querySelector("img"), E = document.createElement("img");
-      E.src = getData(v, "originalUrl"), E.alt = v.getAttribute("alt"), E.referrerPolicy = v.referrerPolicy, c += 1, addClass(E, CLASS_FADE), toggleClass(E, CLASS_TRANSITION, a.transition), hasClass(f, CLASS_ACTIVE) && (addClass(E, CLASS_IN), u = g), h.push(E), addListener(E, EVENT_LOAD, o, {
+    var s = this.player, r = this.loadImage.bind(this), o = [], u = 0, h = 0;
+    if (this.played = !0, this.onLoadWhenPlay = r, i && this.requestFullscreen(i), f(s, q), w(this.items, function(v, N) {
+      var S = v.querySelector("img"), E = document.createElement("img");
+      E.src = K(S, "originalUrl"), E.alt = S.getAttribute("alt"), E.referrerPolicy = S.referrerPolicy, u += 1, f(E, ut), at(E, D, n.transition), j(v, rt) && (f(E, _), h = N), o.push(E), d(E, z, r, {
         once: !0
-      }), r.appendChild(E);
-    }), isNumber(a.interval) && a.interval > 0) {
+      }), s.appendChild(E);
+    }), T(n.interval) && n.interval > 0) {
       var l = function() {
-        clearTimeout(e.playing.timeout), removeClass(h[u], CLASS_IN), u -= 1, u = u >= 0 ? u : c - 1, addClass(h[u], CLASS_IN), e.playing.timeout = setTimeout(l, a.interval);
-      }, d = function() {
-        clearTimeout(e.playing.timeout), removeClass(h[u], CLASS_IN), u += 1, u = u < c ? u : 0, addClass(h[u], CLASS_IN), e.playing.timeout = setTimeout(d, a.interval);
+        clearTimeout(t.playing.timeout), g(o[h], _), h -= 1, h = h >= 0 ? h : u - 1, f(o[h], _), t.playing.timeout = setTimeout(l, n.interval);
+      }, c = function() {
+        clearTimeout(t.playing.timeout), g(o[h], _), h += 1, h = h < u ? h : 0, f(o[h], _), t.playing.timeout = setTimeout(c, n.interval);
       };
-      c > 1 && (this.playing = {
+      u > 1 && (this.playing = {
         prev: l,
-        next: d,
-        timeout: setTimeout(d, a.interval)
+        next: c,
+        timeout: setTimeout(c, n.interval)
       });
     }
     return this;
   },
   // Stop play
   stop: function() {
-    var e = this;
+    var t = this;
     if (!this.played)
       return this;
-    var s = this.element, t = this.options;
-    if (isFunction(t.stop) && addListener(s, EVENT_STOP, t.stop, {
+    var i = this.element, e = this.options;
+    if (p(e.stop) && d(i, Gt, e.stop, {
       once: !0
-    }), dispatchEvent(s, EVENT_STOP) === !1)
+    }), x(i, Gt) === !1)
       return this;
-    var a = this.player;
-    return clearTimeout(this.playing.timeout), this.playing = !1, this.played = !1, forEach(a.getElementsByTagName("img"), function(r) {
-      removeListener(r, EVENT_LOAD, e.onLoadWhenPlay);
-    }), removeClass(a, CLASS_SHOW), a.innerHTML = "", this.exitFullscreen(), this;
+    var n = this.player;
+    return clearTimeout(this.playing.timeout), this.playing = !1, this.played = !1, w(n.getElementsByTagName("img"), function(s) {
+      b(s, z, t.onLoadWhenPlay);
+    }), g(n, q), n.innerHTML = "", this.exitFullscreen(), this;
   },
   // Enter modal mode (only available in inline mode)
   full: function() {
-    var e = this, s = this.options, t = this.viewer, a = this.image, r = this.list;
-    return !this.isShown || this.played || this.fulled || !s.inline ? this : (this.fulled = !0, this.open(), addClass(this.button, CLASS_FULLSCREEN_EXIT), s.transition && (removeClass(r, CLASS_TRANSITION), this.viewed && removeClass(a, CLASS_TRANSITION)), addClass(t, CLASS_FIXED), t.setAttribute("role", "dialog"), t.setAttribute("aria-labelledby", this.title.id), t.setAttribute("aria-modal", !0), t.removeAttribute("style"), setStyle(t, {
-      zIndex: s.zIndex
-    }), s.focus && this.enforceFocus(), this.initContainer(), this.viewerData = assign({}, this.containerData), this.renderList(), this.viewed && this.initImage(function() {
-      e.renderImage(function() {
-        s.transition && setTimeout(function() {
-          addClass(a, CLASS_TRANSITION), addClass(r, CLASS_TRANSITION);
+    var t = this, i = this.options, e = this.viewer, n = this.image, s = this.list;
+    return !this.isShown || this.played || this.fulled || !i.inline ? this : (this.fulled = !0, this.open(), f(this.button, xt), i.transition && (g(s, D), this.viewed && g(n, D)), f(e, gt), e.setAttribute("role", "dialog"), e.setAttribute("aria-labelledby", this.title.id), e.setAttribute("aria-modal", !0), e.removeAttribute("style"), k(e, {
+      zIndex: i.zIndex
+    }), i.focus && this.enforceFocus(), this.initContainer(), this.viewerData = C({}, this.containerData), this.renderList(), this.viewed && this.initImage(function() {
+      t.renderImage(function() {
+        i.transition && setTimeout(function() {
+          f(n, D), f(s, D);
         }, 0);
       });
     }), this);
   },
   // Exit modal mode (only available in inline mode)
   exit: function() {
-    var e = this, s = this.options, t = this.viewer, a = this.image, r = this.list;
-    return !this.isShown || this.played || !this.fulled || !s.inline ? this : (this.fulled = !1, this.close(), removeClass(this.button, CLASS_FULLSCREEN_EXIT), s.transition && (removeClass(r, CLASS_TRANSITION), this.viewed && removeClass(a, CLASS_TRANSITION)), s.focus && this.clearEnforceFocus(), t.removeAttribute("role"), t.removeAttribute("aria-labelledby"), t.removeAttribute("aria-modal"), removeClass(t, CLASS_FIXED), setStyle(t, {
-      zIndex: s.zIndexInline
-    }), this.viewerData = assign({}, this.parentData), this.renderViewer(), this.renderList(), this.viewed && this.initImage(function() {
-      e.renderImage(function() {
-        s.transition && setTimeout(function() {
-          addClass(a, CLASS_TRANSITION), addClass(r, CLASS_TRANSITION);
+    var t = this, i = this.options, e = this.viewer, n = this.image, s = this.list;
+    return !this.isShown || this.played || !this.fulled || !i.inline ? this : (this.fulled = !1, this.close(), g(this.button, xt), i.transition && (g(s, D), this.viewed && g(n, D)), i.focus && this.clearEnforceFocus(), e.removeAttribute("role"), e.removeAttribute("aria-labelledby"), e.removeAttribute("aria-modal"), g(e, gt), k(e, {
+      zIndex: i.zIndexInline
+    }), this.viewerData = C({}, this.parentData), this.renderViewer(), this.renderList(), this.viewed && this.initImage(function() {
+      t.renderImage(function() {
+        i.transition && setTimeout(function() {
+          f(n, D), f(s, D);
         }, 0);
       });
     }), this);
   },
   // Show the current ratio of the image with percentage
   tooltip: function() {
-    var e = this, s = this.options, t = this.tooltipBox, a = this.imageData;
-    return !this.viewed || this.played || !s.tooltip ? this : (t.textContent = "".concat(Math.round(a.ratio * 100), "%"), this.tooltipping ? clearTimeout(this.tooltipping) : s.transition ? (this.fading && dispatchEvent(t, EVENT_TRANSITION_END), addClass(t, CLASS_SHOW), addClass(t, CLASS_FADE), addClass(t, CLASS_TRANSITION), t.removeAttribute("aria-hidden"), t.initialOffsetWidth = t.offsetWidth, addClass(t, CLASS_IN)) : (addClass(t, CLASS_SHOW), t.removeAttribute("aria-hidden")), this.tooltipping = setTimeout(function() {
-      s.transition ? (addListener(t, EVENT_TRANSITION_END, function() {
-        removeClass(t, CLASS_SHOW), removeClass(t, CLASS_FADE), removeClass(t, CLASS_TRANSITION), t.setAttribute("aria-hidden", !0), e.fading = !1;
+    var t = this, i = this.options, e = this.tooltipBox, n = this.imageData;
+    return !this.viewed || this.played || !i.tooltip ? this : (e.textContent = "".concat(Math.round(n.ratio * 100), "%"), this.tooltipping ? clearTimeout(this.tooltipping) : i.transition ? (this.fading && x(e, L), f(e, q), f(e, ut), f(e, D), e.removeAttribute("aria-hidden"), e.initialOffsetWidth = e.offsetWidth, f(e, _)) : (f(e, q), e.removeAttribute("aria-hidden")), this.tooltipping = setTimeout(function() {
+      i.transition ? (d(e, L, function() {
+        g(e, q), g(e, ut), g(e, D), e.setAttribute("aria-hidden", !0), t.fading = !1;
       }, {
         once: !0
-      }), removeClass(t, CLASS_IN), e.fading = !0) : (removeClass(t, CLASS_SHOW), t.setAttribute("aria-hidden", !0)), e.tooltipping = !1;
+      }), g(e, _), t.fading = !0) : (g(e, q), e.setAttribute("aria-hidden", !0)), t.tooltipping = !1;
     }, 1e3), this);
   },
   /**
@@ -1278,39 +1278,39 @@ var render = {
    * @returns {Viewer} this
    */
   toggle: function() {
-    var e = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null;
-    return this.imageData.ratio === 1 ? this.zoomTo(this.imageData.oldRatio, !0, null, e) : this.zoomTo(1, !0, null, e), this;
+    var t = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : null;
+    return this.imageData.ratio === 1 ? this.zoomTo(this.imageData.oldRatio, !0, null, t) : this.zoomTo(1, !0, null, t), this;
   },
   // Reset the image to its initial state
   reset: function() {
-    return this.viewed && !this.played && (this.imageData = assign({}, this.initialImageData), this.renderImage()), this;
+    return this.viewed && !this.played && (this.imageData = C({}, this.initialImageData), this.renderImage()), this;
   },
   // Update viewer when images changed
   update: function() {
-    var e = this, s = this.element, t = this.options, a = this.isImg;
-    if (a && !s.parentNode)
+    var t = this, i = this.element, e = this.options, n = this.isImg;
+    if (n && !i.parentNode)
       return this.destroy();
-    var r = [];
-    if (forEach(a ? [s] : s.querySelectorAll("img"), function(u) {
-      isFunction(t.filter) ? t.filter.call(e, u) && r.push(u) : e.getImageURL(u) && r.push(u);
-    }), !r.length)
+    var s = [];
+    if (w(n ? [i] : i.querySelectorAll("img"), function(h) {
+      p(e.filter) ? e.filter.call(t, h) && s.push(h) : t.getImageURL(h) && s.push(h);
+    }), !s.length)
       return this;
-    if (this.images = r, this.length = r.length, this.ready) {
-      var o = [];
-      if (forEach(this.items, function(u, l) {
-        var d = u.querySelector("img"), f = r[l];
-        f && d ? (f.src !== d.src || f.alt !== d.alt) && o.push(l) : o.push(l);
-      }), setStyle(this.list, {
+    if (this.images = s, this.length = s.length, this.ready) {
+      var r = [];
+      if (w(this.items, function(h, l) {
+        var c = h.querySelector("img"), v = s[l];
+        v && c ? (v.src !== c.src || v.alt !== c.alt) && r.push(l) : r.push(l);
+      }), k(this.list, {
         width: "auto"
       }), this.initList(), this.isShown)
         if (this.length) {
           if (this.viewed) {
-            var h = o.indexOf(this.index);
-            if (h >= 0)
-              this.viewed = !1, this.view(Math.max(Math.min(this.index - h, this.length - 1), 0));
+            var o = r.indexOf(this.index);
+            if (o >= 0)
+              this.viewed = !1, this.view(Math.max(Math.min(this.index - o, this.length - 1), 0));
             else {
-              var c = this.items[this.index];
-              addClass(c, CLASS_ACTIVE), c.setAttribute("aria-selected", !0);
+              var u = this.items[this.index];
+              f(u, rt), u.setAttribute("aria-selected", !0);
             }
           }
         } else
@@ -1321,150 +1321,150 @@ var render = {
   },
   // Destroy the viewer
   destroy: function() {
-    var e = this.element, s = this.options;
-    return e[NAMESPACE] ? (this.destroyed = !0, this.ready ? (this.played && this.stop(), s.inline ? (this.fulled && this.exit(), this.unbind()) : this.isShown ? (this.viewing && (this.imageRendering ? this.imageRendering.abort() : this.imageInitializing && this.imageInitializing.abort()), this.hiding && this.transitioning.abort(), this.hidden()) : this.showing && (this.transitioning.abort(), this.hidden()), this.ready = !1, this.viewer.parentNode.removeChild(this.viewer)) : s.inline && (this.delaying ? this.delaying.abort() : this.initializing && this.initializing.abort()), s.inline || removeListener(e, EVENT_CLICK, this.onStart), e[NAMESPACE] = void 0, this) : this;
+    var t = this.element, i = this.options;
+    return t[m] ? (this.destroyed = !0, this.ready ? (this.played && this.stop(), i.inline ? (this.fulled && this.exit(), this.unbind()) : this.isShown ? (this.viewing && (this.imageRendering ? this.imageRendering.abort() : this.imageInitializing && this.imageInitializing.abort()), this.hiding && this.transitioning.abort(), this.hidden()) : this.showing && (this.transitioning.abort(), this.hidden()), this.ready = !1, this.viewer.parentNode.removeChild(this.viewer)) : i.inline && (this.delaying ? this.delaying.abort() : this.initializing && this.initializing.abort()), i.inline || b(t, G, this.onStart), t[m] = void 0, this) : this;
   }
-}, others = {
-  getImageURL: function(e) {
-    var s = this.options.url;
-    return isString(s) ? s = e.getAttribute(s) : isFunction(s) ? s = s.call(this, e) : s = "", s;
+}, Ce = {
+  getImageURL: function(t) {
+    var i = this.options.url;
+    return nt(i) ? i = t.getAttribute(i) : p(i) ? i = i.call(this, t) : i = "", i;
   },
   enforceFocus: function() {
-    var e = this;
-    this.clearEnforceFocus(), addListener(document, EVENT_FOCUSIN, this.onFocusin = function(s) {
-      var t = e.viewer, a = s.target;
-      if (!(a === document || a === t || t.contains(a))) {
-        for (; a; ) {
-          if (a.getAttribute("tabindex") !== null || a.getAttribute("aria-modal") === "true")
+    var t = this;
+    this.clearEnforceFocus(), d(document, Ot, this.onFocusin = function(i) {
+      var e = t.viewer, n = i.target;
+      if (!(n === document || n === e || e.contains(n))) {
+        for (; n; ) {
+          if (n.getAttribute("tabindex") !== null || n.getAttribute("aria-modal") === "true")
             return;
-          a = a.parentElement;
+          n = n.parentElement;
         }
-        t.focus();
+        e.focus();
       }
     });
   },
   clearEnforceFocus: function() {
-    this.onFocusin && (removeListener(document, EVENT_FOCUSIN, this.onFocusin), this.onFocusin = null);
+    this.onFocusin && (b(document, Ot, this.onFocusin), this.onFocusin = null);
   },
   open: function() {
-    var e = this.body;
-    addClass(e, CLASS_OPEN), this.scrollbarWidth > 0 && (e.style.paddingRight = "".concat(this.scrollbarWidth + (parseFloat(this.initialBodyComputedPaddingRight) || 0), "px"));
+    var t = this.body;
+    f(t, It), this.scrollbarWidth > 0 && (t.style.paddingRight = "".concat(this.scrollbarWidth + (parseFloat(this.initialBodyComputedPaddingRight) || 0), "px"));
   },
   close: function() {
-    var e = this.body;
-    removeClass(e, CLASS_OPEN), this.scrollbarWidth > 0 && (e.style.paddingRight = this.initialBodyPaddingRight);
+    var t = this.body;
+    g(t, It), this.scrollbarWidth > 0 && (t.style.paddingRight = this.initialBodyPaddingRight);
   },
   shown: function() {
-    var e = this.element, s = this.options, t = this.viewer;
-    this.fulled = !0, this.isShown = !0, this.render(), this.bind(), this.showing = !1, s.focus && (t.focus(), this.enforceFocus()), isFunction(s.shown) && addListener(e, EVENT_SHOWN, s.shown, {
+    var t = this.element, i = this.options, e = this.viewer;
+    this.fulled = !0, this.isShown = !0, this.render(), this.bind(), this.showing = !1, i.focus && (e.focus(), this.enforceFocus()), p(i.shown) && d(t, Ft, i.shown, {
       once: !0
-    }), dispatchEvent(e, EVENT_SHOWN) !== !1 && this.ready && this.isShown && !this.hiding && this.view(this.index);
+    }), x(t, Ft) !== !1 && this.ready && this.isShown && !this.hiding && this.view(this.index);
   },
   hidden: function() {
-    var e = this.element, s = this.options, t = this.viewer;
-    s.fucus && this.clearEnforceFocus(), this.close(), this.unbind(), addClass(t, CLASS_HIDE), t.removeAttribute("role"), t.removeAttribute("aria-labelledby"), t.removeAttribute("aria-modal"), t.setAttribute("aria-hidden", !0), this.resetList(), this.resetImage(), this.fulled = !1, this.viewed = !1, this.isShown = !1, this.hiding = !1, this.destroyed || (isFunction(s.hidden) && addListener(e, EVENT_HIDDEN, s.hidden, {
+    var t = this.element, i = this.options, e = this.viewer;
+    i.fucus && this.clearEnforceFocus(), this.close(), this.unbind(), f(e, W), e.removeAttribute("role"), e.removeAttribute("aria-labelledby"), e.removeAttribute("aria-modal"), e.setAttribute("aria-hidden", !0), this.resetList(), this.resetImage(), this.fulled = !1, this.viewed = !1, this.isShown = !1, this.hiding = !1, this.destroyed || (p(i.hidden) && d(t, Yt, i.hidden, {
       once: !0
-    }), dispatchEvent(e, EVENT_HIDDEN, null, {
+    }), x(t, Yt, null, {
       cancelable: !1
     }));
   },
-  requestFullscreen: function(e) {
-    var s = this.element.ownerDocument;
-    if (this.fulled && !(s.fullscreenElement || s.webkitFullscreenElement || s.mozFullScreenElement || s.msFullscreenElement)) {
-      var t = s.documentElement;
-      t.requestFullscreen ? isPlainObject(e) ? t.requestFullscreen(e) : t.requestFullscreen() : t.webkitRequestFullscreen ? t.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT) : t.mozRequestFullScreen ? t.mozRequestFullScreen() : t.msRequestFullscreen && t.msRequestFullscreen();
+  requestFullscreen: function(t) {
+    var i = this.element.ownerDocument;
+    if (this.fulled && !(i.fullscreenElement || i.webkitFullscreenElement || i.mozFullScreenElement || i.msFullscreenElement)) {
+      var e = i.documentElement;
+      e.requestFullscreen ? B(t) ? e.requestFullscreen(t) : e.requestFullscreen() : e.webkitRequestFullscreen ? e.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT) : e.mozRequestFullScreen ? e.mozRequestFullScreen() : e.msRequestFullscreen && e.msRequestFullscreen();
     }
   },
   exitFullscreen: function() {
-    var e = this.element.ownerDocument;
-    this.fulled && (e.fullscreenElement || e.webkitFullscreenElement || e.mozFullScreenElement || e.msFullscreenElement) && (e.exitFullscreen ? e.exitFullscreen() : e.webkitExitFullscreen ? e.webkitExitFullscreen() : e.mozCancelFullScreen ? e.mozCancelFullScreen() : e.msExitFullscreen && e.msExitFullscreen());
+    var t = this.element.ownerDocument;
+    this.fulled && (t.fullscreenElement || t.webkitFullscreenElement || t.mozFullScreenElement || t.msFullscreenElement) && (t.exitFullscreen ? t.exitFullscreen() : t.webkitExitFullscreen ? t.webkitExitFullscreen() : t.mozCancelFullScreen ? t.mozCancelFullScreen() : t.msExitFullscreen && t.msExitFullscreen());
   },
-  change: function(e) {
-    var s = this.options, t = this.pointers, a = t[Object.keys(t)[0]];
-    if (a) {
-      var r = a.endX - a.startX, o = a.endY - a.startY;
+  change: function(t) {
+    var i = this.options, e = this.pointers, n = e[Object.keys(e)[0]];
+    if (n) {
+      var s = n.endX - n.startX, r = n.endY - n.startY;
       switch (this.action) {
-        case ACTION_MOVE:
-          (r !== 0 || o !== 0) && (this.pointerMoved = !0, this.move(r, o, e));
+        case ht:
+          (s !== 0 || r !== 0) && (this.pointerMoved = !0, this.move(s, r, t));
           break;
-        case ACTION_ZOOM:
-          this.zoom(getMaxZoomRatio(t), !1, null, e);
+        case tt:
+          this.zoom(De(e), !1, null, t);
           break;
-        case ACTION_SWITCH: {
+        case Qt: {
           this.action = "switched";
-          var h = Math.abs(r);
-          h > 1 && h > Math.abs(o) && (this.pointers = {}, r > 1 ? this.prev(s.loop) : r < -1 && this.next(s.loop));
+          var o = Math.abs(s);
+          o > 1 && o > Math.abs(r) && (this.pointers = {}, s > 1 ? this.prev(i.loop) : s < -1 && this.next(i.loop));
           break;
         }
       }
-      forEach(t, function(c) {
-        c.startX = c.endX, c.startY = c.endY;
+      w(e, function(u) {
+        u.startX = u.endX, u.startY = u.endY;
       });
     }
   },
   isSwitchable: function() {
-    var e = this.imageData, s = this.viewerData;
-    return this.length > 1 && e.x >= 0 && e.y >= 0 && e.width <= s.width && e.height <= s.height;
+    var t = this.imageData, i = this.viewerData;
+    return this.length > 1 && t.x >= 0 && t.y >= 0 && t.width <= i.width && t.height <= i.height;
   }
-}, AnotherViewer = WINDOW.Viewer, getUniqueID = /* @__PURE__ */ function(n) {
+}, _e = F.Viewer, ze = /* @__PURE__ */ function(a) {
   return function() {
-    return n += 1, n;
+    return a += 1, a;
   };
-}(-1), Viewer = /* @__PURE__ */ function() {
-  function n(e) {
-    var s = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    if (_classCallCheck(this, n), !e || e.nodeType !== 1)
+}(-1), ie = /* @__PURE__ */ function() {
+  function a(t) {
+    var i = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+    if (ne(this, a), !t || t.nodeType !== 1)
       throw new Error("The first argument is required and must be an element.");
-    this.element = e, this.options = assign({}, DEFAULTS, isPlainObject(s) && s), this.action = !1, this.fading = !1, this.fulled = !1, this.hiding = !1, this.imageClicked = !1, this.imageData = {}, this.index = this.options.initialViewIndex, this.isImg = !1, this.isShown = !1, this.length = 0, this.moving = !1, this.played = !1, this.playing = !1, this.pointers = {}, this.ready = !1, this.rotating = !1, this.scaling = !1, this.showing = !1, this.timeout = !1, this.tooltipping = !1, this.viewed = !1, this.viewing = !1, this.wheeling = !1, this.zooming = !1, this.pointerMoved = !1, this.id = getUniqueID(), this.init();
+    this.element = t, this.options = C({}, Nt, B(i) && i), this.action = !1, this.fading = !1, this.fulled = !1, this.hiding = !1, this.imageClicked = !1, this.imageData = {}, this.index = this.options.initialViewIndex, this.isImg = !1, this.isShown = !1, this.length = 0, this.moving = !1, this.played = !1, this.playing = !1, this.pointers = {}, this.ready = !1, this.rotating = !1, this.scaling = !1, this.showing = !1, this.timeout = !1, this.tooltipping = !1, this.viewed = !1, this.viewing = !1, this.wheeling = !1, this.zooming = !1, this.pointerMoved = !1, this.id = ze(), this.init();
   }
-  return _createClass(n, [{
+  return ae(a, [{
     key: "init",
     value: function() {
-      var s = this, t = this.element, a = this.options;
-      if (!t[NAMESPACE]) {
-        t[NAMESPACE] = this, a.focus && !a.keyboard && (a.focus = !1);
-        var r = t.localName === "img", o = [];
-        if (forEach(r ? [t] : t.querySelectorAll("img"), function(u) {
-          isFunction(a.filter) ? a.filter.call(s, u) && o.push(u) : s.getImageURL(u) && o.push(u);
-        }), this.isImg = r, this.length = o.length, this.images = o, this.initBody(), isUndefined(document.createElement(NAMESPACE).style.transition) && (a.transition = !1), a.inline) {
-          var h = 0, c = function() {
-            if (h += 1, h === s.length) {
+      var i = this, e = this.element, n = this.options;
+      if (!e[m]) {
+        e[m] = this, n.focus && !n.keyboard && (n.focus = !1);
+        var s = e.localName === "img", r = [];
+        if (w(s ? [e] : e.querySelectorAll("img"), function(h) {
+          p(n.filter) ? n.filter.call(i, h) && r.push(h) : i.getImageURL(h) && r.push(h);
+        }), this.isImg = s, this.length = r.length, this.images = r, this.initBody(), U(document.createElement(m).style.transition) && (n.transition = !1), n.inline) {
+          var o = 0, u = function() {
+            if (o += 1, o === i.length) {
               var l;
-              s.initializing = !1, s.delaying = {
+              i.initializing = !1, i.delaying = {
                 abort: function() {
                   clearTimeout(l);
                 }
               }, l = setTimeout(function() {
-                s.delaying = !1, s.build();
+                i.delaying = !1, i.build();
               }, 0);
             }
           };
           this.initializing = {
             abort: function() {
-              forEach(o, function(l) {
-                l.complete || (removeListener(l, EVENT_LOAD, c), removeListener(l, EVENT_ERROR, c));
+              w(r, function(l) {
+                l.complete || (b(l, z, u), b(l, X, u));
               });
             }
-          }, forEach(o, function(u) {
-            if (u.complete)
-              c();
+          }, w(r, function(h) {
+            if (h.complete)
+              u();
             else {
-              var l, d;
-              addListener(u, EVENT_LOAD, l = function() {
-                removeListener(u, EVENT_ERROR, d), c();
+              var l, c;
+              d(h, z, l = function() {
+                b(h, X, c), u();
               }, {
                 once: !0
-              }), addListener(u, EVENT_ERROR, d = function() {
-                removeListener(u, EVENT_LOAD, l), c();
+              }), d(h, X, c = function() {
+                b(h, z, l), u();
               }, {
                 once: !0
               });
             }
           });
         } else
-          addListener(t, EVENT_CLICK, this.onStart = function(u) {
-            var l = u.target;
-            l.localName === "img" && (!isFunction(a.filter) || a.filter.call(s, l)) && s.view(s.images.indexOf(l));
+          d(e, G, this.onStart = function(h) {
+            var l = h.target;
+            l.localName === "img" && (!p(n.filter) || n.filter.call(i, l)) && i.view(i.images.indexOf(l));
           });
       }
     }
@@ -1472,48 +1472,48 @@ var render = {
     key: "build",
     value: function() {
       if (!this.ready) {
-        var s = this.element, t = this.options, a = s.parentNode, r = document.createElement("div");
-        r.innerHTML = TEMPLATE;
-        var o = r.querySelector(".".concat(NAMESPACE, "-container")), h = o.querySelector(".".concat(NAMESPACE, "-title")), c = o.querySelector(".".concat(NAMESPACE, "-toolbar")), u = o.querySelector(".".concat(NAMESPACE, "-navbar")), l = o.querySelector(".".concat(NAMESPACE, "-button")), d = o.querySelector(".".concat(NAMESPACE, "-canvas"));
-        if (this.parent = a, this.viewer = o, this.title = h, this.toolbar = c, this.navbar = u, this.button = l, this.canvas = d, this.footer = o.querySelector(".".concat(NAMESPACE, "-footer")), this.tooltipBox = o.querySelector(".".concat(NAMESPACE, "-tooltip")), this.player = o.querySelector(".".concat(NAMESPACE, "-player")), this.list = o.querySelector(".".concat(NAMESPACE, "-list")), o.id = "".concat(NAMESPACE).concat(this.id), h.id = "".concat(NAMESPACE, "Title").concat(this.id), addClass(h, t.title ? getResponsiveClass(Array.isArray(t.title) ? t.title[0] : t.title) : CLASS_HIDE), addClass(u, t.navbar ? getResponsiveClass(t.navbar) : CLASS_HIDE), toggleClass(l, CLASS_HIDE, !t.button), t.keyboard && l.setAttribute("tabindex", 0), t.backdrop && (addClass(o, "".concat(NAMESPACE, "-backdrop")), !t.inline && t.backdrop !== "static" && setData(d, DATA_ACTION, "hide")), isString(t.className) && t.className && t.className.split(REGEXP_SPACES).forEach(function(m) {
-          addClass(o, m);
-        }), t.toolbar) {
-          var f = document.createElement("ul"), g = isPlainObject(t.toolbar), v = BUTTONS.slice(0, 3), E = BUTTONS.slice(7, 9), p = BUTTONS.slice(9);
-          g || addClass(c, getResponsiveClass(t.toolbar)), forEach(g ? t.toolbar : BUTTONS, function(m, C) {
-            var b = g && isPlainObject(m), T = g ? hyphenate(C) : m, _ = b && !isUndefined(m.show) ? m.show : m;
-            if (!(!_ || !t.zoomable && v.indexOf(T) !== -1 || !t.rotatable && E.indexOf(T) !== -1 || !t.scalable && p.indexOf(T) !== -1)) {
-              var I = b && !isUndefined(m.size) ? m.size : m, w = b && !isUndefined(m.click) ? m.click : m, A = document.createElement("li");
-              t.keyboard && A.setAttribute("tabindex", 0), A.setAttribute("role", "button"), addClass(A, "".concat(NAMESPACE, "-").concat(T)), isFunction(w) || setData(A, DATA_ACTION, T), isNumber(_) && addClass(A, getResponsiveClass(_)), ["small", "large"].indexOf(I) !== -1 ? addClass(A, "".concat(NAMESPACE, "-").concat(I)) : T === "play" && addClass(A, "".concat(NAMESPACE, "-large")), isFunction(w) && addListener(A, EVENT_CLICK, w), f.appendChild(A);
+        var i = this.element, e = this.options, n = i.parentNode, s = document.createElement("div");
+        s.innerHTML = oe;
+        var r = s.querySelector(".".concat(m, "-container")), o = r.querySelector(".".concat(m, "-title")), u = r.querySelector(".".concat(m, "-toolbar")), h = r.querySelector(".".concat(m, "-navbar")), l = r.querySelector(".".concat(m, "-button")), c = r.querySelector(".".concat(m, "-canvas"));
+        if (this.parent = n, this.viewer = r, this.title = o, this.toolbar = u, this.navbar = h, this.button = l, this.canvas = c, this.footer = r.querySelector(".".concat(m, "-footer")), this.tooltipBox = r.querySelector(".".concat(m, "-tooltip")), this.player = r.querySelector(".".concat(m, "-player")), this.list = r.querySelector(".".concat(m, "-list")), r.id = "".concat(m).concat(this.id), o.id = "".concat(m, "Title").concat(this.id), f(o, e.title ? ot(Array.isArray(e.title) ? e.title[0] : e.title) : W), f(h, e.navbar ? ot(e.navbar) : W), at(l, W, !e.button), e.keyboard && l.setAttribute("tabindex", 0), e.backdrop && (f(r, "".concat(m, "-backdrop")), !e.inline && e.backdrop !== "static" && bt(c, ft, "hide")), nt(e.className) && e.className && e.className.split(Et).forEach(function(y) {
+          f(r, y);
+        }), e.toolbar) {
+          var v = document.createElement("ul"), N = B(e.toolbar), S = st.slice(0, 3), E = st.slice(7, 9), I = st.slice(9);
+          N || f(u, ot(e.toolbar)), w(N ? e.toolbar : st, function(y, V) {
+            var P = N && B(y), R = N ? Tt(V) : y, Y = P && !U(y.show) ? y.show : y;
+            if (!(!Y || !e.zoomable && S.indexOf(R) !== -1 || !e.rotatable && E.indexOf(R) !== -1 || !e.scalable && I.indexOf(R) !== -1)) {
+              var Q = P && !U(y.size) ? y.size : y, H = P && !U(y.click) ? y.click : y, M = document.createElement("li");
+              e.keyboard && M.setAttribute("tabindex", 0), M.setAttribute("role", "button"), f(M, "".concat(m, "-").concat(R)), p(H) || bt(M, ft, R), T(Y) && f(M, ot(Y)), ["small", "large"].indexOf(Q) !== -1 ? f(M, "".concat(m, "-").concat(Q)) : R === "play" && f(M, "".concat(m, "-large")), p(H) && d(M, G, H), v.appendChild(M);
             }
-          }), c.appendChild(f);
+          }), u.appendChild(v);
         } else
-          addClass(c, CLASS_HIDE);
-        if (!t.rotatable) {
-          var S = c.querySelectorAll('li[class*="rotate"]');
-          addClass(S, CLASS_INVISIBLE), forEach(S, function(m) {
-            c.appendChild(m);
+          f(u, W);
+        if (!e.rotatable) {
+          var A = u.querySelectorAll('li[class*="rotate"]');
+          f(A, et), w(A, function(y) {
+            u.appendChild(y);
           });
         }
-        if (t.inline)
-          addClass(l, CLASS_FULLSCREEN), setStyle(o, {
-            zIndex: t.zIndexInline
-          }), window.getComputedStyle(a).position === "static" && setStyle(a, {
+        if (e.inline)
+          f(l, he), k(r, {
+            zIndex: e.zIndexInline
+          }), window.getComputedStyle(n).position === "static" && k(n, {
             position: "relative"
-          }), a.insertBefore(o, s.nextSibling);
+          }), n.insertBefore(r, i.nextSibling);
         else {
-          addClass(l, CLASS_CLOSE), addClass(o, CLASS_FIXED), addClass(o, CLASS_FADE), addClass(o, CLASS_HIDE), setStyle(o, {
-            zIndex: t.zIndex
+          f(l, le), f(r, gt), f(r, ut), f(r, W), k(r, {
+            zIndex: e.zIndex
           });
-          var N = t.container;
-          isString(N) && (N = s.ownerDocument.querySelector(N)), N || (N = this.body), N.appendChild(o);
+          var O = e.container;
+          nt(O) && (O = i.ownerDocument.querySelector(O)), O || (O = this.body), O.appendChild(r);
         }
-        if (t.inline && (this.render(), this.bind(), this.isShown = !0), this.ready = !0, isFunction(t.ready) && addListener(s, EVENT_READY, t.ready, {
+        if (e.inline && (this.render(), this.bind(), this.isShown = !0), this.ready = !0, p(e.ready) && d(i, Vt, e.ready, {
           once: !0
-        }), dispatchEvent(s, EVENT_READY) === !1) {
+        }), x(i, Vt) === !1) {
           this.ready = !1;
           return;
         }
-        this.ready && t.inline && this.view(this.index);
+        this.ready && e.inline && this.view(this.index);
       }
     }
     /**
@@ -1523,7 +1523,7 @@ var render = {
   }], [{
     key: "noConflict",
     value: function() {
-      return window.Viewer = AnotherViewer, n;
+      return window.Viewer = _e, a;
     }
     /**
      * Change the default options.
@@ -1531,50 +1531,86 @@ var render = {
      */
   }, {
     key: "setDefaults",
-    value: function(s) {
-      assign(DEFAULTS, isPlainObject(s) && s);
+    value: function(i) {
+      C(Nt, B(i) && i);
     }
   }]);
 }();
-assign(Viewer.prototype, render, events, handlers, methods, others);
-const styleStr = "<style>.container {display: grid;grid-template-columns: repeat(3, 33.33%);grid-template-rows: 1fr 1fr auto;img {width: 100%;height: 100%;max-height: 100%;}}</style>", slotStr = '<slot name="slotName"></slot>', innerTemplate = '<div id="viewer-container" class="container" part="content"></div>' + styleStr + slotStr;
-class ViewerWebComponent extends HTMLElement {
+C(ie.prototype, xe, Ie, Ae, Oe, Ce);
+const Le = "<style>.container {display: grid;grid-template-columns: repeat(3, 33.33%);grid-template-rows: 1fr 1fr auto;img {width: 100%;height: 100%;max-height: 100%;}}</style>", ke = '<slot name="slotName"></slot>', Re = '<div id="viewer-container" class="container" part="content"></div>' + Le + ke;
+class Ve extends HTMLElement {
   // 生命周期，元素添加到文档中时调用
   connectedCallback() {
-    const template = document.createElement("template"), imageArr = this.getAttribute("images");
-    template.innerHTML = this.imageCount(imageArr.split(","));
-    const content = template.content.cloneNode(!0);
-    this.shadow.appendChild(content);
-    const options = {};
-    for (const i of this.attributes)
-      !i.name.includes("-") && i.name !== "images" && (options[i.name] = eval(i.value));
-    const viewer = new Viewer(this.shadowRoot.getElementById("viewer-container"), options);
-    getViewer.viewer = viewer;
+    const t = document.createElement("template"), i = this.getAttribute("images");
+    t.innerHTML = this.imageCount(i.split(","));
+    const e = t.content.cloneNode(!0);
+    this.shadow.appendChild(e);
+    let n = {};
+    const s = this.getAttribute("options");
+    if (s)
+      try {
+        n = JSON.parse(s);
+      } catch (r) {
+        console.warn("Failed to parse options attribute as JSON:", r), typeof window[s] == "object" && (n = window[s]);
+      }
+    else
+      for (const r of this.attributes)
+        if (!r.name.includes("-") && r.name !== "images" && r.name !== "options")
+          try {
+            n[r.name] = JSON.parse(r.value);
+          } catch {
+            r.value === "true" ? n[r.name] = !0 : r.value === "false" ? n[r.name] = !1 : isNaN(r.value) ? n[r.name] = r.value : n[r.name] = Number(r.value);
+          }
+    this._options && typeof this._options == "object" && (n = { ...n, ...this._options }), this.initializeViewer(n);
   }
   // 设置组件的初始化状态
   constructor() {
     super();
-    const n = this.attachShadow({ mode: "open" });
-    this.shadow = n;
+    const t = this.attachShadow({ mode: "open" });
+    this.shadow = t;
+  }
+  // 添加 options 的 setter 来接收 Vue/React 传递的对象
+  set options(t) {
+    this._options = t, this.shadow && this.shadow.getElementById("viewer-container") && this.initializeViewer();
+  }
+  get options() {
+    return this._options;
+  }
+  // 初始化 viewer 的方法
+  initializeViewer(t = {}) {
+    let i = { ...t };
+    if (this._options && typeof this._options == "object")
+      i = { ...i, ...this._options };
+    else {
+      const e = this.getAttribute("options");
+      if (e)
+        try {
+          const n = JSON.parse(e);
+          i = { ...i, ...n };
+        } catch (n) {
+          console.warn("Failed to parse options attribute as JSON:", n), typeof window[e] == "object" && (i = { ...i, ...window[e] });
+        }
+    }
+    this._viewer && this._viewer.destroy(), this._viewer = new ie(this.shadowRoot.getElementById("viewer-container"), i), Me.viewer = this._viewer;
   }
   // 处理webcomponent模板下的图片html
-  imageCount(n) {
-    const e = innerTemplate.split("</div>").filter(Boolean);
-    if (n && n.length)
-      for (let s = 0; s < n.length; s++)
-        e.push(`<div><img src="${n[s]}" alt="${s + 1}" title="${s + 1}" part="img"></div>`);
-    return e.join("") + "</div>";
+  imageCount(t) {
+    const i = Re.split("</div>").filter(Boolean);
+    if (t && t.length)
+      for (let e = 0; e < t.length; e++)
+        i.push(`<div><img src="${t[e]}" alt="${e + 1}" title="${e + 1}" part="img"></div>`);
+    return i.join("") + "</div>";
   }
 }
-document.querySelector("viewer-webcomponent") || customElements.define("viewer-webcomponent", ViewerWebComponent);
-const getViewer = new Proxy({}, {
-  get(n, e) {
-    return console.log(`[get] ${e}`), n[e];
+document.querySelector("viewer-webcomponent") || customElements.define("viewer-webcomponent", Ve);
+const Me = new Proxy({}, {
+  get(a, t) {
+    return console.log(`[get] ${t}`), a[t];
   },
-  set(n, e, s) {
-    return console.log(`[set] ${e} =`, s), n[e] = s, !0;
+  set(a, t, i) {
+    return console.log(`[set] ${t} =`, i), a[t] = i, !0;
   }
 });
 export {
-  getViewer as default
+  Me as default
 };

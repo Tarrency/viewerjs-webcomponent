@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import getViewer from "viewerjs-webcomponent";
-// import getViewer from "../webcomponent/viewer-webcomponent";
+// import getViewer from "viewerjs-webcomponent";
+import getViewer from "../webcomponent/viewer-webcomponent";
 
-const options = ref({ toolbar: false, title: true });
+const options = ref({ toolbar: false, title: false });
 const images = ref([
   "src/assets/tibet-1.jpg",
   "src/assets/tibet-2.jpg",
@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
   <div class="demo">
-    <viewer-webcomponent :.="options" :images="images"></viewer-webcomponent>
+    <viewer-webcomponent :options="options" :images="images"></viewer-webcomponent>
   </div>
 </template>
 

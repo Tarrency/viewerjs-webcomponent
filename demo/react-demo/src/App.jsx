@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      {<viewer-webcomponent {...options} images={images}> <span slot="slotName">这是真正的slot</span></viewer-webcomponent>}
+      {<viewer-webcomponent options={options} images={images}> <span slot="slotName">这是真正的slot</span></viewer-webcomponent>}
     </>
   )
 }

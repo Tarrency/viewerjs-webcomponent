@@ -24,9 +24,8 @@ npm install viewerjs-webcomponent
 #### Component Props
 - **options** (Optional)
     - Type: `Object`
-    - Viewerjs options. For details, please see [viewerjs-options](#Example).
-    - It should be coded in destructured way while used in frameworks. For details, please see [Example](#Example).
-- **Images**
+    - Viewerjs options. Can be passed directly as an object using `:options="options"` in Vue or `options={options}` in React.
+- **images**
     - Type: `Array`
     - Images Urls.
 
@@ -84,7 +83,7 @@ export default defineConfig({
     const viewer = getViewer.viewer;
     viewer.show();
 
-    // // Reactive
+    // 响应式
     // const vueViewer = ref(viewer)
     // vueViewer.value.show()
     });
@@ -92,7 +91,7 @@ export default defineConfig({
 
 <template>
     <div class="demo">
-        <viewer-webcomponent :.="options" :images="images"></viewer-webcomponent>
+        <viewer-webcomponent :options="options" :images="images"></viewer-webcomponent>
     </div>
 </template>
 
@@ -145,7 +144,7 @@ useEffect(() => {
     viewer?.show()
 
 return (
-    <>{<viewer-webcomponent {...options} images={images}></viewer-webcomponent>}</>
+    <>{<viewer-webcomponent images={images}></viewer-webcomponent>}</>
   )
 }
 
