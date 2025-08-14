@@ -1,11 +1,3 @@
-/*
- * @Author: wangqi01 13693607080@163.com
- * @Date: 2025-07-28 17:47:12
- * @LastEditors: wangqi01 13693607080@163.com
- * @LastEditTime: 2025-08-14 11:24:57
- * @FilePath: \viewerjs-webcomponent\demo\vue-demo\src\webcomponent\viewer-webcomponent.js
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import Viewer from 'viewerjs'
 import 'viewerjs/dist/viewer.css'
 import innerTemplate from './template.js'
