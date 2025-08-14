@@ -24,17 +24,10 @@ npm install viewerjs-webcomponent
 #### Component Props
 - **options** (Optional)
     - Type: `Object`
-    - Viewerjs options. Can be passed directly as an object using `:options="options"` in Vue or `options={JSON.stringify(options)}` in React.
+    - Viewerjs options.
 - **images**
     - Type: `Array`
     - Images Urls.
-> Examples
-```vue
-  <viewer-webcomponent :options="options" :images="images"></viewer-webcomponent>
-```
-```jsx
-  <viewer-webcomponent images={images} options={JSON.stringify(options)}></viewer-webcomponent>
-```
 
 #### Change Style
 > If you want to override the default styles of Viewerjs-WebComponent, you can use the ::part pseudo-element to target and style its internal elements.
@@ -90,7 +83,7 @@ export default defineConfig({
     const viewer = getViewer.viewer;
     viewer.show();
 
-    // 响应式
+    // Vue3
     // const vueViewer = ref(viewer)
     // vueViewer.value.show()
     });
