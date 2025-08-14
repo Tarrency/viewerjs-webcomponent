@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted } from "vue";
-// import getViewer from "viewerjs-webcomponent";
-import getViewer from "../webcomponent/viewer-webcomponent";
+import getViewer from "viewerjs-webcomponent";
+// import getViewer from "../webcomponent/viewer-webcomponent";
 
-const options = ref({ toolbar: false, title: false });
+const options = ref({ toolbar: true, title: false });
 const images = ref([
   "src/assets/tibet-1.jpg",
   "src/assets/tibet-2.jpg",

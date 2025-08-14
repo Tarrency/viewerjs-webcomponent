@@ -4,7 +4,7 @@ import getViewer from "viewerjs-webcomponent"
 // import getViewer from "./webcomponent/viewer-webcomponent"
 
 function App() {
-  const [options, setOptions] = useState({ toolbar: true, title: false })
+  const [options, setOptions] = useState({ toolbar: false, title: false })
   const [images, setImages] = useState([
     "src/assets/tibet-1.jpg",
     "src/assets/tibet-2.jpg",
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-      {<viewer-webcomponent options={options} images={images}> <span slot="slotName">这是真正的slot</span></viewer-webcomponent>}
+      {<viewer-webcomponent options={JSON.stringify(options)} images={images}></viewer-webcomponent>}
     </>
   )
 }

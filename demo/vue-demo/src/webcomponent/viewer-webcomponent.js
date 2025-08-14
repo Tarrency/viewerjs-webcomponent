@@ -1,3 +1,11 @@
+/*
+ * @Author: wangqi01 13693607080@163.com
+ * @Date: 2025-07-28 17:47:12
+ * @LastEditors: wangqi01 13693607080@163.com
+ * @LastEditTime: 2025-08-14 11:24:57
+ * @FilePath: \viewerjs-webcomponent\demo\vue-demo\src\webcomponent\viewer-webcomponent.js
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import Viewer from 'viewerjs'
 import 'viewerjs/dist/viewer.css'
 import innerTemplate from './template.js'
@@ -22,52 +30,12 @@ class ViewerWebComponent extends HTMLElement {
         this.shadow.appendChild(content)
         // this.appendChild(content)
 
-        // 处理webcomponent组件的props，options属性，对应viewerjs的options，用于进行相关配置
-        let options = {}
-
-        // 优先使用 options 属性
-        const optionsAttr = this.getAttribute('options')
-        if (optionsAttr) {
-            try {
-                // 尝试解析 JSON 字符串
-                options = JSON.parse(optionsAttr)
-            } catch (e) {
-                console.warn('Failed to parse options attribute as JSON:', e)
-                // 如果解析失败，尝试作为全局变量名获取
-                if (typeof window[optionsAttr] === 'object') {
-                    options = window[optionsAttr]
-                }
-            }
-        } else {
-            // 如果没有 options 属性，则从其他属性构建配置
-            for (const i of this.attributes) {
-                if (!i.name.includes('-') && i.name !== 'images' && i.name !== 'options') {
-                    // 尝试解析为 JSON，如果失败则作为字符串处理
-                    try {
-                        options[i.name] = JSON.parse(i.value)
-                    } catch (e) {
-                        // 对于布尔值特殊处理
-                        if (i.value === 'true') {
-                            options[i.name] = true
-                        } else if (i.value === 'false') {
-                            options[i.name] = false
-                        } else if (!isNaN(i.value)) {
-                            options[i.name] = Number(i.value)
-                        } else {
-                            options[i.name] = i.value
-                        }
-                    }
-                }
-            }
+        const optionsStr = this.getAttribute('options')
+        if (typeof optionsStr === 'string') {
+            this._options = JSON.parse(optionsStr)
         }
-
-        // 检查是否有直接传递的 options 对象（通过 Vue/React 绑定）
-        if (this._options && typeof this._options === 'object') {
-            options = { ...options, ...this._options }
-        }
-
         // 初始化 viewer
-        this.initializeViewer(options)
+        this.initializeViewer(this._options)
     }
 
     // 设置组件的初始化状态
@@ -93,26 +61,7 @@ class ViewerWebComponent extends HTMLElement {
 
     // 初始化 viewer 的方法
     initializeViewer(initialOptions = {}) {
-        let options = { ...initialOptions }
-
-        // 优先使用直接传递的 options 对象
-        if (this._options && typeof this._options === 'object') {
-            options = { ...options, ...this._options }
-        } else {
-            // 回退到属性解析
-            const optionsAttr = this.getAttribute('options')
-            if (optionsAttr) {
-                try {
-                    const parsedOptions = JSON.parse(optionsAttr)
-                    options = { ...options, ...parsedOptions }
-                } catch (e) {
-                    console.warn('Failed to parse options attribute as JSON:', e)
-                    if (typeof window[optionsAttr] === 'object') {
-                        options = { ...options, ...window[optionsAttr] }
-                    }
-                }
-            }
-        }
+        const options = { ...initialOptions }
 
         // 销毁旧的 viewer 实例
         if (this._viewer) {
@@ -143,15 +92,15 @@ if (!document.querySelector('viewer-webcomponent')) {
 
 // 创建Proxy全局变量，用于后续暴露viewerjs的api
 const getViewer = new Proxy({}, {
-    get(target, prop) {
-        // console.log(`[get] ${prop}`) // 打印访问日志
-        return target[prop]
-    },
-    set(target, prop, value) {
-        // console.log(`[set] ${prop} =`, value) // 打印修改日志
-        target[prop] = value
-        return true
-    }
+    // get(target, prop) {
+    //     // console.log(`[get] ${prop}`) // 打印访问日志
+    //     return target[prop]
+    // },
+    // set(target, prop, value) {
+    //     // console.log(`[set] ${prop} =`, value) // 打印修改日志
+    //     target[prop] = value
+    //     return true
+    // }
 })
 
 export default getViewer

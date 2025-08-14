@@ -16,72 +16,72 @@
  *
  * Date: 2024-11-24T04:32:19.116Z
  */
-function ne(a, t) {
-  if (!(a instanceof t)) throw new TypeError("Cannot call a class as a function");
+function ne(n, t) {
+  if (!(n instanceof t)) throw new TypeError("Cannot call a class as a function");
 }
-function St(a, t) {
+function St(n, t) {
   for (var i = 0; i < t.length; i++) {
     var e = t[i];
-    e.enumerable = e.enumerable || !1, e.configurable = !0, "value" in e && (e.writable = !0), Object.defineProperty(a, Jt(e.key), e);
+    e.enumerable = e.enumerable || !1, e.configurable = !0, "value" in e && (e.writable = !0), Object.defineProperty(n, Jt(e.key), e);
   }
 }
-function ae(a, t, i) {
-  return t && St(a.prototype, t), i && St(a, i), Object.defineProperty(a, "prototype", {
+function ae(n, t, i) {
+  return t && St(n.prototype, t), i && St(n, i), Object.defineProperty(n, "prototype", {
     writable: !1
-  }), a;
+  }), n;
 }
-function re(a, t, i) {
-  return (t = Jt(t)) in a ? Object.defineProperty(a, t, {
+function re(n, t, i) {
+  return (t = Jt(t)) in n ? Object.defineProperty(n, t, {
     value: i,
     enumerable: !0,
     configurable: !0,
     writable: !0
-  }) : a[t] = i, a;
+  }) : n[t] = i, n;
 }
-function Dt(a, t) {
-  var i = Object.keys(a);
+function Dt(n, t) {
+  var i = Object.keys(n);
   if (Object.getOwnPropertySymbols) {
-    var e = Object.getOwnPropertySymbols(a);
-    t && (e = e.filter(function(n) {
-      return Object.getOwnPropertyDescriptor(a, n).enumerable;
+    var e = Object.getOwnPropertySymbols(n);
+    t && (e = e.filter(function(a) {
+      return Object.getOwnPropertyDescriptor(n, a).enumerable;
     })), i.push.apply(i, e);
   }
   return i;
 }
-function wt(a) {
+function wt(n) {
   for (var t = 1; t < arguments.length; t++) {
     var i = arguments[t] != null ? arguments[t] : {};
     t % 2 ? Dt(Object(i), !0).forEach(function(e) {
-      re(a, e, i[e]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(a, Object.getOwnPropertyDescriptors(i)) : Dt(Object(i)).forEach(function(e) {
-      Object.defineProperty(a, e, Object.getOwnPropertyDescriptor(i, e));
+      re(n, e, i[e]);
+    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(n, Object.getOwnPropertyDescriptors(i)) : Dt(Object(i)).forEach(function(e) {
+      Object.defineProperty(n, e, Object.getOwnPropertyDescriptor(i, e));
     });
   }
-  return a;
+  return n;
 }
-function se(a, t) {
-  if (typeof a != "object" || !a) return a;
-  var i = a[Symbol.toPrimitive];
+function se(n, t) {
+  if (typeof n != "object" || !n) return n;
+  var i = n[Symbol.toPrimitive];
   if (i !== void 0) {
-    var e = i.call(a, t);
+    var e = i.call(n, t);
     if (typeof e != "object") return e;
     throw new TypeError("@@toPrimitive must return a primitive value.");
   }
-  return String(a);
+  return String(n);
 }
-function Jt(a) {
-  var t = se(a, "string");
+function Jt(n) {
+  var t = se(n, "string");
   return typeof t == "symbol" ? t : t + "";
 }
-function vt(a) {
+function vt(n) {
   "@babel/helpers - typeof";
   return vt = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(t) {
     return typeof t;
   } : function(t) {
     return t && typeof Symbol == "function" && t.constructor === Symbol && t !== Symbol.prototype ? "symbol" : typeof t;
-  }, vt(a);
+  }, vt(n);
 }
-var Nt = {
+var xt = {
   /**
    * Enable a modal backdrop, specify `static` for a backdrop
    * which doesn't close the modal on click.
@@ -286,207 +286,207 @@ var Nt = {
   zoomed: null,
   play: null,
   stop: null
-}, oe = '<div class="viewer-container" tabindex="-1" touch-action="none"><div class="viewer-canvas"></div><div class="viewer-footer"><div class="viewer-title"></div><div class="viewer-toolbar"></div><div class="viewer-navbar"><ul class="viewer-list" role="navigation"></ul></div></div><div class="viewer-tooltip" role="alert" aria-hidden="true"></div><div class="viewer-button" data-viewer-action="mix" role="button"></div><div class="viewer-player"></div></div>', dt = typeof window < "u" && typeof window.document < "u", F = dt ? window : {}, Z = dt && F.document.documentElement ? "ontouchstart" in F.document.documentElement : !1, yt = dt ? "PointerEvent" in F : !1, m = "viewer", ht = "move", Qt = "switch", tt = "zoom", rt = "".concat(m, "-active"), le = "".concat(m, "-close"), ut = "".concat(m, "-fade"), gt = "".concat(m, "-fixed"), he = "".concat(m, "-fullscreen"), xt = "".concat(m, "-fullscreen-exit"), W = "".concat(m, "-hide"), ue = "".concat(m, "-hide-md-down"), ce = "".concat(m, "-hide-sm-down"), fe = "".concat(m, "-hide-xs-down"), _ = "".concat(m, "-in"), et = "".concat(m, "-invisible"), $ = "".concat(m, "-loading"), de = "".concat(m, "-move"), It = "".concat(m, "-open"), q = "".concat(m, "-show"), D = "".concat(m, "-transition"), G = "click", pt = "dblclick", At = "dragstart", Ot = "focusin", Ct = "keydown", z = "load", X = "error", me = Z ? "touchend touchcancel" : "mouseup", ve = Z ? "touchmove" : "mousemove", ge = Z ? "touchstart" : "mousedown", _t = yt ? "pointerdown" : ge, zt = yt ? "pointermove" : ve, Lt = yt ? "pointerup pointercancel" : me, kt = "resize", L = "transitionend", Rt = "wheel", Vt = "ready", Mt = "show", Ft = "shown", Pt = "hide", Yt = "hidden", Wt = "view", it = "viewed", Xt = "move", Ht = "moved", qt = "rotate", jt = "rotated", Ut = "scale", Bt = "scaled", Kt = "zoom", Zt = "zoomed", $t = "play", Gt = "stop", ft = "".concat(m, "Action"), Et = /\s\s*/, st = ["zoom-in", "zoom-out", "one-to-one", "reset", "prev", "play", "next", "rotate-left", "rotate-right", "flip-horizontal", "flip-vertical"];
-function nt(a) {
-  return typeof a == "string";
+}, oe = '<div class="viewer-container" tabindex="-1" touch-action="none"><div class="viewer-canvas"></div><div class="viewer-footer"><div class="viewer-title"></div><div class="viewer-toolbar"></div><div class="viewer-navbar"><ul class="viewer-list" role="navigation"></ul></div></div><div class="viewer-tooltip" role="alert" aria-hidden="true"></div><div class="viewer-button" data-viewer-action="mix" role="button"></div><div class="viewer-player"></div></div>', dt = typeof window < "u" && typeof window.document < "u", F = dt ? window : {}, Z = dt && F.document.documentElement ? "ontouchstart" in F.document.documentElement : !1, yt = dt ? "PointerEvent" in F : !1, m = "viewer", ht = "move", Qt = "switch", tt = "zoom", rt = "".concat(m, "-active"), le = "".concat(m, "-close"), ut = "".concat(m, "-fade"), gt = "".concat(m, "-fixed"), he = "".concat(m, "-fullscreen"), It = "".concat(m, "-fullscreen-exit"), W = "".concat(m, "-hide"), ue = "".concat(m, "-hide-md-down"), ce = "".concat(m, "-hide-sm-down"), fe = "".concat(m, "-hide-xs-down"), _ = "".concat(m, "-in"), et = "".concat(m, "-invisible"), $ = "".concat(m, "-loading"), de = "".concat(m, "-move"), Nt = "".concat(m, "-open"), q = "".concat(m, "-show"), D = "".concat(m, "-transition"), G = "click", pt = "dblclick", At = "dragstart", Ct = "focusin", Ot = "keydown", z = "load", X = "error", me = Z ? "touchend touchcancel" : "mouseup", ve = Z ? "touchmove" : "mousemove", ge = Z ? "touchstart" : "mousedown", _t = yt ? "pointerdown" : ge, zt = yt ? "pointermove" : ve, Lt = yt ? "pointerup pointercancel" : me, kt = "resize", L = "transitionend", Rt = "wheel", Vt = "ready", Mt = "show", Ft = "shown", Pt = "hide", Yt = "hidden", Wt = "view", it = "viewed", Xt = "move", Ht = "moved", qt = "rotate", jt = "rotated", Ut = "scale", Bt = "scaled", Kt = "zoom", Zt = "zoomed", $t = "play", Gt = "stop", ft = "".concat(m, "Action"), Et = /\s\s*/, st = ["zoom-in", "zoom-out", "one-to-one", "reset", "prev", "play", "next", "rotate-left", "rotate-right", "flip-horizontal", "flip-vertical"];
+function nt(n) {
+  return typeof n == "string";
 }
 var pe = Number.isNaN || F.isNaN;
-function T(a) {
-  return typeof a == "number" && !pe(a);
+function T(n) {
+  return typeof n == "number" && !pe(n);
 }
-function U(a) {
-  return typeof a > "u";
+function U(n) {
+  return typeof n > "u";
 }
-function J(a) {
-  return vt(a) === "object" && a !== null;
+function J(n) {
+  return vt(n) === "object" && n !== null;
 }
 var be = Object.prototype.hasOwnProperty;
-function B(a) {
-  if (!J(a))
+function B(n) {
+  if (!J(n))
     return !1;
   try {
-    var t = a.constructor, i = t.prototype;
+    var t = n.constructor, i = t.prototype;
     return t && i && be.call(i, "isPrototypeOf");
   } catch {
     return !1;
   }
 }
-function p(a) {
-  return typeof a == "function";
+function p(n) {
+  return typeof n == "function";
 }
-function w(a, t) {
-  if (a && p(t))
-    if (Array.isArray(a) || T(a.length)) {
-      var i = a.length, e;
-      for (e = 0; e < i && t.call(a, a[e], e, a) !== !1; e += 1)
+function w(n, t) {
+  if (n && p(t))
+    if (Array.isArray(n) || T(n.length)) {
+      var i = n.length, e;
+      for (e = 0; e < i && t.call(n, n[e], e, n) !== !1; e += 1)
         ;
-    } else J(a) && Object.keys(a).forEach(function(n) {
-      t.call(a, a[n], n, a);
+    } else J(n) && Object.keys(n).forEach(function(a) {
+      t.call(n, n[a], a, n);
     });
-  return a;
+  return n;
 }
-var C = Object.assign || function(t) {
-  for (var i = arguments.length, e = new Array(i > 1 ? i - 1 : 0), n = 1; n < i; n++)
-    e[n - 1] = arguments[n];
-  return J(t) && e.length > 0 && e.forEach(function(s) {
-    J(s) && Object.keys(s).forEach(function(r) {
-      t[r] = s[r];
+var O = Object.assign || function(t) {
+  for (var i = arguments.length, e = new Array(i > 1 ? i - 1 : 0), a = 1; a < i; a++)
+    e[a - 1] = arguments[a];
+  return J(t) && e.length > 0 && e.forEach(function(r) {
+    J(r) && Object.keys(r).forEach(function(s) {
+      t[s] = r[s];
     });
   }), t;
 }, we = /^(?:width|height|left|top|marginLeft|marginTop)$/;
-function k(a, t) {
-  var i = a.style;
-  w(t, function(e, n) {
-    we.test(n) && T(e) && (e += "px"), i[n] = e;
+function k(n, t) {
+  var i = n.style;
+  w(t, function(e, a) {
+    we.test(a) && T(e) && (e += "px"), i[a] = e;
   });
 }
-function ye(a) {
-  return nt(a) ? a.replace(/&(?!amp;|quot;|#39;|lt;|gt;)/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : a;
+function ye(n) {
+  return nt(n) ? n.replace(/&(?!amp;|quot;|#39;|lt;|gt;)/g, "&amp;").replace(/"/g, "&quot;").replace(/'/g, "&#39;").replace(/</g, "&lt;").replace(/>/g, "&gt;") : n;
 }
-function j(a, t) {
-  return !a || !t ? !1 : a.classList ? a.classList.contains(t) : a.className.indexOf(t) > -1;
+function j(n, t) {
+  return !n || !t ? !1 : n.classList ? n.classList.contains(t) : n.className.indexOf(t) > -1;
 }
-function f(a, t) {
-  if (!(!a || !t)) {
-    if (T(a.length)) {
-      w(a, function(e) {
+function f(n, t) {
+  if (!(!n || !t)) {
+    if (T(n.length)) {
+      w(n, function(e) {
         f(e, t);
       });
       return;
     }
-    if (a.classList) {
-      a.classList.add(t);
+    if (n.classList) {
+      n.classList.add(t);
       return;
     }
-    var i = a.className.trim();
-    i ? i.indexOf(t) < 0 && (a.className = "".concat(i, " ").concat(t)) : a.className = t;
+    var i = n.className.trim();
+    i ? i.indexOf(t) < 0 && (n.className = "".concat(i, " ").concat(t)) : n.className = t;
   }
 }
-function g(a, t) {
-  if (!(!a || !t)) {
-    if (T(a.length)) {
-      w(a, function(i) {
+function g(n, t) {
+  if (!(!n || !t)) {
+    if (T(n.length)) {
+      w(n, function(i) {
         g(i, t);
       });
       return;
     }
-    if (a.classList) {
-      a.classList.remove(t);
+    if (n.classList) {
+      n.classList.remove(t);
       return;
     }
-    a.className.indexOf(t) >= 0 && (a.className = a.className.replace(t, ""));
+    n.className.indexOf(t) >= 0 && (n.className = n.className.replace(t, ""));
   }
 }
-function at(a, t, i) {
+function at(n, t, i) {
   if (t) {
-    if (T(a.length)) {
-      w(a, function(e) {
+    if (T(n.length)) {
+      w(n, function(e) {
         at(e, t, i);
       });
       return;
     }
-    i ? f(a, t) : g(a, t);
+    i ? f(n, t) : g(n, t);
   }
 }
 var Ee = /([a-z\d])([A-Z])/g;
-function Tt(a) {
-  return a.replace(Ee, "$1-$2").toLowerCase();
+function Tt(n) {
+  return n.replace(Ee, "$1-$2").toLowerCase();
 }
-function K(a, t) {
-  return J(a[t]) ? a[t] : a.dataset ? a.dataset[t] : a.getAttribute("data-".concat(Tt(t)));
+function K(n, t) {
+  return J(n[t]) ? n[t] : n.dataset ? n.dataset[t] : n.getAttribute("data-".concat(Tt(t)));
 }
-function bt(a, t, i) {
-  J(i) ? a[t] = i : a.dataset ? a.dataset[t] = i : a.setAttribute("data-".concat(Tt(t)), i);
+function bt(n, t, i) {
+  J(i) ? n[t] = i : n.dataset ? n.dataset[t] = i : n.setAttribute("data-".concat(Tt(t)), i);
 }
 var te = function() {
-  var a = !1;
+  var n = !1;
   if (dt) {
     var t = !1, i = function() {
     }, e = Object.defineProperty({}, "once", {
       get: function() {
-        return a = !0, t;
+        return n = !0, t;
       },
       /**
        * This setter can fix a `TypeError` in strict mode
        * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Getter_only}
        * @param {boolean} value - The value to set
        */
-      set: function(s) {
-        t = s;
+      set: function(r) {
+        t = r;
       }
     });
     F.addEventListener("test", i, e), F.removeEventListener("test", i, e);
   }
-  return a;
+  return n;
 }();
-function b(a, t, i) {
-  var e = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, n = i;
-  t.trim().split(Et).forEach(function(s) {
+function b(n, t, i) {
+  var e = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, a = i;
+  t.trim().split(Et).forEach(function(r) {
     if (!te) {
-      var r = a.listeners;
-      r && r[s] && r[s][i] && (n = r[s][i], delete r[s][i], Object.keys(r[s]).length === 0 && delete r[s], Object.keys(r).length === 0 && delete a.listeners);
+      var s = n.listeners;
+      s && s[r] && s[r][i] && (a = s[r][i], delete s[r][i], Object.keys(s[r]).length === 0 && delete s[r], Object.keys(s).length === 0 && delete n.listeners);
     }
-    a.removeEventListener(s, n, e);
+    n.removeEventListener(r, a, e);
   });
 }
-function d(a, t, i) {
-  var e = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, n = i;
-  t.trim().split(Et).forEach(function(s) {
+function d(n, t, i) {
+  var e = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : {}, a = i;
+  t.trim().split(Et).forEach(function(r) {
     if (e.once && !te) {
-      var r = a.listeners, o = r === void 0 ? {} : r;
-      n = function() {
-        delete o[s][i], a.removeEventListener(s, n, e);
-        for (var h = arguments.length, l = new Array(h), c = 0; c < h; c++)
-          l[c] = arguments[c];
-        i.apply(a, l);
-      }, o[s] || (o[s] = {}), o[s][i] && a.removeEventListener(s, o[s][i], e), o[s][i] = n, a.listeners = o;
+      var s = n.listeners, l = s === void 0 ? {} : s;
+      a = function() {
+        delete l[r][i], n.removeEventListener(r, a, e);
+        for (var h = arguments.length, o = new Array(h), c = 0; c < h; c++)
+          o[c] = arguments[c];
+        i.apply(n, o);
+      }, l[r] || (l[r] = {}), l[r][i] && n.removeEventListener(r, l[r][i], e), l[r][i] = a, n.listeners = l;
     }
-    a.addEventListener(s, n, e);
+    n.addEventListener(r, a, e);
   });
 }
-function x(a, t, i, e) {
-  var n;
-  return p(Event) && p(CustomEvent) ? n = new CustomEvent(t, wt({
+function I(n, t, i, e) {
+  var a;
+  return p(Event) && p(CustomEvent) ? a = new CustomEvent(t, wt({
     bubbles: !0,
     cancelable: !0,
     detail: i
-  }, e)) : (n = document.createEvent("CustomEvent"), n.initCustomEvent(t, !0, !0, i)), a.dispatchEvent(n);
+  }, e)) : (a = document.createEvent("CustomEvent"), a.initCustomEvent(t, !0, !0, i)), n.dispatchEvent(a);
 }
-function Te(a) {
-  var t = a.getBoundingClientRect();
+function Te(n) {
+  var t = n.getBoundingClientRect();
   return {
     left: t.left + (window.pageXOffset - document.documentElement.clientLeft),
     top: t.top + (window.pageYOffset - document.documentElement.clientTop)
   };
 }
-function ct(a) {
-  var t = a.rotate, i = a.scaleX, e = a.scaleY, n = a.translateX, s = a.translateY, r = [];
-  T(n) && n !== 0 && r.push("translateX(".concat(n, "px)")), T(s) && s !== 0 && r.push("translateY(".concat(s, "px)")), T(t) && t !== 0 && r.push("rotate(".concat(t, "deg)")), T(i) && i !== 1 && r.push("scaleX(".concat(i, ")")), T(e) && e !== 1 && r.push("scaleY(".concat(e, ")"));
-  var o = r.length ? r.join(" ") : "none";
+function ct(n) {
+  var t = n.rotate, i = n.scaleX, e = n.scaleY, a = n.translateX, r = n.translateY, s = [];
+  T(a) && a !== 0 && s.push("translateX(".concat(a, "px)")), T(r) && r !== 0 && s.push("translateY(".concat(r, "px)")), T(t) && t !== 0 && s.push("rotate(".concat(t, "deg)")), T(i) && i !== 1 && s.push("scaleX(".concat(i, ")")), T(e) && e !== 1 && s.push("scaleY(".concat(e, ")"));
+  var l = s.length ? s.join(" ") : "none";
   return {
-    WebkitTransform: o,
-    msTransform: o,
-    transform: o
+    WebkitTransform: l,
+    msTransform: l,
+    transform: l
   };
 }
-function Se(a) {
-  return nt(a) ? decodeURIComponent(a.replace(/^.*\//, "").replace(/[?&#].*$/, "")) : "";
+function Se(n) {
+  return nt(n) ? decodeURIComponent(n.replace(/^.*\//, "").replace(/[?&#].*$/, "")) : "";
 }
 var mt = F.navigator && /Version\/\d+(\.\d+)+?\s+Safari/i.test(F.navigator.userAgent);
-function ee(a, t, i) {
+function ee(n, t, i) {
   var e = document.createElement("img");
-  if (a.naturalWidth && !mt)
-    return i(a.naturalWidth, a.naturalHeight), e;
-  var n = document.body || document.documentElement;
+  if (n.naturalWidth && !mt)
+    return i(n.naturalWidth, n.naturalHeight), e;
+  var a = document.body || document.documentElement;
   return e.onload = function() {
-    i(e.width, e.height), mt || n.removeChild(e);
-  }, w(t.inheritedAttributes, function(s) {
-    var r = a.getAttribute(s);
-    r !== null && e.setAttribute(s, r);
-  }), e.src = a.src, mt || (e.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", n.appendChild(e)), e;
+    i(e.width, e.height), mt || a.removeChild(e);
+  }, w(t.inheritedAttributes, function(r) {
+    var s = n.getAttribute(r);
+    s !== null && e.setAttribute(r, s);
+  }), e.src = n.src, mt || (e.style.cssText = "left:0;max-height:none!important;max-width:none!important;min-height:0!important;min-width:0!important;opacity:0;position:absolute;top:0;z-index:-1;", a.appendChild(e)), e;
 }
-function ot(a) {
-  switch (a) {
+function ot(n) {
+  switch (n) {
     case 2:
       return fe;
     case 3:
@@ -497,39 +497,39 @@ function ot(a) {
       return "";
   }
 }
-function De(a) {
-  var t = wt({}, a), i = [];
-  return w(a, function(e, n) {
-    delete t[n], w(t, function(s) {
-      var r = Math.abs(e.startX - s.startX), o = Math.abs(e.startY - s.startY), u = Math.abs(e.endX - s.endX), h = Math.abs(e.endY - s.endY), l = Math.sqrt(r * r + o * o), c = Math.sqrt(u * u + h * h), v = (c - l) / l;
+function De(n) {
+  var t = wt({}, n), i = [];
+  return w(n, function(e, a) {
+    delete t[a], w(t, function(r) {
+      var s = Math.abs(e.startX - r.startX), l = Math.abs(e.startY - r.startY), u = Math.abs(e.endX - r.endX), h = Math.abs(e.endY - r.endY), o = Math.sqrt(s * s + l * l), c = Math.sqrt(u * u + h * h), v = (c - o) / o;
       i.push(v);
     });
-  }), i.sort(function(e, n) {
-    return Math.abs(e) < Math.abs(n);
+  }), i.sort(function(e, a) {
+    return Math.abs(e) < Math.abs(a);
   }), i[0];
 }
-function lt(a, t) {
-  var i = a.pageX, e = a.pageY, n = {
+function lt(n, t) {
+  var i = n.pageX, e = n.pageY, a = {
     endX: i,
     endY: e
   };
-  return t ? n : wt({
+  return t ? a : wt({
     timeStamp: Date.now(),
     startX: i,
     startY: e
-  }, n);
+  }, a);
 }
-function Ne(a) {
+function xe(n) {
   var t = 0, i = 0, e = 0;
-  return w(a, function(n) {
-    var s = n.startX, r = n.startY;
-    t += s, i += r, e += 1;
+  return w(n, function(a) {
+    var r = a.startX, s = a.startY;
+    t += r, i += s, e += 1;
   }), t /= e, i /= e, {
     pageX: t,
     pageY: i
   };
 }
-var xe = {
+var Ie = {
   render: function() {
     this.initContainer(), this.initViewer(), this.initList(), this.renderViewer();
   },
@@ -548,35 +548,35 @@ var xe = {
     t.inline && (e = {
       width: Math.max(i.offsetWidth, t.minWidth),
       height: Math.max(i.offsetHeight, t.minHeight)
-    }, this.parentData = e), (this.fulled || !e) && (e = this.containerData), this.viewerData = C({}, e);
+    }, this.parentData = e), (this.fulled || !e) && (e = this.containerData), this.viewerData = O({}, e);
   },
   renderViewer: function() {
     this.options.inline && !this.fulled && k(this.viewer, this.viewerData);
   },
   initList: function() {
-    var t = this, i = this.element, e = this.options, n = this.list, s = [];
-    n.innerHTML = "", w(this.images, function(r, o) {
-      var u = r.src, h = r.alt || Se(u), l = t.getImageURL(r);
-      if (u || l) {
+    var t = this, i = this.element, e = this.options, a = this.list, r = [];
+    a.innerHTML = "", w(this.images, function(s, l) {
+      var u = s.src, h = s.alt || Se(u), o = t.getImageURL(s);
+      if (u || o) {
         var c = document.createElement("li"), v = document.createElement("img");
-        w(e.inheritedAttributes, function(N) {
-          var S = r.getAttribute(N);
-          S !== null && v.setAttribute(N, S);
-        }), e.navbar && (v.src = u || l), v.alt = h, v.setAttribute("data-original-url", l || u), c.setAttribute("data-index", o), c.setAttribute("data-viewer-action", "view"), c.setAttribute("role", "button"), e.keyboard && c.setAttribute("tabindex", 0), c.appendChild(v), n.appendChild(c), s.push(c);
+        w(e.inheritedAttributes, function(x) {
+          var S = s.getAttribute(x);
+          S !== null && v.setAttribute(x, S);
+        }), e.navbar && (v.src = u || o), v.alt = h, v.setAttribute("data-original-url", o || u), c.setAttribute("data-index", l), c.setAttribute("data-viewer-action", "view"), c.setAttribute("role", "button"), e.keyboard && c.setAttribute("tabindex", 0), c.appendChild(v), a.appendChild(c), r.push(c);
       }
-    }), this.items = s, w(s, function(r) {
-      var o = r.firstElementChild, u, h;
-      bt(o, "filled", !0), e.loading && f(r, $), d(o, z, u = function(c) {
-        b(o, X, h), e.loading && g(r, $), t.loadImage(c);
+    }), this.items = r, w(r, function(s) {
+      var l = s.firstElementChild, u, h;
+      bt(l, "filled", !0), e.loading && f(s, $), d(l, z, u = function(c) {
+        b(l, X, h), e.loading && g(s, $), t.loadImage(c);
       }, {
         once: !0
-      }), d(o, X, h = function() {
-        b(o, z, u), e.loading && g(r, $);
+      }), d(l, X, h = function() {
+        b(l, z, u), e.loading && g(s, $);
       }, {
         once: !0
       });
     }), e.transition && d(i, it, function() {
-      f(n, D);
+      f(a, D);
     }, {
       once: !0
     });
@@ -584,11 +584,11 @@ var xe = {
   renderList: function() {
     var t = this.index, i = this.items[t];
     if (i) {
-      var e = i.nextElementSibling, n = parseInt(window.getComputedStyle(e || i).marginLeft, 10), s = i.offsetWidth, r = s + n;
-      k(this.list, C({
-        width: r * this.length - n
+      var e = i.nextElementSibling, a = parseInt(window.getComputedStyle(e || i).marginLeft, 10), r = i.offsetWidth, s = r + a;
+      k(this.list, O({
+        width: s * this.length - a
       }, ct({
-        translateX: (this.viewerData.width - s) / 2 - r * t
+        translateX: (this.viewerData.width - r) / 2 - s * t
       })));
     }
   },
@@ -599,48 +599,48 @@ var xe = {
     }));
   },
   initImage: function(t) {
-    var i = this, e = this.options, n = this.image, s = this.viewerData, r = this.footer.offsetHeight, o = s.width, u = Math.max(s.height - r, r), h = this.imageData || {}, l;
+    var i = this, e = this.options, a = this.image, r = this.viewerData, s = this.footer.offsetHeight, l = r.width, u = Math.max(r.height - s, s), h = this.imageData || {}, o;
     this.imageInitializing = {
       abort: function() {
-        l.onload = null;
+        o.onload = null;
       }
-    }, l = ee(n, e, function(c, v) {
-      var N = c / v, S = Math.max(0, Math.min(1, e.initialCoverage)), E = o, I = u;
-      i.imageInitializing = !1, u * N > o ? I = o / N : E = u * N, S = T(S) ? S : 0.9, E = Math.min(E * S, c), I = Math.min(I * S, v);
-      var A = (o - E) / 2, O = (u - I) / 2, y = {
+    }, o = ee(a, e, function(c, v) {
+      var x = c / v, S = Math.max(0, Math.min(1, e.initialCoverage)), E = l, N = u;
+      i.imageInitializing = !1, u * x > l ? N = l / x : E = u * x, S = T(S) ? S : 0.9, E = Math.min(E * S, c), N = Math.min(N * S, v);
+      var A = (l - E) / 2, C = (u - N) / 2, y = {
         left: A,
-        top: O,
+        top: C,
         x: A,
-        y: O,
+        y: C,
         width: E,
-        height: I,
+        height: N,
         oldRatio: 1,
         ratio: E / c,
-        aspectRatio: N,
+        aspectRatio: x,
         naturalWidth: c,
         naturalHeight: v
-      }, V = C({}, y);
+      }, V = O({}, y);
       e.rotatable && (y.rotate = h.rotate || 0, V.rotate = 0), e.scalable && (y.scaleX = h.scaleX || 1, y.scaleY = h.scaleY || 1, V.scaleX = 1, V.scaleY = 1), i.imageData = y, i.initialImageData = V, t && t();
     });
   },
   renderImage: function(t) {
-    var i = this, e = this.image, n = this.imageData;
-    if (k(e, C({
-      width: n.width,
-      height: n.height,
+    var i = this, e = this.image, a = this.imageData;
+    if (k(e, O({
+      width: a.width,
+      height: a.height,
       // XXX: Not to use translateX/Y to avoid image shaking when zooming
-      marginLeft: n.x,
-      marginTop: n.y
-    }, ct(n))), t)
+      marginLeft: a.x,
+      marginTop: a.y
+    }, ct(a))), t)
       if ((this.viewing || this.moving || this.rotating || this.scaling || this.zooming) && this.options.transition && j(e, D)) {
-        var s = function() {
+        var r = function() {
           i.imageRendering = !1, t();
         };
         this.imageRendering = {
           abort: function() {
-            b(e, L, s);
+            b(e, L, r);
           }
-        }, d(e, L, s, {
+        }, d(e, L, r, {
           once: !0
         });
       } else
@@ -650,25 +650,25 @@ var xe = {
     var t = this.image;
     t && (this.viewing && this.viewing.abort(), t.parentNode.removeChild(t), this.image = null, this.title.innerHTML = "");
   }
-}, Ie = {
+}, Ne = {
   bind: function() {
-    var t = this.options, i = this.viewer, e = this.canvas, n = this.element.ownerDocument;
-    d(i, G, this.onClick = this.click.bind(this)), d(i, At, this.onDragStart = this.dragstart.bind(this)), d(e, _t, this.onPointerDown = this.pointerdown.bind(this)), d(n, zt, this.onPointerMove = this.pointermove.bind(this)), d(n, Lt, this.onPointerUp = this.pointerup.bind(this)), d(n, Ct, this.onKeyDown = this.keydown.bind(this)), d(window, kt, this.onResize = this.resize.bind(this)), t.zoomable && t.zoomOnWheel && d(i, Rt, this.onWheel = this.wheel.bind(this), {
+    var t = this.options, i = this.viewer, e = this.canvas, a = this.element.ownerDocument;
+    d(i, G, this.onClick = this.click.bind(this)), d(i, At, this.onDragStart = this.dragstart.bind(this)), d(e, _t, this.onPointerDown = this.pointerdown.bind(this)), d(a, zt, this.onPointerMove = this.pointermove.bind(this)), d(a, Lt, this.onPointerUp = this.pointerup.bind(this)), d(a, Ot, this.onKeyDown = this.keydown.bind(this)), d(window, kt, this.onResize = this.resize.bind(this)), t.zoomable && t.zoomOnWheel && d(i, Rt, this.onWheel = this.wheel.bind(this), {
       passive: !1,
       capture: !0
     }), t.toggleOnDblclick && d(e, pt, this.onDblclick = this.dblclick.bind(this));
   },
   unbind: function() {
-    var t = this.options, i = this.viewer, e = this.canvas, n = this.element.ownerDocument;
-    b(i, G, this.onClick), b(i, At, this.onDragStart), b(e, _t, this.onPointerDown), b(n, zt, this.onPointerMove), b(n, Lt, this.onPointerUp), b(n, Ct, this.onKeyDown), b(window, kt, this.onResize), t.zoomable && t.zoomOnWheel && b(i, Rt, this.onWheel, {
+    var t = this.options, i = this.viewer, e = this.canvas, a = this.element.ownerDocument;
+    b(i, G, this.onClick), b(i, At, this.onDragStart), b(e, _t, this.onPointerDown), b(a, zt, this.onPointerMove), b(a, Lt, this.onPointerUp), b(a, Ot, this.onKeyDown), b(window, kt, this.onResize), t.zoomable && t.zoomOnWheel && b(i, Rt, this.onWheel, {
       passive: !1,
       capture: !0
     }), t.toggleOnDblclick && b(e, pt, this.onDblclick);
   }
 }, Ae = {
   click: function(t) {
-    var i = this.options, e = this.imageData, n = t.target, s = K(n, ft);
-    switch (!s && n.localName === "img" && n.parentElement.localName === "li" && (n = n.parentElement, s = K(n, ft)), Z && t.isTrusted && n === this.canvas && clearTimeout(this.clickCanvasTimeout), s) {
+    var i = this.options, e = this.imageData, a = t.target, r = K(a, ft);
+    switch (!r && a.localName === "img" && a.parentElement.localName === "li" && (a = a.parentElement, r = K(a, ft)), Z && t.isTrusted && a === this.canvas && clearTimeout(this.clickCanvasTimeout), r) {
       case "mix":
         this.played ? this.stop() : i.inline ? this.fulled ? this.exit() : this.full() : this.hide();
         break;
@@ -676,7 +676,7 @@ var xe = {
         this.pointerMoved || this.hide();
         break;
       case "view":
-        this.view(K(n, "index"));
+        this.view(K(a, "index"));
         break;
       case "zoom-in":
         this.zoom(0.1, !0);
@@ -721,15 +721,15 @@ var xe = {
   load: function() {
     var t = this;
     this.timeout && (clearTimeout(this.timeout), this.timeout = !1);
-    var i = this.element, e = this.options, n = this.image, s = this.index, r = this.viewerData;
-    g(n, et), e.loading && g(this.canvas, $), n.style.cssText = "height:0;" + "margin-left:".concat(r.width / 2, "px;") + "margin-top:".concat(r.height / 2, "px;") + "max-width:none!important;position:relative;width:0;", this.initImage(function() {
-      at(n, de, e.movable), at(n, D, e.transition), t.renderImage(function() {
+    var i = this.element, e = this.options, a = this.image, r = this.index, s = this.viewerData;
+    g(a, et), e.loading && g(this.canvas, $), a.style.cssText = "height:0;" + "margin-left:".concat(s.width / 2, "px;") + "margin-top:".concat(s.height / 2, "px;") + "max-width:none!important;position:relative;width:0;", this.initImage(function() {
+      at(a, de, e.movable), at(a, D, e.transition), t.renderImage(function() {
         t.viewed = !0, t.viewing = !1, p(e.viewed) && d(i, it, e.viewed, {
           once: !0
-        }), x(i, it, {
-          originalImage: t.images[s],
-          index: s,
-          image: n
+        }), I(i, it, {
+          originalImage: t.images[r],
+          index: r,
+          image: a
         }, {
           cancelable: !1
         });
@@ -737,15 +737,15 @@ var xe = {
     });
   },
   loadImage: function(t) {
-    var i = t.target, e = i.parentNode, n = e.offsetWidth || 30, s = e.offsetHeight || 50, r = !!K(i, "filled");
-    ee(i, this.options, function(o, u) {
-      var h = o / u, l = n, c = s;
-      s * h > n ? r ? l = s * h : c = n / h : r ? c = n / h : l = s * h, k(i, C({
-        width: l,
+    var i = t.target, e = i.parentNode, a = e.offsetWidth || 30, r = e.offsetHeight || 50, s = !!K(i, "filled");
+    ee(i, this.options, function(l, u) {
+      var h = l / u, o = a, c = r;
+      r * h > a ? s ? o = r * h : c = a / h : s ? c = a / h : o = r * h, k(i, O({
+        width: o,
         height: c
       }, ct({
-        translateX: (n - l) / 2,
-        translateY: (s - c) / 2
+        translateX: (a - o) / 2,
+        translateY: (r - c) / 2
       })));
     });
   },
@@ -789,34 +789,34 @@ var xe = {
     t.target.localName === "img" && t.preventDefault();
   },
   pointerdown: function(t) {
-    var i = this.options, e = this.pointers, n = t.buttons, s = t.button;
+    var i = this.options, e = this.pointers, a = t.buttons, r = t.button;
     if (this.pointerMoved = !1, !(!this.viewed || this.showing || this.viewing || this.hiding || (t.type === "mousedown" || t.type === "pointerdown" && t.pointerType === "mouse") && // No primary button (Usually the left button)
-    (T(n) && n !== 1 || T(s) && s !== 0 || t.ctrlKey))) {
-      t.preventDefault(), t.changedTouches ? w(t.changedTouches, function(o) {
-        e[o.identifier] = lt(o);
+    (T(a) && a !== 1 || T(r) && r !== 0 || t.ctrlKey))) {
+      t.preventDefault(), t.changedTouches ? w(t.changedTouches, function(l) {
+        e[l.identifier] = lt(l);
       }) : e[t.pointerId || 0] = lt(t);
-      var r = i.movable ? ht : !1;
-      i.zoomOnTouch && i.zoomable && Object.keys(e).length > 1 ? r = tt : i.slideOnTouch && (t.pointerType === "touch" || t.type === "touchstart") && this.isSwitchable() && (r = Qt), i.transition && (r === ht || r === tt) && g(this.image, D), this.action = r;
+      var s = i.movable ? ht : !1;
+      i.zoomOnTouch && i.zoomable && Object.keys(e).length > 1 ? s = tt : i.slideOnTouch && (t.pointerType === "touch" || t.type === "touchstart") && this.isSwitchable() && (s = Qt), i.transition && (s === ht || s === tt) && g(this.image, D), this.action = s;
     }
   },
   pointermove: function(t) {
     var i = this.pointers, e = this.action;
-    !this.viewed || !e || (t.preventDefault(), t.changedTouches ? w(t.changedTouches, function(n) {
-      C(i[n.identifier] || {}, lt(n, !0));
-    }) : C(i[t.pointerId || 0] || {}, lt(t, !0)), this.change(t));
+    !this.viewed || !e || (t.preventDefault(), t.changedTouches ? w(t.changedTouches, function(a) {
+      O(i[a.identifier] || {}, lt(a, !0));
+    }) : O(i[t.pointerId || 0] || {}, lt(t, !0)), this.change(t));
   },
   pointerup: function(t) {
-    var i = this, e = this.options, n = this.action, s = this.pointers, r;
-    t.changedTouches ? w(t.changedTouches, function(o) {
-      r = s[o.identifier], delete s[o.identifier];
-    }) : (r = s[t.pointerId || 0], delete s[t.pointerId || 0]), n && (t.preventDefault(), e.transition && (n === ht || n === tt) && f(this.image, D), this.action = !1, Z && n !== tt && r && Date.now() - r.timeStamp < 500 && (clearTimeout(this.clickCanvasTimeout), clearTimeout(this.doubleClickImageTimeout), e.toggleOnDblclick && this.viewed && t.target === this.image ? this.imageClicked ? (this.imageClicked = !1, this.doubleClickImageTimeout = setTimeout(function() {
-      x(i.image, pt, {
+    var i = this, e = this.options, a = this.action, r = this.pointers, s;
+    t.changedTouches ? w(t.changedTouches, function(l) {
+      s = r[l.identifier], delete r[l.identifier];
+    }) : (s = r[t.pointerId || 0], delete r[t.pointerId || 0]), a && (t.preventDefault(), e.transition && (a === ht || a === tt) && f(this.image, D), this.action = !1, Z && a !== tt && s && Date.now() - s.timeStamp < 500 && (clearTimeout(this.clickCanvasTimeout), clearTimeout(this.doubleClickImageTimeout), e.toggleOnDblclick && this.viewed && t.target === this.image ? this.imageClicked ? (this.imageClicked = !1, this.doubleClickImageTimeout = setTimeout(function() {
+      I(i.image, pt, {
         originalEvent: t
       });
     }, 50)) : (this.imageClicked = !0, this.doubleClickImageTimeout = setTimeout(function() {
       i.imageClicked = !1;
     }, 500)) : (this.imageClicked = !1, e.backdrop && e.backdrop !== "static" && t.target === this.canvas && (this.clickCanvasTimeout = setTimeout(function() {
-      x(i.canvas, G, {
+      I(i.canvas, G, {
         originalEvent: t
       });
     }, 50)))));
@@ -833,7 +833,7 @@ var xe = {
       w(this.player.getElementsByTagName("img"), function(i) {
         d(i, z, t.loadImage.bind(t), {
           once: !0
-        }), x(i, z);
+        }), I(i, z);
       });
     }
   },
@@ -843,11 +843,11 @@ var xe = {
       this.wheeling = !0, setTimeout(function() {
         i.wheeling = !1;
       }, 50);
-      var e = Number(this.options.zoomRatio) || 0.1, n = 1;
-      t.deltaY ? n = t.deltaY > 0 ? 1 : -1 : t.wheelDelta ? n = -t.wheelDelta / 120 : t.detail && (n = t.detail > 0 ? 1 : -1), this.zoom(-n * e, !0, null, t);
+      var e = Number(this.options.zoomRatio) || 0.1, a = 1;
+      t.deltaY ? a = t.deltaY > 0 ? 1 : -1 : t.wheelDelta ? a = -t.wheelDelta / 120 : t.detail && (a = t.detail > 0 ? 1 : -1), this.zoom(-a * e, !0, null, t);
     }
   }
-}, Oe = {
+}, Ce = {
   /** Show the viewer (only available in modal mode)
    * @param {boolean} [immediate=false] - Indicates if show the viewer immediately or not.
    * @returns {Viewer} this
@@ -860,21 +860,21 @@ var xe = {
       return this.build(), this.ready && this.show(t), this;
     if (p(e.show) && d(i, Mt, e.show, {
       once: !0
-    }), x(i, Mt) === !1 || !this.ready)
+    }), I(i, Mt) === !1 || !this.ready)
       return this;
     this.hiding && this.transitioning.abort(), this.showing = !0, this.open();
-    var n = this.viewer;
-    if (g(n, W), n.setAttribute("role", "dialog"), n.setAttribute("aria-labelledby", this.title.id), n.setAttribute("aria-modal", !0), n.removeAttribute("aria-hidden"), e.transition && !t) {
-      var s = this.shown.bind(this);
+    var a = this.viewer;
+    if (g(a, W), a.setAttribute("role", "dialog"), a.setAttribute("aria-labelledby", this.title.id), a.setAttribute("aria-modal", !0), a.removeAttribute("aria-hidden"), e.transition && !t) {
+      var r = this.shown.bind(this);
       this.transitioning = {
         abort: function() {
-          b(n, L, s), g(n, _);
+          b(a, L, r), g(a, _);
         }
-      }, f(n, D), n.initialOffsetWidth = n.offsetWidth, d(n, L, s, {
+      }, f(a, D), a.initialOffsetWidth = a.offsetWidth, d(a, L, r, {
         once: !0
-      }), f(n, _);
+      }), f(a, _);
     } else
-      f(n, _), this.shown();
+      f(a, _), this.shown();
     return this;
   },
   /**
@@ -883,32 +883,32 @@ var xe = {
    * @returns {Viewer} this
    */
   hide: function() {
-    var t = this, i = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.element, n = this.options;
-    if (n.inline || this.hiding || !(this.isShown || this.showing))
+    var t = this, i = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1, e = this.element, a = this.options;
+    if (a.inline || this.hiding || !(this.isShown || this.showing))
       return this;
-    if (p(n.hide) && d(e, Pt, n.hide, {
+    if (p(a.hide) && d(e, Pt, a.hide, {
       once: !0
-    }), x(e, Pt) === !1)
+    }), I(e, Pt) === !1)
       return this;
     this.showing && this.transitioning.abort(), this.hiding = !0, this.played ? this.stop() : this.viewing && this.viewing.abort();
-    var s = this.viewer, r = this.image, o = function() {
-      g(s, _), t.hidden();
+    var r = this.viewer, s = this.image, l = function() {
+      g(r, _), t.hidden();
     };
-    if (n.transition && !i) {
+    if (a.transition && !i) {
       var u = function(c) {
-        c && c.target === s && (b(s, L, u), t.hidden());
+        c && c.target === r && (b(r, L, u), t.hidden());
       }, h = function() {
-        j(s, D) ? (d(s, L, u), g(s, _)) : o();
+        j(r, D) ? (d(r, L, u), g(r, _)) : l();
       };
       this.transitioning = {
         abort: function() {
-          t.viewed && j(r, D) ? b(r, L, h) : j(s, D) && b(s, L, u);
+          t.viewed && j(s, D) ? b(s, L, h) : j(r, D) && b(r, L, u);
         }
-      }, this.viewed && j(r, D) ? (d(r, L, h, {
+      }, this.viewed && j(s, D) ? (d(s, L, h, {
         once: !0
       }), this.zoomTo(0, !1, null, null, !0)) : h();
     } else
-      o();
+      l();
     return this;
   },
   /**
@@ -923,36 +923,36 @@ var xe = {
     if (!this.isShown)
       return this.index = i, this.show();
     this.viewing && this.viewing.abort();
-    var e = this.element, n = this.options, s = this.title, r = this.canvas, o = this.items[i], u = o.querySelector("img"), h = K(u, "originalUrl"), l = u.getAttribute("alt"), c = document.createElement("img");
-    if (w(n.inheritedAttributes, function(I) {
-      var A = u.getAttribute(I);
-      A !== null && c.setAttribute(I, A);
-    }), c.src = h, c.alt = l, p(n.view) && d(e, Wt, n.view, {
+    var e = this.element, a = this.options, r = this.title, s = this.canvas, l = this.items[i], u = l.querySelector("img"), h = K(u, "originalUrl"), o = u.getAttribute("alt"), c = document.createElement("img");
+    if (w(a.inheritedAttributes, function(N) {
+      var A = u.getAttribute(N);
+      A !== null && c.setAttribute(N, A);
+    }), c.src = h, c.alt = o, p(a.view) && d(e, Wt, a.view, {
       once: !0
-    }), x(e, Wt, {
+    }), I(e, Wt, {
       originalImage: this.images[i],
       index: i,
       image: c
     }) === !1 || !this.isShown || this.hiding || this.played)
       return this;
     var v = this.items[this.index];
-    v && (g(v, rt), v.removeAttribute("aria-selected")), f(o, rt), o.setAttribute("aria-selected", !0), n.focus && o.focus(), this.image = c, this.viewed = !1, this.index = i, this.imageData = {}, f(c, et), n.loading && f(r, $), r.innerHTML = "", r.appendChild(c), this.renderList(), s.innerHTML = "";
-    var N = function() {
-      var A = t.imageData, O = Array.isArray(n.title) ? n.title[1] : n.title;
-      s.innerHTML = ye(p(O) ? O.call(t, c, A) : "".concat(l, " (").concat(A.naturalWidth, " × ").concat(A.naturalHeight, ")"));
+    v && (g(v, rt), v.removeAttribute("aria-selected")), f(l, rt), l.setAttribute("aria-selected", !0), a.focus && l.focus(), this.image = c, this.viewed = !1, this.index = i, this.imageData = {}, f(c, et), a.loading && f(s, $), s.innerHTML = "", s.appendChild(c), this.renderList(), r.innerHTML = "";
+    var x = function() {
+      var A = t.imageData, C = Array.isArray(a.title) ? a.title[1] : a.title;
+      r.innerHTML = ye(p(C) ? C.call(t, c, A) : "".concat(o, " (").concat(A.naturalWidth, " × ").concat(A.naturalHeight, ")"));
     }, S, E;
-    return d(e, it, N, {
+    return d(e, it, x, {
       once: !0
     }), this.viewing = {
       abort: function() {
-        b(e, it, N), c.complete ? t.imageRendering ? t.imageRendering.abort() : t.imageInitializing && t.imageInitializing.abort() : (c.src = "", b(c, z, S), t.timeout && clearTimeout(t.timeout));
+        b(e, it, x), c.complete ? t.imageRendering ? t.imageRendering.abort() : t.imageInitializing && t.imageInitializing.abort() : (c.src = "", b(c, z, S), t.timeout && clearTimeout(t.timeout));
       }
     }, c.complete ? this.load() : (d(c, z, S = function() {
       b(c, X, E), t.load();
     }, {
       once: !0
     }), d(c, X, E = function() {
-      b(c, z, S), t.timeout && (clearTimeout(t.timeout), t.timeout = !1), g(c, et), n.loading && g(t.canvas, $);
+      b(c, z, S), t.timeout && (clearTimeout(t.timeout), t.timeout = !1), g(c, et), a.loading && g(t.canvas, $);
     }, {
       once: !0
     }), this.timeout && clearTimeout(this.timeout), this.timeout = setTimeout(function() {
@@ -997,29 +997,29 @@ var xe = {
    * @returns {Viewer} this
    */
   moveTo: function(t) {
-    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, n = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, s = this.element, r = this.options, o = this.imageData;
-    if (t = Number(t), e = Number(e), this.viewed && !this.played && r.movable) {
-      var u = o.x, h = o.y, l = !1;
-      if (T(t) ? l = !0 : t = u, T(e) ? l = !0 : e = h, l) {
-        if (p(r.move) && d(s, Xt, r.move, {
+    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, a = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, r = this.element, s = this.options, l = this.imageData;
+    if (t = Number(t), e = Number(e), this.viewed && !this.played && s.movable) {
+      var u = l.x, h = l.y, o = !1;
+      if (T(t) ? o = !0 : t = u, T(e) ? o = !0 : e = h, o) {
+        if (p(s.move) && d(r, Xt, s.move, {
           once: !0
-        }), x(s, Xt, {
+        }), I(r, Xt, {
           x: t,
           y: e,
           oldX: u,
           oldY: h,
-          originalEvent: n
+          originalEvent: a
         }) === !1)
           return this;
-        o.x = t, o.y = e, o.left = t, o.top = e, this.moving = !0, this.renderImage(function() {
-          i.moving = !1, p(r.moved) && d(s, Ht, r.moved, {
+        l.x = t, l.y = e, l.left = t, l.top = e, this.moving = !0, this.renderImage(function() {
+          i.moving = !1, p(s.moved) && d(r, Ht, s.moved, {
             once: !0
-          }), x(s, Ht, {
+          }), I(r, Ht, {
             x: t,
             y: e,
             oldX: u,
             oldY: h,
-            originalEvent: n
+            originalEvent: a
           }, {
             cancelable: !1
           });
@@ -1042,22 +1042,22 @@ var xe = {
    * @returns {Viewer} this
    */
   rotateTo: function(t) {
-    var i = this, e = this.element, n = this.options, s = this.imageData;
-    if (t = Number(t), T(t) && this.viewed && !this.played && n.rotatable) {
-      var r = s.rotate;
-      if (p(n.rotate) && d(e, qt, n.rotate, {
+    var i = this, e = this.element, a = this.options, r = this.imageData;
+    if (t = Number(t), T(t) && this.viewed && !this.played && a.rotatable) {
+      var s = r.rotate;
+      if (p(a.rotate) && d(e, qt, a.rotate, {
         once: !0
-      }), x(e, qt, {
+      }), I(e, qt, {
         degree: t,
-        oldDegree: r
+        oldDegree: s
       }) === !1)
         return this;
-      s.rotate = t, this.rotating = !0, this.renderImage(function() {
-        i.rotating = !1, p(n.rotated) && d(e, jt, n.rotated, {
+      r.rotate = t, this.rotating = !0, this.renderImage(function() {
+        i.rotating = !1, p(a.rotated) && d(e, jt, a.rotated, {
           once: !0
-        }), x(e, jt, {
+        }), I(e, jt, {
           degree: t,
-          oldDegree: r
+          oldDegree: s
         }, {
           cancelable: !1
         });
@@ -1088,26 +1088,26 @@ var xe = {
    * @returns {Viewer} this
    */
   scale: function(t) {
-    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, n = this.element, s = this.options, r = this.imageData;
-    if (t = Number(t), e = Number(e), this.viewed && !this.played && s.scalable) {
-      var o = r.scaleX, u = r.scaleY, h = !1;
-      if (T(t) ? h = !0 : t = o, T(e) ? h = !0 : e = u, h) {
-        if (p(s.scale) && d(n, Ut, s.scale, {
+    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : t, a = this.element, r = this.options, s = this.imageData;
+    if (t = Number(t), e = Number(e), this.viewed && !this.played && r.scalable) {
+      var l = s.scaleX, u = s.scaleY, h = !1;
+      if (T(t) ? h = !0 : t = l, T(e) ? h = !0 : e = u, h) {
+        if (p(r.scale) && d(a, Ut, r.scale, {
           once: !0
-        }), x(n, Ut, {
+        }), I(a, Ut, {
           scaleX: t,
           scaleY: e,
-          oldScaleX: o,
+          oldScaleX: l,
           oldScaleY: u
         }) === !1)
           return this;
-        r.scaleX = t, r.scaleY = e, this.scaling = !0, this.renderImage(function() {
-          i.scaling = !1, p(s.scaled) && d(n, Bt, s.scaled, {
+        s.scaleX = t, s.scaleY = e, this.scaling = !0, this.renderImage(function() {
+          i.scaling = !1, p(r.scaled) && d(a, Bt, r.scaled, {
             once: !0
-          }), x(n, Bt, {
+          }), I(a, Bt, {
             scaleX: t,
             scaleY: e,
-            oldScaleX: o,
+            oldScaleX: l,
             oldScaleY: u
           }, {
             cancelable: !1
@@ -1126,8 +1126,8 @@ var xe = {
    * @returns {Viewer} this
    */
   zoom: function(t) {
-    var i = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, e = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, n = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null, s = this.imageData;
-    return t = Number(t), t < 0 ? t = 1 / (1 - t) : t = 1 + t, this.zoomTo(s.width * t / s.naturalWidth, i, e, n), this;
+    var i = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, e = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, a = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null, r = this.imageData;
+    return t = Number(t), t < 0 ? t = 1 / (1 - t) : t = 1 + t, this.zoomTo(r.width * t / r.naturalWidth, i, e, a), this;
   },
   /**
    * Zoom the image to an absolute ratio.
@@ -1139,14 +1139,14 @@ var xe = {
    * @returns {Viewer} this
    */
   zoomTo: function(t) {
-    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, n = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, s = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null, r = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : !1, o = this.element, u = this.options, h = this.pointers, l = this.imageData, c = l.x, v = l.y, N = l.width, S = l.height, E = l.naturalWidth, I = l.naturalHeight;
-    if (t = Math.max(0, t), T(t) && this.viewed && !this.played && (r || u.zoomable)) {
-      if (!r) {
-        var A = Math.max(0.01, u.minZoomRatio), O = Math.min(100, u.maxZoomRatio);
-        t = Math.min(Math.max(t, A), O);
+    var i = this, e = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : !1, a = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : null, r = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : null, s = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : !1, l = this.element, u = this.options, h = this.pointers, o = this.imageData, c = o.x, v = o.y, x = o.width, S = o.height, E = o.naturalWidth, N = o.naturalHeight;
+    if (t = Math.max(0, t), T(t) && this.viewed && !this.played && (s || u.zoomable)) {
+      if (!s) {
+        var A = Math.max(0.01, u.minZoomRatio), C = Math.min(100, u.maxZoomRatio);
+        t = Math.min(Math.max(t, A), C);
       }
-      if (s)
-        switch (s.type) {
+      if (r)
+        switch (r.type) {
           case "wheel":
             u.zoomRatio >= 0.055 && t > 0.95 && t < 1.05 && (t = 1);
             break;
@@ -1156,29 +1156,29 @@ var xe = {
             t > 0.99 && t < 1.01 && (t = 1);
             break;
         }
-      var y = E * t, V = I * t, P = y - N, R = V - S, Y = l.ratio;
-      if (p(u.zoom) && d(o, Kt, u.zoom, {
+      var y = E * t, V = N * t, P = y - x, R = V - S, Y = o.ratio;
+      if (p(u.zoom) && d(l, Kt, u.zoom, {
         once: !0
-      }), x(o, Kt, {
+      }), I(l, Kt, {
         ratio: t,
         oldRatio: Y,
-        originalEvent: s
+        originalEvent: r
       }) === !1)
         return this;
-      if (this.zooming = !0, s) {
-        var Q = Te(this.viewer), H = h && Object.keys(h).length > 0 ? Ne(h) : {
-          pageX: s.pageX,
-          pageY: s.pageY
+      if (this.zooming = !0, r) {
+        var Q = Te(this.viewer), H = h && Object.keys(h).length > 0 ? xe(h) : {
+          pageX: r.pageX,
+          pageY: r.pageY
         };
-        l.x -= P * ((H.pageX - Q.left - c) / N), l.y -= R * ((H.pageY - Q.top - v) / S);
-      } else B(n) && T(n.x) && T(n.y) ? (l.x -= P * ((n.x - c) / N), l.y -= R * ((n.y - v) / S)) : (l.x -= P / 2, l.y -= R / 2);
-      l.left = l.x, l.top = l.y, l.width = y, l.height = V, l.oldRatio = Y, l.ratio = t, this.renderImage(function() {
-        i.zooming = !1, p(u.zoomed) && d(o, Zt, u.zoomed, {
+        o.x -= P * ((H.pageX - Q.left - c) / x), o.y -= R * ((H.pageY - Q.top - v) / S);
+      } else B(a) && T(a.x) && T(a.y) ? (o.x -= P * ((a.x - c) / x), o.y -= R * ((a.y - v) / S)) : (o.x -= P / 2, o.y -= R / 2);
+      o.left = o.x, o.top = o.y, o.width = y, o.height = V, o.oldRatio = Y, o.ratio = t, this.renderImage(function() {
+        i.zooming = !1, p(u.zoomed) && d(l, Zt, u.zoomed, {
           once: !0
-        }), x(o, Zt, {
+        }), I(l, Zt, {
           ratio: t,
           oldRatio: Y,
-          originalEvent: s
+          originalEvent: r
         }, {
           cancelable: !1
         });
@@ -1195,27 +1195,27 @@ var xe = {
     var t = this, i = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : !1;
     if (!this.isShown || this.played)
       return this;
-    var e = this.element, n = this.options;
-    if (p(n.play) && d(e, $t, n.play, {
+    var e = this.element, a = this.options;
+    if (p(a.play) && d(e, $t, a.play, {
       once: !0
-    }), x(e, $t) === !1)
+    }), I(e, $t) === !1)
       return this;
-    var s = this.player, r = this.loadImage.bind(this), o = [], u = 0, h = 0;
-    if (this.played = !0, this.onLoadWhenPlay = r, i && this.requestFullscreen(i), f(s, q), w(this.items, function(v, N) {
+    var r = this.player, s = this.loadImage.bind(this), l = [], u = 0, h = 0;
+    if (this.played = !0, this.onLoadWhenPlay = s, i && this.requestFullscreen(i), f(r, q), w(this.items, function(v, x) {
       var S = v.querySelector("img"), E = document.createElement("img");
-      E.src = K(S, "originalUrl"), E.alt = S.getAttribute("alt"), E.referrerPolicy = S.referrerPolicy, u += 1, f(E, ut), at(E, D, n.transition), j(v, rt) && (f(E, _), h = N), o.push(E), d(E, z, r, {
+      E.src = K(S, "originalUrl"), E.alt = S.getAttribute("alt"), E.referrerPolicy = S.referrerPolicy, u += 1, f(E, ut), at(E, D, a.transition), j(v, rt) && (f(E, _), h = x), l.push(E), d(E, z, s, {
         once: !0
-      }), s.appendChild(E);
-    }), T(n.interval) && n.interval > 0) {
-      var l = function() {
-        clearTimeout(t.playing.timeout), g(o[h], _), h -= 1, h = h >= 0 ? h : u - 1, f(o[h], _), t.playing.timeout = setTimeout(l, n.interval);
+      }), r.appendChild(E);
+    }), T(a.interval) && a.interval > 0) {
+      var o = function() {
+        clearTimeout(t.playing.timeout), g(l[h], _), h -= 1, h = h >= 0 ? h : u - 1, f(l[h], _), t.playing.timeout = setTimeout(o, a.interval);
       }, c = function() {
-        clearTimeout(t.playing.timeout), g(o[h], _), h += 1, h = h < u ? h : 0, f(o[h], _), t.playing.timeout = setTimeout(c, n.interval);
+        clearTimeout(t.playing.timeout), g(l[h], _), h += 1, h = h < u ? h : 0, f(l[h], _), t.playing.timeout = setTimeout(c, a.interval);
       };
       u > 1 && (this.playing = {
-        prev: l,
+        prev: o,
         next: c,
-        timeout: setTimeout(c, n.interval)
+        timeout: setTimeout(c, a.interval)
       });
     }
     return this;
@@ -1228,43 +1228,43 @@ var xe = {
     var i = this.element, e = this.options;
     if (p(e.stop) && d(i, Gt, e.stop, {
       once: !0
-    }), x(i, Gt) === !1)
+    }), I(i, Gt) === !1)
       return this;
-    var n = this.player;
-    return clearTimeout(this.playing.timeout), this.playing = !1, this.played = !1, w(n.getElementsByTagName("img"), function(s) {
-      b(s, z, t.onLoadWhenPlay);
-    }), g(n, q), n.innerHTML = "", this.exitFullscreen(), this;
+    var a = this.player;
+    return clearTimeout(this.playing.timeout), this.playing = !1, this.played = !1, w(a.getElementsByTagName("img"), function(r) {
+      b(r, z, t.onLoadWhenPlay);
+    }), g(a, q), a.innerHTML = "", this.exitFullscreen(), this;
   },
   // Enter modal mode (only available in inline mode)
   full: function() {
-    var t = this, i = this.options, e = this.viewer, n = this.image, s = this.list;
-    return !this.isShown || this.played || this.fulled || !i.inline ? this : (this.fulled = !0, this.open(), f(this.button, xt), i.transition && (g(s, D), this.viewed && g(n, D)), f(e, gt), e.setAttribute("role", "dialog"), e.setAttribute("aria-labelledby", this.title.id), e.setAttribute("aria-modal", !0), e.removeAttribute("style"), k(e, {
+    var t = this, i = this.options, e = this.viewer, a = this.image, r = this.list;
+    return !this.isShown || this.played || this.fulled || !i.inline ? this : (this.fulled = !0, this.open(), f(this.button, It), i.transition && (g(r, D), this.viewed && g(a, D)), f(e, gt), e.setAttribute("role", "dialog"), e.setAttribute("aria-labelledby", this.title.id), e.setAttribute("aria-modal", !0), e.removeAttribute("style"), k(e, {
       zIndex: i.zIndex
-    }), i.focus && this.enforceFocus(), this.initContainer(), this.viewerData = C({}, this.containerData), this.renderList(), this.viewed && this.initImage(function() {
+    }), i.focus && this.enforceFocus(), this.initContainer(), this.viewerData = O({}, this.containerData), this.renderList(), this.viewed && this.initImage(function() {
       t.renderImage(function() {
         i.transition && setTimeout(function() {
-          f(n, D), f(s, D);
+          f(a, D), f(r, D);
         }, 0);
       });
     }), this);
   },
   // Exit modal mode (only available in inline mode)
   exit: function() {
-    var t = this, i = this.options, e = this.viewer, n = this.image, s = this.list;
-    return !this.isShown || this.played || !this.fulled || !i.inline ? this : (this.fulled = !1, this.close(), g(this.button, xt), i.transition && (g(s, D), this.viewed && g(n, D)), i.focus && this.clearEnforceFocus(), e.removeAttribute("role"), e.removeAttribute("aria-labelledby"), e.removeAttribute("aria-modal"), g(e, gt), k(e, {
+    var t = this, i = this.options, e = this.viewer, a = this.image, r = this.list;
+    return !this.isShown || this.played || !this.fulled || !i.inline ? this : (this.fulled = !1, this.close(), g(this.button, It), i.transition && (g(r, D), this.viewed && g(a, D)), i.focus && this.clearEnforceFocus(), e.removeAttribute("role"), e.removeAttribute("aria-labelledby"), e.removeAttribute("aria-modal"), g(e, gt), k(e, {
       zIndex: i.zIndexInline
-    }), this.viewerData = C({}, this.parentData), this.renderViewer(), this.renderList(), this.viewed && this.initImage(function() {
+    }), this.viewerData = O({}, this.parentData), this.renderViewer(), this.renderList(), this.viewed && this.initImage(function() {
       t.renderImage(function() {
         i.transition && setTimeout(function() {
-          f(n, D), f(s, D);
+          f(a, D), f(r, D);
         }, 0);
       });
     }), this);
   },
   // Show the current ratio of the image with percentage
   tooltip: function() {
-    var t = this, i = this.options, e = this.tooltipBox, n = this.imageData;
-    return !this.viewed || this.played || !i.tooltip ? this : (e.textContent = "".concat(Math.round(n.ratio * 100), "%"), this.tooltipping ? clearTimeout(this.tooltipping) : i.transition ? (this.fading && x(e, L), f(e, q), f(e, ut), f(e, D), e.removeAttribute("aria-hidden"), e.initialOffsetWidth = e.offsetWidth, f(e, _)) : (f(e, q), e.removeAttribute("aria-hidden")), this.tooltipping = setTimeout(function() {
+    var t = this, i = this.options, e = this.tooltipBox, a = this.imageData;
+    return !this.viewed || this.played || !i.tooltip ? this : (e.textContent = "".concat(Math.round(a.ratio * 100), "%"), this.tooltipping ? clearTimeout(this.tooltipping) : i.transition ? (this.fading && I(e, L), f(e, q), f(e, ut), f(e, D), e.removeAttribute("aria-hidden"), e.initialOffsetWidth = e.offsetWidth, f(e, _)) : (f(e, q), e.removeAttribute("aria-hidden")), this.tooltipping = setTimeout(function() {
       i.transition ? (d(e, L, function() {
         g(e, q), g(e, ut), g(e, D), e.setAttribute("aria-hidden", !0), t.fading = !1;
       }, {
@@ -1283,31 +1283,31 @@ var xe = {
   },
   // Reset the image to its initial state
   reset: function() {
-    return this.viewed && !this.played && (this.imageData = C({}, this.initialImageData), this.renderImage()), this;
+    return this.viewed && !this.played && (this.imageData = O({}, this.initialImageData), this.renderImage()), this;
   },
   // Update viewer when images changed
   update: function() {
-    var t = this, i = this.element, e = this.options, n = this.isImg;
-    if (n && !i.parentNode)
+    var t = this, i = this.element, e = this.options, a = this.isImg;
+    if (a && !i.parentNode)
       return this.destroy();
-    var s = [];
-    if (w(n ? [i] : i.querySelectorAll("img"), function(h) {
-      p(e.filter) ? e.filter.call(t, h) && s.push(h) : t.getImageURL(h) && s.push(h);
-    }), !s.length)
+    var r = [];
+    if (w(a ? [i] : i.querySelectorAll("img"), function(h) {
+      p(e.filter) ? e.filter.call(t, h) && r.push(h) : t.getImageURL(h) && r.push(h);
+    }), !r.length)
       return this;
-    if (this.images = s, this.length = s.length, this.ready) {
-      var r = [];
-      if (w(this.items, function(h, l) {
-        var c = h.querySelector("img"), v = s[l];
-        v && c ? (v.src !== c.src || v.alt !== c.alt) && r.push(l) : r.push(l);
+    if (this.images = r, this.length = r.length, this.ready) {
+      var s = [];
+      if (w(this.items, function(h, o) {
+        var c = h.querySelector("img"), v = r[o];
+        v && c ? (v.src !== c.src || v.alt !== c.alt) && s.push(o) : s.push(o);
       }), k(this.list, {
         width: "auto"
       }), this.initList(), this.isShown)
         if (this.length) {
           if (this.viewed) {
-            var o = r.indexOf(this.index);
-            if (o >= 0)
-              this.viewed = !1, this.view(Math.max(Math.min(this.index - o, this.length - 1), 0));
+            var l = s.indexOf(this.index);
+            if (l >= 0)
+              this.viewed = !1, this.view(Math.max(Math.min(this.index - l, this.length - 1), 0));
             else {
               var u = this.items[this.index];
               f(u, rt), u.setAttribute("aria-selected", !0);
@@ -1324,47 +1324,47 @@ var xe = {
     var t = this.element, i = this.options;
     return t[m] ? (this.destroyed = !0, this.ready ? (this.played && this.stop(), i.inline ? (this.fulled && this.exit(), this.unbind()) : this.isShown ? (this.viewing && (this.imageRendering ? this.imageRendering.abort() : this.imageInitializing && this.imageInitializing.abort()), this.hiding && this.transitioning.abort(), this.hidden()) : this.showing && (this.transitioning.abort(), this.hidden()), this.ready = !1, this.viewer.parentNode.removeChild(this.viewer)) : i.inline && (this.delaying ? this.delaying.abort() : this.initializing && this.initializing.abort()), i.inline || b(t, G, this.onStart), t[m] = void 0, this) : this;
   }
-}, Ce = {
+}, Oe = {
   getImageURL: function(t) {
     var i = this.options.url;
     return nt(i) ? i = t.getAttribute(i) : p(i) ? i = i.call(this, t) : i = "", i;
   },
   enforceFocus: function() {
     var t = this;
-    this.clearEnforceFocus(), d(document, Ot, this.onFocusin = function(i) {
-      var e = t.viewer, n = i.target;
-      if (!(n === document || n === e || e.contains(n))) {
-        for (; n; ) {
-          if (n.getAttribute("tabindex") !== null || n.getAttribute("aria-modal") === "true")
+    this.clearEnforceFocus(), d(document, Ct, this.onFocusin = function(i) {
+      var e = t.viewer, a = i.target;
+      if (!(a === document || a === e || e.contains(a))) {
+        for (; a; ) {
+          if (a.getAttribute("tabindex") !== null || a.getAttribute("aria-modal") === "true")
             return;
-          n = n.parentElement;
+          a = a.parentElement;
         }
         e.focus();
       }
     });
   },
   clearEnforceFocus: function() {
-    this.onFocusin && (b(document, Ot, this.onFocusin), this.onFocusin = null);
+    this.onFocusin && (b(document, Ct, this.onFocusin), this.onFocusin = null);
   },
   open: function() {
     var t = this.body;
-    f(t, It), this.scrollbarWidth > 0 && (t.style.paddingRight = "".concat(this.scrollbarWidth + (parseFloat(this.initialBodyComputedPaddingRight) || 0), "px"));
+    f(t, Nt), this.scrollbarWidth > 0 && (t.style.paddingRight = "".concat(this.scrollbarWidth + (parseFloat(this.initialBodyComputedPaddingRight) || 0), "px"));
   },
   close: function() {
     var t = this.body;
-    g(t, It), this.scrollbarWidth > 0 && (t.style.paddingRight = this.initialBodyPaddingRight);
+    g(t, Nt), this.scrollbarWidth > 0 && (t.style.paddingRight = this.initialBodyPaddingRight);
   },
   shown: function() {
     var t = this.element, i = this.options, e = this.viewer;
     this.fulled = !0, this.isShown = !0, this.render(), this.bind(), this.showing = !1, i.focus && (e.focus(), this.enforceFocus()), p(i.shown) && d(t, Ft, i.shown, {
       once: !0
-    }), x(t, Ft) !== !1 && this.ready && this.isShown && !this.hiding && this.view(this.index);
+    }), I(t, Ft) !== !1 && this.ready && this.isShown && !this.hiding && this.view(this.index);
   },
   hidden: function() {
     var t = this.element, i = this.options, e = this.viewer;
     i.fucus && this.clearEnforceFocus(), this.close(), this.unbind(), f(e, W), e.removeAttribute("role"), e.removeAttribute("aria-labelledby"), e.removeAttribute("aria-modal"), e.setAttribute("aria-hidden", !0), this.resetList(), this.resetImage(), this.fulled = !1, this.viewed = !1, this.isShown = !1, this.hiding = !1, this.destroyed || (p(i.hidden) && d(t, Yt, i.hidden, {
       once: !0
-    }), x(t, Yt, null, {
+    }), I(t, Yt, null, {
       cancelable: !1
     }));
   },
@@ -1380,20 +1380,20 @@ var xe = {
     this.fulled && (t.fullscreenElement || t.webkitFullscreenElement || t.mozFullScreenElement || t.msFullscreenElement) && (t.exitFullscreen ? t.exitFullscreen() : t.webkitExitFullscreen ? t.webkitExitFullscreen() : t.mozCancelFullScreen ? t.mozCancelFullScreen() : t.msExitFullscreen && t.msExitFullscreen());
   },
   change: function(t) {
-    var i = this.options, e = this.pointers, n = e[Object.keys(e)[0]];
-    if (n) {
-      var s = n.endX - n.startX, r = n.endY - n.startY;
+    var i = this.options, e = this.pointers, a = e[Object.keys(e)[0]];
+    if (a) {
+      var r = a.endX - a.startX, s = a.endY - a.startY;
       switch (this.action) {
         case ht:
-          (s !== 0 || r !== 0) && (this.pointerMoved = !0, this.move(s, r, t));
+          (r !== 0 || s !== 0) && (this.pointerMoved = !0, this.move(r, s, t));
           break;
         case tt:
           this.zoom(De(e), !1, null, t);
           break;
         case Qt: {
           this.action = "switched";
-          var o = Math.abs(s);
-          o > 1 && o > Math.abs(r) && (this.pointers = {}, s > 1 ? this.prev(i.loop) : s < -1 && this.next(i.loop));
+          var l = Math.abs(r);
+          l > 1 && l > Math.abs(s) && (this.pointers = {}, r > 1 ? this.prev(i.loop) : r < -1 && this.next(i.loop));
           break;
         }
       }
@@ -1406,56 +1406,56 @@ var xe = {
     var t = this.imageData, i = this.viewerData;
     return this.length > 1 && t.x >= 0 && t.y >= 0 && t.width <= i.width && t.height <= i.height;
   }
-}, _e = F.Viewer, ze = /* @__PURE__ */ function(a) {
+}, _e = F.Viewer, ze = /* @__PURE__ */ function(n) {
   return function() {
-    return a += 1, a;
+    return n += 1, n;
   };
 }(-1), ie = /* @__PURE__ */ function() {
-  function a(t) {
+  function n(t) {
     var i = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-    if (ne(this, a), !t || t.nodeType !== 1)
+    if (ne(this, n), !t || t.nodeType !== 1)
       throw new Error("The first argument is required and must be an element.");
-    this.element = t, this.options = C({}, Nt, B(i) && i), this.action = !1, this.fading = !1, this.fulled = !1, this.hiding = !1, this.imageClicked = !1, this.imageData = {}, this.index = this.options.initialViewIndex, this.isImg = !1, this.isShown = !1, this.length = 0, this.moving = !1, this.played = !1, this.playing = !1, this.pointers = {}, this.ready = !1, this.rotating = !1, this.scaling = !1, this.showing = !1, this.timeout = !1, this.tooltipping = !1, this.viewed = !1, this.viewing = !1, this.wheeling = !1, this.zooming = !1, this.pointerMoved = !1, this.id = ze(), this.init();
+    this.element = t, this.options = O({}, xt, B(i) && i), this.action = !1, this.fading = !1, this.fulled = !1, this.hiding = !1, this.imageClicked = !1, this.imageData = {}, this.index = this.options.initialViewIndex, this.isImg = !1, this.isShown = !1, this.length = 0, this.moving = !1, this.played = !1, this.playing = !1, this.pointers = {}, this.ready = !1, this.rotating = !1, this.scaling = !1, this.showing = !1, this.timeout = !1, this.tooltipping = !1, this.viewed = !1, this.viewing = !1, this.wheeling = !1, this.zooming = !1, this.pointerMoved = !1, this.id = ze(), this.init();
   }
-  return ae(a, [{
+  return ae(n, [{
     key: "init",
     value: function() {
-      var i = this, e = this.element, n = this.options;
+      var i = this, e = this.element, a = this.options;
       if (!e[m]) {
-        e[m] = this, n.focus && !n.keyboard && (n.focus = !1);
-        var s = e.localName === "img", r = [];
-        if (w(s ? [e] : e.querySelectorAll("img"), function(h) {
-          p(n.filter) ? n.filter.call(i, h) && r.push(h) : i.getImageURL(h) && r.push(h);
-        }), this.isImg = s, this.length = r.length, this.images = r, this.initBody(), U(document.createElement(m).style.transition) && (n.transition = !1), n.inline) {
-          var o = 0, u = function() {
-            if (o += 1, o === i.length) {
-              var l;
+        e[m] = this, a.focus && !a.keyboard && (a.focus = !1);
+        var r = e.localName === "img", s = [];
+        if (w(r ? [e] : e.querySelectorAll("img"), function(h) {
+          p(a.filter) ? a.filter.call(i, h) && s.push(h) : i.getImageURL(h) && s.push(h);
+        }), this.isImg = r, this.length = s.length, this.images = s, this.initBody(), U(document.createElement(m).style.transition) && (a.transition = !1), a.inline) {
+          var l = 0, u = function() {
+            if (l += 1, l === i.length) {
+              var o;
               i.initializing = !1, i.delaying = {
                 abort: function() {
-                  clearTimeout(l);
+                  clearTimeout(o);
                 }
-              }, l = setTimeout(function() {
+              }, o = setTimeout(function() {
                 i.delaying = !1, i.build();
               }, 0);
             }
           };
           this.initializing = {
             abort: function() {
-              w(r, function(l) {
-                l.complete || (b(l, z, u), b(l, X, u));
+              w(s, function(o) {
+                o.complete || (b(o, z, u), b(o, X, u));
               });
             }
-          }, w(r, function(h) {
+          }, w(s, function(h) {
             if (h.complete)
               u();
             else {
-              var l, c;
-              d(h, z, l = function() {
+              var o, c;
+              d(h, z, o = function() {
                 b(h, X, c), u();
               }, {
                 once: !0
               }), d(h, X, c = function() {
-                b(h, z, l), u();
+                b(h, z, o), u();
               }, {
                 once: !0
               });
@@ -1463,8 +1463,8 @@ var xe = {
           });
         } else
           d(e, G, this.onStart = function(h) {
-            var l = h.target;
-            l.localName === "img" && (!p(n.filter) || n.filter.call(i, l)) && i.view(i.images.indexOf(l));
+            var o = h.target;
+            o.localName === "img" && (!p(a.filter) || a.filter.call(i, o)) && i.view(i.images.indexOf(o));
           });
       }
     }
@@ -1472,16 +1472,16 @@ var xe = {
     key: "build",
     value: function() {
       if (!this.ready) {
-        var i = this.element, e = this.options, n = i.parentNode, s = document.createElement("div");
-        s.innerHTML = oe;
-        var r = s.querySelector(".".concat(m, "-container")), o = r.querySelector(".".concat(m, "-title")), u = r.querySelector(".".concat(m, "-toolbar")), h = r.querySelector(".".concat(m, "-navbar")), l = r.querySelector(".".concat(m, "-button")), c = r.querySelector(".".concat(m, "-canvas"));
-        if (this.parent = n, this.viewer = r, this.title = o, this.toolbar = u, this.navbar = h, this.button = l, this.canvas = c, this.footer = r.querySelector(".".concat(m, "-footer")), this.tooltipBox = r.querySelector(".".concat(m, "-tooltip")), this.player = r.querySelector(".".concat(m, "-player")), this.list = r.querySelector(".".concat(m, "-list")), r.id = "".concat(m).concat(this.id), o.id = "".concat(m, "Title").concat(this.id), f(o, e.title ? ot(Array.isArray(e.title) ? e.title[0] : e.title) : W), f(h, e.navbar ? ot(e.navbar) : W), at(l, W, !e.button), e.keyboard && l.setAttribute("tabindex", 0), e.backdrop && (f(r, "".concat(m, "-backdrop")), !e.inline && e.backdrop !== "static" && bt(c, ft, "hide")), nt(e.className) && e.className && e.className.split(Et).forEach(function(y) {
-          f(r, y);
+        var i = this.element, e = this.options, a = i.parentNode, r = document.createElement("div");
+        r.innerHTML = oe;
+        var s = r.querySelector(".".concat(m, "-container")), l = s.querySelector(".".concat(m, "-title")), u = s.querySelector(".".concat(m, "-toolbar")), h = s.querySelector(".".concat(m, "-navbar")), o = s.querySelector(".".concat(m, "-button")), c = s.querySelector(".".concat(m, "-canvas"));
+        if (this.parent = a, this.viewer = s, this.title = l, this.toolbar = u, this.navbar = h, this.button = o, this.canvas = c, this.footer = s.querySelector(".".concat(m, "-footer")), this.tooltipBox = s.querySelector(".".concat(m, "-tooltip")), this.player = s.querySelector(".".concat(m, "-player")), this.list = s.querySelector(".".concat(m, "-list")), s.id = "".concat(m).concat(this.id), l.id = "".concat(m, "Title").concat(this.id), f(l, e.title ? ot(Array.isArray(e.title) ? e.title[0] : e.title) : W), f(h, e.navbar ? ot(e.navbar) : W), at(o, W, !e.button), e.keyboard && o.setAttribute("tabindex", 0), e.backdrop && (f(s, "".concat(m, "-backdrop")), !e.inline && e.backdrop !== "static" && bt(c, ft, "hide")), nt(e.className) && e.className && e.className.split(Et).forEach(function(y) {
+          f(s, y);
         }), e.toolbar) {
-          var v = document.createElement("ul"), N = B(e.toolbar), S = st.slice(0, 3), E = st.slice(7, 9), I = st.slice(9);
-          N || f(u, ot(e.toolbar)), w(N ? e.toolbar : st, function(y, V) {
-            var P = N && B(y), R = N ? Tt(V) : y, Y = P && !U(y.show) ? y.show : y;
-            if (!(!Y || !e.zoomable && S.indexOf(R) !== -1 || !e.rotatable && E.indexOf(R) !== -1 || !e.scalable && I.indexOf(R) !== -1)) {
+          var v = document.createElement("ul"), x = B(e.toolbar), S = st.slice(0, 3), E = st.slice(7, 9), N = st.slice(9);
+          x || f(u, ot(e.toolbar)), w(x ? e.toolbar : st, function(y, V) {
+            var P = x && B(y), R = x ? Tt(V) : y, Y = P && !U(y.show) ? y.show : y;
+            if (!(!Y || !e.zoomable && S.indexOf(R) !== -1 || !e.rotatable && E.indexOf(R) !== -1 || !e.scalable && N.indexOf(R) !== -1)) {
               var Q = P && !U(y.size) ? y.size : y, H = P && !U(y.click) ? y.click : y, M = document.createElement("li");
               e.keyboard && M.setAttribute("tabindex", 0), M.setAttribute("role", "button"), f(M, "".concat(m, "-").concat(R)), p(H) || bt(M, ft, R), T(Y) && f(M, ot(Y)), ["small", "large"].indexOf(Q) !== -1 ? f(M, "".concat(m, "-").concat(Q)) : R === "play" && f(M, "".concat(m, "-large")), p(H) && d(M, G, H), v.appendChild(M);
             }
@@ -1495,21 +1495,21 @@ var xe = {
           });
         }
         if (e.inline)
-          f(l, he), k(r, {
+          f(o, he), k(s, {
             zIndex: e.zIndexInline
-          }), window.getComputedStyle(n).position === "static" && k(n, {
+          }), window.getComputedStyle(a).position === "static" && k(a, {
             position: "relative"
-          }), n.insertBefore(r, i.nextSibling);
+          }), a.insertBefore(s, i.nextSibling);
         else {
-          f(l, le), f(r, gt), f(r, ut), f(r, W), k(r, {
+          f(o, le), f(s, gt), f(s, ut), f(s, W), k(s, {
             zIndex: e.zIndex
           });
-          var O = e.container;
-          nt(O) && (O = i.ownerDocument.querySelector(O)), O || (O = this.body), O.appendChild(r);
+          var C = e.container;
+          nt(C) && (C = i.ownerDocument.querySelector(C)), C || (C = this.body), C.appendChild(s);
         }
         if (e.inline && (this.render(), this.bind(), this.isShown = !0), this.ready = !0, p(e.ready) && d(i, Vt, e.ready, {
           once: !0
-        }), x(i, Vt) === !1) {
+        }), I(i, Vt) === !1) {
           this.ready = !1;
           return;
         }
@@ -1523,7 +1523,7 @@ var xe = {
   }], [{
     key: "noConflict",
     value: function() {
-      return window.Viewer = _e, a;
+      return window.Viewer = _e, n;
     }
     /**
      * Change the default options.
@@ -1532,11 +1532,11 @@ var xe = {
   }, {
     key: "setDefaults",
     value: function(i) {
-      C(Nt, B(i) && i);
+      O(xt, B(i) && i);
     }
   }]);
 }();
-C(ie.prototype, xe, Ie, Ae, Oe, Ce);
+O(ie.prototype, Ie, Ne, Ae, Ce, Oe);
 const Le = "<style>.container {display: grid;grid-template-columns: repeat(3, 33.33%);grid-template-rows: 1fr 1fr auto;img {width: 100%;height: 100%;max-height: 100%;}}</style>", ke = '<slot name="slotName"></slot>', Re = '<div id="viewer-container" class="container" part="content"></div>' + Le + ke;
 class Ve extends HTMLElement {
   // 生命周期，元素添加到文档中时调用
@@ -1545,23 +1545,8 @@ class Ve extends HTMLElement {
     t.innerHTML = this.imageCount(i.split(","));
     const e = t.content.cloneNode(!0);
     this.shadow.appendChild(e);
-    let n = {};
-    const s = this.getAttribute("options");
-    if (s)
-      try {
-        n = JSON.parse(s);
-      } catch (r) {
-        console.warn("Failed to parse options attribute as JSON:", r), typeof window[s] == "object" && (n = window[s]);
-      }
-    else
-      for (const r of this.attributes)
-        if (!r.name.includes("-") && r.name !== "images" && r.name !== "options")
-          try {
-            n[r.name] = JSON.parse(r.value);
-          } catch {
-            r.value === "true" ? n[r.name] = !0 : r.value === "false" ? n[r.name] = !1 : isNaN(r.value) ? n[r.name] = r.value : n[r.name] = Number(r.value);
-          }
-    this._options && typeof this._options == "object" && (n = { ...n, ...this._options }), this.initializeViewer(n);
+    const a = this.getAttribute("options");
+    typeof a == "string" && (this._options = JSON.parse(a)), this.initializeViewer(this._options);
   }
   // 设置组件的初始化状态
   constructor() {
@@ -1578,19 +1563,7 @@ class Ve extends HTMLElement {
   }
   // 初始化 viewer 的方法
   initializeViewer(t = {}) {
-    let i = { ...t };
-    if (this._options && typeof this._options == "object")
-      i = { ...i, ...this._options };
-    else {
-      const e = this.getAttribute("options");
-      if (e)
-        try {
-          const n = JSON.parse(e);
-          i = { ...i, ...n };
-        } catch (n) {
-          console.warn("Failed to parse options attribute as JSON:", n), typeof window[e] == "object" && (i = { ...i, ...window[e] });
-        }
-    }
+    const i = { ...t };
     this._viewer && this._viewer.destroy(), this._viewer = new ie(this.shadowRoot.getElementById("viewer-container"), i), Me.viewer = this._viewer;
   }
   // 处理webcomponent模板下的图片html
@@ -1604,12 +1577,15 @@ class Ve extends HTMLElement {
 }
 document.querySelector("viewer-webcomponent") || customElements.define("viewer-webcomponent", Ve);
 const Me = new Proxy({}, {
-  get(a, t) {
-    return console.log(`[get] ${t}`), a[t];
-  },
-  set(a, t, i) {
-    return console.log(`[set] ${t} =`, i), a[t] = i, !0;
-  }
+  // get(target, prop) {
+  //     // console.log(`[get] ${prop}`) // 打印访问日志
+  //     return target[prop]
+  // },
+  // set(target, prop, value) {
+  //     // console.log(`[set] ${prop} =`, value) // 打印修改日志
+  //     target[prop] = value
+  //     return true
+  // }
 });
 export {
   Me as default
