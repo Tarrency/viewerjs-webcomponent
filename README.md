@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](https://mit-license.org/) 
 
 > **Image viewer webcomponent** based on [viewerjs](https://github.com/fengyuanchen/viewerjs).
-- It can be imported in **Vue and React**.
+- It can be imported in **Vue, React and HTML**.
 - All the options & methods of viewerjs are avaliable.
 
 ## Table of contents
@@ -80,12 +80,12 @@ export default defineConfig({
     "src/assets/tibet-5.jpg",
     ]);
     onMounted(() => {
-    const viewer = getViewer.viewer;
-    viewer.show();
+      const viewer = getViewer.viewer;
+      viewer.show();
 
-    // Vue3
-    // const vueViewer = ref(viewer)
-    // vueViewer.value.show()
+      // Vue3
+      // const vueViewer = ref(viewer)
+      // vueViewer.value.show()
     });
 </script>
 
@@ -149,6 +149,20 @@ return (
 }
 
 export default App
+```
+- HTML
+```jsx
+  <script src="https://unpkg.com/viewerjs-webcomponent/dist/browser.js"></script>
+  <viewer-webcomponent options='{"toolbar": true, "title": false}'
+    images='["./assets/tibet-1.jpg", "./assets/tibet-2.jpg", "./assets/tibet-3.jpg", "./assets/tibet-4.jpg", "./assets/tibet-5.jpg", "./assets/tibet-6.jpg", "./assets/tibet-7.jpg", "./assets/tibet-8.jpg", "./assets/tibet-9.jpg"]'>
+    <!-- <span slot="slotName">这是真正的slot</span> -->
+  </viewer-webcomponent>
+  <script>
+    setTimeout(() => {
+      const viewer = ViewerjsWebcomponentGlobal.viewer
+      viewer.show()
+    })
+  </script>
 ```
 
 ## Options and Methods and Keyboard support of Viewerjs
