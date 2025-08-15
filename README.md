@@ -69,15 +69,15 @@ export default defineConfig({
 
     const options = ref({ toolbar: true, title: false });
     const images = ref([
-    "src/assets/tibet-1.jpg",
-    "src/assets/tibet-2.jpg",
-    "src/assets/tibet-3.jpg",
-    "src/assets/tibet-4.jpg",
-    "src/assets/tibet-8.jpg",
-    "src/assets/tibet-9.jpg",
-    "src/assets/tibet-7.jpg",
-    "src/assets/tibet-6.jpg",
-    "src/assets/tibet-5.jpg",
+      "src/assets/tibet-1.jpg",
+      "src/assets/tibet-2.jpg",
+      "src/assets/tibet-3.jpg",
+      "src/assets/tibet-4.jpg",
+      "src/assets/tibet-8.jpg",
+      "src/assets/tibet-9.jpg",
+      "src/assets/tibet-7.jpg",
+      "src/assets/tibet-6.jpg",
+      "src/assets/tibet-5.jpg",
     ]);
     onMounted(() => {
       const viewer = getViewer.viewer;
@@ -151,17 +151,19 @@ return (
 export default App
 ```
 - HTML
-```jsx
+```html
   <script src="https://unpkg.com/viewerjs-webcomponent/dist/browser.js"></script>
-  <viewer-webcomponent options='{"toolbar": true, "title": false}'
+  
+  <viewer-webcomponent 
+    options='{"toolbar": true, "title": false}'
     images='["./assets/tibet-1.jpg", "./assets/tibet-2.jpg", "./assets/tibet-3.jpg", "./assets/tibet-4.jpg", "./assets/tibet-5.jpg", "./assets/tibet-6.jpg", "./assets/tibet-7.jpg", "./assets/tibet-8.jpg", "./assets/tibet-9.jpg"]'>
-    <!-- <span slot="slotName">这是真正的slot</span> -->
   </viewer-webcomponent>
+  
   <script>
     setTimeout(() => {
-      const viewer = ViewerjsWebcomponentGlobal.viewer
-      viewer.show()
-    })
+      const viewer = ViewerjsWebcomponentGlobal.viewer;
+      viewer.show();
+    });
   </script>
 ```
 
